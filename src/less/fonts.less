@@ -1,0 +1,19 @@
+@font-path: '../fonts';
+
+.fontFace(@font-family, @file, @weight, @style) {
+  @font-face {
+    font-family: '@{font-family}';
+    src:  url('@{font-path}/@{file}.eot?skszf9');
+    src:  url('@{font-path}/@{file}.eot?skszf9#iefix') format('embedded-opentype'),
+    url('@{font-path}/@{file}.ttf?skszf9') format('truetype'),
+    url('@{font-path}/@{file}.woff?skszf9') format('woff');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+
+.fontFace('roboto', 'roboto-light', 100, normal);
+.fontFace('roboto', 'roboto-regular', 400, normal);
+.fontFace('roboto', 'roboto-medium', 500, normal);
+.fontFace('roboto', 'roboto-bold', bold, normal);
