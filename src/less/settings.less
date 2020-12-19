@@ -1,0 +1,29 @@
+@import "mixin";
+@import "var";
+@import "grid";
+
+* {
+  font: normal normal 16px/18px sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.row {
+  margin-left: -@padding;
+  margin-right: -@padding;
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 @padding;
+}

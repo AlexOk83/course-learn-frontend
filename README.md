@@ -1,2 +1,3 @@
 # course-learn-frontend
-here i show you how to typeset correctly
+##template-for-start
+данная ветка содержит базовые настройки: gulp + pug + less + all mixins for work
