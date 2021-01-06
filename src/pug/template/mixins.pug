@@ -1,12 +1,24 @@
-include example-code
+include variable
 
-mixin header(h1)
+mixin header()
 	header.header
 		.container
-			h1= h1
+			.row.row--mobile-revert
+				.col.header__info
+					.title
+						p Меня зовут
+						h1 Окатьев Александр Александрович
+						p front-end'om занимаюсь с 2015 года. До 2018 года много сверстал интересных проектов. Самые интересные выложил здесь.
+						p В 2018 устроился в BSS (работаю там и по сей день) где освоил в полной мере react js + redux и паралельно изучил vue js + vuex. сюда выкладываю свои наработки.
+						p На данный момент работаю на проекте банка ВТБ - Личный кабинет 2.0, освоил на данном проекте typeScript.
+					.description
+						each link in links
+							.link: a(href=link.url, target='_blank')= link.title
+				.col.header__photo: img(src='images/my_photo.png')
 
-mixin footer()
-	footer.footer
-		.container
-			p bye student
+mixin project(item)
+	a(href=item.url target='_blank').item__wrapper
+		.item
+			.item__title= item.title
+			.item__description= item.description
 

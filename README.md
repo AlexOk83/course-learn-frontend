@@ -1,3 +1,4 @@
 # course-learn-frontend
-##template-for-start
-данная ветка содержит базовые настройки: gulp + pug + less + all mixins for work
+##my-portfolio
+Моё портфолио, небольшой проект, который будет отражать все мои проекты и скилы 
+Z

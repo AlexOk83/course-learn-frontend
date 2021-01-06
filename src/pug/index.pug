@@ -1,11 +1,24 @@
 extends template/layout
 block var
-	-
-		var h1 = 'hello student'
 block content
-	+header(h1)
+  +header()
+  section.portfolio
+    .container
+      h2.portfolio__title Портфолио
+      h3.portfolio__description Верстка (gulp, pug, less, sass, jquery)
+      .row
+        each item in projects
+          +project(item)
+      h3.portfolio__description проекты написанные на vue js (в рамках изучения данного фреймворка)
+      .row
+        each item in projects2
+          +project(item)
+      h3.portfolio__description реальные проекты, в которых я участвовал
+      .row
+        each item in projects3
+          +project(item)
 
-	+footer()
+
 
 
 
