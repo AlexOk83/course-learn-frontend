@@ -3,7 +3,7 @@
 @import "grid";
 
 * {
-  font: normal normal 16px/18px sans-serif;
+  font: normal normal 16px/18px "roboto";
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -19,6 +19,19 @@ body {
   margin-left: -@padding;
   margin-right: -@padding;
   display: flex;
+  flex-wrap: wrap;
+  .media_device({
+    margin-left: 0;
+    margin-right: 0;
+  });
+  &--mobile-revert {
+    .media_mobile({
+      flex-direction: column-reverse;
+    })
+  }
+}
+.col {
+  padding: @padding;
 }
 
 .container {
