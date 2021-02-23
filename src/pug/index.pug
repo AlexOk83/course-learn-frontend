@@ -1,12 +1,25 @@
 extends template/layout
-block var
-	-
-		var h1 = 'hello student'
+
 block content
-	+header(h1)
-
-	+footer()
-
+  .home-header
+    .container
+      h1.home-header__title Ясность нашей позиции очевидна очень
+      p.home-header__sub-title Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает широкому кругу
+      a.home-header__more-btn(href='#') Подробнее
+  .bg-grey
+    .home-slider__container
+      +home-slider()
+      .buttons__wrapper
+        .btn.btn--orange Отправить статью
+        .btn.btn--orange-border Полный каталог
+  +experts()
+  .social
+    .container
+      h2.social__title подписывайтесь на нас в соц сетях
+      .social__links
+        a.social__link.instagram(href="#")
+        a.social__link.viber(href="#")
+        a.social__link.facebook(href="#")
 
 
 

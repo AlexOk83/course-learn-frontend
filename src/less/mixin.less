@@ -69,7 +69,7 @@
 }
 
 .bg(@img, @size: contain, @pos: center, @repeat: no-repeat) {
-  background-image: url('@{img}');
+  background-image: url('../images/@{img}');
   background-size: @size;
   background-position: @pos;
   background-repeat: @repeat;
@@ -88,4 +88,43 @@
 
 .mixed_bg(@type : overlay) {
   background-blend-mode: @type;
+}
+
+.scrollbars(@size, @foreground-color, @background-color: mix(@foreground-color, white,  50%)) {
+  ::-webkit-scrollbar{
+    width:  @size;
+    height: @size;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: @foreground-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: @background-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: @foreground-color;
+    scrollbar-track-color: @background-color;
+  }
+
+
+}
+
+.circle(@size) {
+  width: @size;
+  height: @size;
+  border-radius: 50%;
+}
+
+.img_cover() {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

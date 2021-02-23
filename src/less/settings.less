@@ -3,7 +3,7 @@
 @import "grid";
 
 * {
-  font: normal normal 16px/18px sans-serif;
+  font: normal normal 16px/18px 'roboto';
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -15,15 +15,62 @@ body {
   overflow-x: hidden;
 }
 
-.row {
-  margin-left: -@padding;
-  margin-right: -@padding;
+.owl-stage-outer {
+  width: 100%;
+  overflow: hidden;
+  z-index: 5;
+  position: relative;
+}
+.owl-stage {
   display: flex;
 }
-
-.container {
+.owl-item {
+  float: left;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 @padding;
+  overflow: hidden;
+}
+.owl-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //background-color: @red;
+  height: 40px;
+}
+.owl-dots {
+  &.disabled {
+    display: none;
+  }
+
+
+}
+.owl-dot {
+  cursor: pointer;
+  &.active {
+    background-color: @red;
+  }
+}
+
+.bg-grey {
+  background-color: @bg;
+}
+
+::-webkit-scrollbar{
+  width:  8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(@orange, 0.9);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-track {
+  background: @grey_border;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+// For Internet Explorer
+body {
+  scrollbar-face-color: @orange;
+  scrollbar-track-color: @grey_border;
 }
