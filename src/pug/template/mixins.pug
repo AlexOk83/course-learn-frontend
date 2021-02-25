@@ -17,11 +17,10 @@ mixin header()
 					input.header__search(name="search", type="text", autocomplete="off", placeholder="Поиск по сайту")
 
 mixin menu(className)
-	- var a = className + '-item'
 	div(class= className)
 		each item in menu
 
-			a(href= item.url, class= a, class={'active': item.active})= item.title
+			a(href= item.url, class=className+'-item', class={'active': item.active})= item.title
 
 mixin home-slider()
 	.home-slider
