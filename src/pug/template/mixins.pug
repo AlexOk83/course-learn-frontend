@@ -19,7 +19,6 @@ mixin header()
 mixin menu(className)
 	div(class= className)
 		each item in menu
-
 			a(href= item.url, class=className+'-item', class={'active': item.active})= item.title
 
 mixin home-slider()
