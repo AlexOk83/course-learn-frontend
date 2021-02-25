@@ -135,13 +135,19 @@
     flex-wrap: wrap;
     height: 76px;
     align-content: center;
+    .media_device({
+      justify-content: flex-start;
+    });
     .link {
       color: rgba(@black, 0.8);
       text-decoration: none;
       margin: 0 20px;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 16px;
+      .font();
+      .media_device({
+        width: 100%;
+        padding-right: 30px;
+        .font(12px, 12px);
+      });
     }
   }
   .pdf_instruction {
@@ -150,7 +156,7 @@
     .bg('svg/pdf.svg');
     position: absolute;
     top: 22px;
-    right: 0;
+    right: 20px;
     cursor: pointer;
   }
 }
