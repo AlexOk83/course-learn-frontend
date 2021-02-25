@@ -248,6 +248,19 @@ jQuery(document).ready(function () {
     });
 
     // модалки
+
+    function hideModal() {
+        $('.modal').removeClass('active');
+        $('.modal__overlay').removeClass('visible');
+        $('body').removeClass('fixed');
+    }
+
+    function showModal() {
+        $('.modal').removeClass('active');
+        $('.modal__overlay').addClass('visible');
+        $('body').addClass('fixed');
+    }
+
     $('.form-field').each(function() {
         var $this = $(this);
         var inp = $('input', $this);
@@ -295,6 +308,8 @@ jQuery(document).ready(function () {
 
         close.click(function() {
             $this.addClass('inactive');
+            $('.modal__overlay').removeClass('visible');
+            $('body').removeClass('fixed');
             setTimeout(() => {
                 $this.removeClass('active inactive');
             }, 200);
@@ -302,15 +317,22 @@ jQuery(document).ready(function () {
         });
     });
 
+    $('.modal__overlay').click(function() {
+        hideModal();
+    });
+
     $('.auth_btn').click(function() {
+        showModal();
         $('#sign').addClass('active');
     });
 
     $('.pdf_instruction').click(function() {
+        showModal();
         $('#instruction').addClass('active');
     });
 
     $('.toggle-menu-btn').click(function() {
+        showModal();
         $('#menu').addClass('active');
     });
 

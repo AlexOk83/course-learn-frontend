@@ -9,17 +9,19 @@ mixin header()
 				span
 			+modal3()
 			img.logo(src='images/logo.png')
-			+menu()
+			+menu('menu')
 			.header__right
 				.auth_btn
 				+modal1()
 				form.form-search
 					input.header__search(name="search", type="text", autocomplete="off", placeholder="Поиск по сайту")
 
-mixin menu()
-	.menu
+mixin menu(className)
+	- var a = className + '-item'
+	div(class= className)
 		each item in menu
-			a(href= item.url, class={'active': item.active}).menu-item= item.title
+
+			a(href= item.url, class= a, class={'active': item.active})= item.title
 
 mixin home-slider()
 	.home-slider
@@ -90,6 +92,7 @@ mixin modal3()
 	.modal#menu
 		.modal__logo.modal__logo--center
 		.close-btn
+		+menu('mobile-menu')
 
 mixin tabs()
 	.tabs__header
