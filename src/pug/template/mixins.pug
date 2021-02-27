@@ -75,7 +75,7 @@ mixin footer()
 			+modal2()
 
 mixin modal1()
-	.modal#sign
+	.modal#sign.active
 		.modal__logo
 		.close-btn
 		+tabs()
@@ -95,12 +95,14 @@ mixin modal3()
 mixin tabs()
 	.tabs__header
 		ul.tabs__list
-			li.tabs__item.active(data-tab='in') Вход
-			li.tabs__item(data-tab='up') Регистрация
-	.tabs__body#in.active
+			li.tabs__item(data-tab='in') Вход
+			li.tabs__item.active(data-tab='up') Регистрация
+	.tabs__body#in
 		+signIn()
 	.tabs__body#up
 		+signUp()
+	.tabs__body#expert.active
+		+signExpert()
 
 mixin signIn()
 	form#signIn
@@ -140,8 +142,30 @@ mixin signUp()
 		.form-radio
 			+radio('phone', 'send', 'Подтвердить регистрацию по телефону', true)
 			+radio('mail', 'send', 'Подтвердить регистрацию по E-mail')
-		+check()
+		+check('check1', 'check1')
 		+button({ text: 'Зарегистрироваться' })
+
+mixin signExpert()
+	form#signExpert
+		.form-radio
+			+radio('expert', 'whoIam', 'Я Эксперт', true)
+		.form-row
+			+field({placeholder: 'Фамилия', required: true, type: 'text'})
+			+field({placeholder: 'Имя', required: true, type: 'text'})
+		.form-row
+			+field({placeholder: 'Отчество', required: true, type: 'text'})
+			+field({placeholder: 'Фото', required: true, type: 'file', id: 'photo'})
+		+field({placeholder: 'О себе', required: true, type: 'textArea'})
+		.form-row
+			+field({placeholder: 'E-mail', required: true, type: 'text'})
+			+field({placeholder: 'Телефон', required: true, type: 'text'})
+		+field({placeholder: 'Пароль', required: true, type: 'password'})
+		+field({placeholder: 'Подтвердите пароль', required: true, type: 'password'})
+		.form-radio
+			+radio('phoneExpert', 'send', 'Подтвердить регистрацию по телефону', true)
+			+radio('mailExpert', 'send', 'Подтвердить регистрацию по E-mail')
+		+check('check', 'check')
+		+button({text: 'Зарегистрироваться'})
 
 mixin field(params)
 	.form-field
@@ -150,7 +174,11 @@ mixin field(params)
 		if (params.type === 'date')
 			.arrow
 			input.datePicker(type='text', placeholder= params.placeholder, required)
-
+		else if (params.type === 'textArea')
+			textarea(placeholder= params.placeholder, required)
+		else if (params.type === 'file')
+			input(type= params.type, id= params.id, required)
+			label(for= params.id)= params.placeholder
 		else
 			input(type= params.type, placeholder= params.placeholder, required)
 		if (params.type === 'password')
@@ -159,9 +187,9 @@ mixin field(params)
 mixin button(params)
 	button.form-btn(disabled)= params.text
 
-mixin check()
+mixin check(id, name)
 	.form-checkbox
-		input(type='checkbox', id='check', name='check')
+		input(type='checkbox', id= id, name= name)
 		label(for='check') Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a>
 
 mixin instruction()

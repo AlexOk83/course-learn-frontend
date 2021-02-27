@@ -262,17 +262,20 @@ jQuery(document).ready(function () {
     }
 
     $('.form-field').each(function() {
-        var $this = $(this);
-        var inp = $('input', $this);
-        var eye = $('.eye', $this);
-        var check = function() {
-            if (inp.val().length > 0) {
+        var $this = $(this),
+            inp = $('input', $this),
+            inputFile = $('input[type="file"]', $this),
+            label = $('label', $this),
+            placeholder = $('.placeholder', $this),
+            text = $('textarea', $this),
+            eye = $('.eye', $this),
+            check = function(element) {
+            if (element.val().length > 0) {
                 $this.addClass('filled');
             } else {
                 $this.removeClass('filled')
-                inp.mask(null);
             }
-        }
+        };
 
         eye.mousedown(function() {
             inp.attr('type', 'text')
@@ -283,8 +286,29 @@ jQuery(document).ready(function () {
         })
 
         inp.keyup(function() {
-            check();
-        })
+            check(inp);
+        });
+
+        text.keyup(function() {
+            check(text);
+        });
+
+        inputFile.change(function(e) {
+            var labelVal = placeholder.text(),
+                fileName = '';
+            if (e.target.value && e.target.value.length > 0) {
+                fileName = e.target.value.split( '\\' ).pop();
+                label.addClass('loaded');
+                $this.addClass('filled');
+            } else {
+                fileName = labelVal;
+                label.removeClass('loaded');
+                $this.removeClass('filled');
+            }
+            label.text(fileName);
+
+
+        });
     });
 
     $('.tabs__item').each(function() {

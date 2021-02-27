@@ -22,16 +22,16 @@
         </div>
         <div class="header__right">
           <div class="auth_btn"></div>
-          <div class="modal" id="sign">
+          <div class="modal active" id="sign">
             <div class="modal__logo"></div>
             <div class="close-btn"></div>
             <div class="tabs__header">
               <ul class="tabs__list">
-                <li class="tabs__item active" data-tab="in">Вход</li>
-                <li class="tabs__item" data-tab="up">Регистрация</li>
+                <li class="tabs__item" data-tab="in">Вход</li>
+                <li class="tabs__item active" data-tab="up">Регистрация</li>
               </ul>
             </div>
-            <div class="tabs__body active" id="in">
+            <div class="tabs__body" id="in">
               <form id="signIn">
                 <div class="form-field">
                   <div class="placeholder">E-mail или телефон</div>
@@ -133,6 +133,70 @@
                   <label for="phone">Подтвердить регистрацию по телефону</label>
                   <input type="radio" id="mail" value="mail" name="send">
                   <label for="mail">Подтвердить регистрацию по E-mail</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="check1" name="check1">
+                  <label for="check">Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a></label>
+                </div>
+                <button class="form-btn" disabled>Зарегистрироваться</button>
+              </form>
+            </div>
+            <div class="tabs__body active" id="expert">
+              <form id="signExpert">
+                <div class="form-radio">
+                  <input type="radio" id="expert" value="expert" name="whoIam" checked>
+                  <label for="expert">Я Эксперт</label>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Фамилия</div>
+                    <input type="text" placeholder="Фамилия" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Имя</div>
+                    <input type="text" placeholder="Имя" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Отчество</div>
+                    <input type="text" placeholder="Отчество" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Фото</div>
+                    <input type="file" id="photo" required>
+                    <label for="photo">Фото</label>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">О себе</div>
+                  <textarea placeholder="О себе" required></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">E-mail</div>
+                    <input type="text" placeholder="E-mail" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Телефон</div>
+                    <input type="text" placeholder="Телефон" required>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Пароль</div>
+                  <input type="password" placeholder="Пароль" required>
+                  <div class="eye"></div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Подтвердите пароль</div>
+                  <input type="password" placeholder="Подтвердите пароль" required>
+                  <div class="eye"></div>
+                </div>
+                <div class="form-radio">
+                  <input type="radio" id="phoneExpert" value="phoneExpert" name="send" checked>
+                  <label for="phoneExpert">Подтвердить регистрацию по телефону</label>
+                  <input type="radio" id="mailExpert" value="mailExpert" name="send">
+                  <label for="mailExpert">Подтвердить регистрацию по E-mail</label>
                 </div>
                 <div class="form-checkbox">
                   <input type="checkbox" id="check" name="check">

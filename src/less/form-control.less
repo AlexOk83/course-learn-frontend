@@ -60,17 +60,59 @@
       z-index: -1;
     }
     input {
-      width: 100%;
       height: 36px;
+      .text_overflow();
+    }
+    textarea {
+      padding-top: 13px;
+      height: 73px;
+      resize: none;
+    }
+    input, textarea {
+      width: 100%;
       border: 1px solid @grey_border;
       background: transparent;
       outline: none;
       .font();
       padding-left: 14px;
       padding-right: 20px;
-      .text_overflow();
       &:focus {
         border: 1px solid @orange;
+      }
+    }
+    input[type='file'] {
+      display: none;
+      &:focus + label {
+        border: 1px solid @orange;
+      }
+      & + label {
+        width: 100%;
+        display: block;
+        padding-top: 10px;
+        border: 1px solid @grey_border;
+        height: 36px;
+        .text_overflow();
+        background: transparent;
+        outline: none;
+        .font();
+        padding-left: 14px;
+        padding-right: 20px;
+        position: relative;
+        &.loaded {
+          &:before {
+            display: none;
+          }
+        }
+        &:before {
+          content: '';
+          width: 23px;
+          height: 17px;
+          display: block;
+          position: absolute;
+          top: 9px;
+          right: 12px;
+          .bg('svg/load.svg', 23px);
+        }
       }
     }
     .eye {
