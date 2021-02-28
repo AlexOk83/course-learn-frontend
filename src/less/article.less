@@ -1,0 +1,150 @@
+@import "mixin";
+@import "var";
+
+.article {
+  padding-top: 23px;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    //align-items: stretch;
+  }
+  &__profile {
+    .column(5);
+    .article__title {
+      margin-bottom: 33px;
+    }
+    .media_device({
+      margin-bottom: 25px;
+    });
+  }
+  &__edit {
+    .column(7);
+  }
+  &__body {
+    border: 1px solid @grey_border;
+    padding: 0 25px 54px;
+    height: 100%;
+  }
+  &__title {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid @grey_border;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-around;
+    .media_mobile({
+      flex-wrap: wrap;
+    });
+    h2 {
+      display: inline;
+      flex-shrink: 0;
+      text-align: center;
+      .font(25px, 30px, 400);
+    }
+    span {
+      .font(14px, 31px, 300);
+    }
+  }
+  &__validation {
+    min-height: 58px;
+    width: 100%;
+    border: 1px solid @orange;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 27px;
+    box-shadow: 0 4px 40px 40px rgba(0, 0, 0, 0.02);
+    border-radius: 25px;
+    .font(16px, 19px 400);
+  }
+  &__file {
+    input {
+      display: none;
+      & + label {
+        text-decoration: underline;
+        position: relative;
+        display: inline-block;
+        padding-top: 10px;
+        .font();
+        &:after {
+          content: '';
+          width: 23px;
+          height: 17px;
+          display: inline-block;
+          .bg('svg/load.svg', 23px);
+          vertical-align: middle;
+          margin-left: 5px;
+
+        }
+      }
+    }
+  }
+  &__files {
+    display: flex;
+    height: 31px;
+    margin-bottom: 28px;
+    span {
+      display: inline-block;
+      line-height: 31px;
+      padding-right: 15px;
+    }
+    .files__list {
+      display: flex;
+      .file-item {
+        margin-right: 10px;
+        height: 31px;
+        position: relative;
+        cursor: pointer;
+        &:before {
+          content: 'удалить';
+          display: block;
+          position: absolute;
+          color: @orange;
+          bottom: -15px;
+          width: 33px;
+          left: 50%;
+          margin-left: -33px / 2;
+          .font(9px, 12px);
+          opacity: 0;
+          transition: opacity 0.2s ease-out;
+        }
+        &:hover {
+          &:before {
+            opacity: 1;
+          }
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+        &--pdf {
+          width: 23px;
+          .bg('svg/pdf-load.svg', 23px);
+        }
+        &--image {
+          width: 31px;
+          .img_cover();
+        }
+      }
+    }
+  }
+  .add_file-btn {
+    width: 31px;
+    height: 31px;
+    text-align: center;
+    border: 1px dashed @grey_border;
+    cursor: pointer;
+
+    &:before {
+      content: '+';
+      display: inline-block;
+      line-height: 31px;
+      color: @red;
+    }
+  }
+  .form-field textarea {
+    height: 172px;
+    padding: 26px 32px;
+    .font(17px, 20px, 300);
+  }
+}

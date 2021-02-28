@@ -41,7 +41,7 @@
                   <input type="password" placeholder="Пароль" required>
                   <div class="eye"></div>
                 </div><a class="modal-link" href="#restore">Восстановить пароль</a>
-                <button class="form-btn" disabled>Войти</button>
+                <button class="form-btn">Войти</button>
               </form>
             </div>
             <div class="tabs__body" id="up">
@@ -137,7 +137,7 @@
                   <input type="checkbox" id="check1" name="check1">
                   <label for="check">Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a></label>
                 </div>
-                <button class="form-btn" disabled>Зарегистрироваться</button>
+                <button class="form-btn">Зарегистрироваться</button>
               </form>
             </div>
             <div class="tabs__body" id="expert">
@@ -201,7 +201,7 @@
                   <input type="checkbox" id="check" name="check">
                   <label for="check">Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a></label>
                 </div>
-                <button class="form-btn" disabled>Зарегистрироваться</button>
+                <button class="form-btn">Зарегистрироваться</button>
               </form>
             </div>
           </div>
@@ -212,63 +212,75 @@
       </div>
     </header>
     <div class="main-social">
-      <div class="back-history"><a class="back__btn" href="/"></a>
-        <div class="title">Новая статья</div>
+      <div class="back-history">
+        <div class="container"><a class="back__btn" href="/"></a>
+          <div class="back-history__title">Новая статья</div>
+        </div>
       </div>
       <div class="article">
         <div class="container">
-          <div class="article__profile-wrapper">
-            <div class="article__profile">
+          <div class="article__profile">
+            <div class="article__body">
               <div class="article__title">
                 <h2>Анкета</h2>
               </div>
-              <form>
-                <div class="form-radio">
-                  <input type="radio" id="student" value="student" name="whoIam" checked>
-                  <label for="student">Я ученик</label>
-                  <input type="radio" id="parent" value="parent" name="whoIam">
-                  <label for="parent">Я родитель</label>
-                </div>
-                <div class="form-row">
-                  <div class="form-field">
-                    <div class="placeholder">Фамилия</div>
-                    <input type="text" placeholder="Фамилия" required>
-                  </div>
-                  <div class="form-field">
-                    <div class="placeholder">Имя</div>
-                    <input type="text" placeholder="Имя" required>
-                  </div>
+              <div class="form-radio">
+                <input type="radio" id="student" value="student" name="whoIam" checked>
+                <label for="student">Я ученик</label>
+                <input type="radio" id="parent" value="parent" name="whoIam">
+                <label for="parent">Я родитель</label>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <div class="placeholder">Фамилия</div>
+                  <input type="text" placeholder="Фамилия" required>
                 </div>
                 <div class="form-field">
-                  <div class="placeholder">Отчество</div>
-                  <input type="text" placeholder="Отчество" required>
+                  <div class="placeholder">Имя</div>
+                  <input type="text" placeholder="Имя" required>
                 </div>
-                <div class="form-row">
-                  <div class="form-field">
-                    <div class="placeholder">Школа</div>
-                    <input type="text" placeholder="Школа" required>
-                  </div>
-                  <div class="form-field">
-                    <div class="placeholder">Класс</div>
-                    <input type="text" placeholder="Класс" required>
-                  </div>
+              </div>
+              <div class="form-field">
+                <div class="placeholder">Отчество</div>
+                <input type="text" placeholder="Отчество" required>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <div class="placeholder">Школа</div>
+                  <input type="text" placeholder="Школа" required>
                 </div>
                 <div class="form-field">
-                  <div class="placeholder">Тематика</div>
-                  <input type="text" placeholder="Тематика" required>
+                  <div class="placeholder">Класс</div>
+                  <input type="text" placeholder="Класс" required>
                 </div>
-              </form>
+              </div>
+              <div class="form-field">
+                <div class="placeholder">Тематика</div>
+                <input type="text" placeholder="Тематика" required>
+              </div>
             </div>
           </div>
-          <div class="article__body-wrapper">
+          <div class="article__edit">
             <div class="article__body">
               <div class="article__title">
                 <h2>Вы можете:</h2>
                 <div class="article__file">
                   <input type="file" id="file">
                   <label for="file">Добавить файл</label>
-                </div>
+                </div><span>Внести статью в окно ниже</span>
               </div>
+              <div class="article__validation">Для загрузки статьи необходимо...</div>
+              <div class="article__files"><span>Редактирование статьи:</span>
+                <div class="files__list">
+                  <div class="file-item file-item--pdf"></div>
+                  <div class="file-item file-item--image"><img src="images/screen.png"></div>
+                </div>
+                <div class="add_file-btn"></div>
+              </div>
+              <div class="form-field">
+                <textarea placeholder="Текст статьи" required></textarea>
+              </div>
+              <button class="form-btn">Отправить</button>
             </div>
           </div>
         </div>

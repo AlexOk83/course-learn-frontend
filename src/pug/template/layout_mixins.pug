@@ -124,7 +124,7 @@ mixin signExpert()
 
 mixin field(params)
   .form-field
-    if (params.placeholder)
+    if (params.placeholder && params.required)
       .placeholder= params.placeholder
     if (params.type === 'date')
       .arrow
@@ -140,7 +140,7 @@ mixin field(params)
       .eye
 
 mixin button(params)
-  button.form-btn(disabled)= params.text
+  button.form-btn(disabled= params.disabled)= params.text
 
 mixin radio(id, name, label, checked)
   input(type="radio" id= id, value= id, name= name, checked=checked)
@@ -167,8 +167,9 @@ mixin breadcrumbs(url)
 
 mixin back(url)
   .back-history
-    a.back__btn(href='/')
-    .title= url
+    .container
+      a.back__btn(href='/')
+      .back-history__title= url
 
 mixin footer()
   footer.footer

@@ -5,27 +5,25 @@ block content
     +back('Новая статья')
     .article
       .container
-        .article__profile-wrapper
-          .article__profile
+        .article__profile
+          .article__body
             .article__title: h2 Анкета
-            form
-              .form-radio
-                +radio('student', 'whoIam', 'Я ученик', true)
-                +radio('parent', 'whoIam', 'Я родитель')
-
-              .form-row
-                +field({placeholder: 'Фамилия', required: true, type: 'text'})
-                +field({placeholder: 'Имя', required: true, type: 'text'})
-              +field({placeholder: 'Отчество', required: true, type: 'text'})
-              .form-row
-                +field({placeholder: 'Школа', required: true, type: 'text'})
-                +field({placeholder: 'Класс', required: true, type: 'text'})
-              +field({placeholder: 'Тематика', required: true, type: 'text'})
-        .article__body-wrapper
+            +profile()
+        .article__edit
           .article__body
             .article__title
               h2 Вы можете:
               .article__file
                 input(type='file', id='file')
                 label(for='file') Добавить файл
+              span Внести статью в окно ниже
+            .article__validation Для загрузки статьи необходимо...
+            .article__files
+              span Редактирование статьи:
+              .files__list
+                .file-item.file-item--pdf
+                .file-item.file-item--image: img(src='images/screen.png')
+              .add_file-btn
+            +field({placeholder: 'Текст статьи', required: false, type: 'textArea'})
+            +button({ text: 'Отправить' })
   +social()

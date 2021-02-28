@@ -46,3 +46,15 @@ mixin partners(className)
 		.partner-item: img(src='images/partner.png')
 		.partner-item: img(src='images/partner2.png')
 
+mixin profile()
+	.form-radio
+		+radio('student', 'whoIam', 'Я ученик', true)
+		+radio('parent', 'whoIam', 'Я родитель')
+	.form-row
+		+field({placeholder: 'Фамилия', required: true, type: 'text'})
+		+field({placeholder: 'Имя', required: true, type: 'text'})
+	+field({placeholder: 'Отчество', required: true, type: 'text'})
+	.form-row
+		+field({placeholder: 'Школа', required: true, type: 'text'})
+		+field({placeholder: 'Класс', required: true, type: 'text'})
+	+field({placeholder: 'Тематика', required: true, type: 'text'})
