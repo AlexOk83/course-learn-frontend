@@ -110,7 +110,6 @@ mixin pagination()
 mixin image-wrap(image, alt)
 	.img_wrap: img(src="images/" + image, alt="" + alt)
 
-
 mixin image-wrap-fancy(image, url, alt)
 	if (url)
 		a(href= url, data-fancybox="images" rel="gallery").img_wrap: img(src="images/" + image, alt="" + alt, )

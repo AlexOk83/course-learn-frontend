@@ -1,9 +1,12 @@
 @import "mixin";
 @import "var";
 
+@headerHeight: 91px;
+@footerHeight: 76px;
+
 .header {
+  height: @headerHeight;
   .container {
-    height: 91px;
     display: flex;
     justify-content: space-around;
     padding-top: 23px;
@@ -126,9 +129,13 @@
   }
 }
 
+.main {
+  min-height: calc(100vh - @headerHeight - @footerHeight);
+}
+
 .footer {
   background-color: @orange;
-  height: 76px;
+  height: @footerHeight;
   &_links {
     display: flex;
     justify-content: center;
@@ -169,4 +176,49 @@
     height: 100vh;
     overflow: hidden;
   });
+}
+
+.breadcrums {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  &__list {
+    display: flex;
+  }
+  &__item {
+    list-style-type: none;
+    .font(12px, 14px, 400);
+    color: @black;
+    margin-right: 30px;
+    position: relative;
+
+    &:before {
+      content: '/';
+      position: absolute;
+      top: 0;
+      left: -15px;
+    }
+
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+
+    &.active {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border-bottom: 2px solid @orange;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      .font(12px, 14px, 400);
+    }
+  }
 }

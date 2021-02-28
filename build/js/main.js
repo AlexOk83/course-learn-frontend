@@ -247,6 +247,29 @@ jQuery(document).ready(function () {
         },
     });
 
+    $('.partners-slider').owlCarousel({
+        loop: false,
+        nav: true,
+        dotsEach: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        navigation: true,
+        navText: [],
+        responsive:{
+            0:{
+                items:2,
+                nav:false
+            },
+            766:{
+                items:3,
+                nav:true
+            },
+            1024:{
+                items:5,
+                nav:false
+            }
+        },
+    });
     // модалки
 
     function hideModal() {

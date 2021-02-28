@@ -36,18 +36,31 @@ body {
   width: 100%;
   //background-color: @red;
   height: 40px;
+  &.disabled {
+    display: none;
+  }
 }
 .owl-dots {
   &.disabled {
     display: none;
   }
 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 58px;
+
+  .owl-dot {
+    .circle(15px);
+    background-color: @grey_text;
+    margin: 5px;
+  }
 
 }
 .owl-dot {
   cursor: pointer;
   &.active {
-    background-color: @red;
+    background-color: @orange;
   }
 }
 
