@@ -1,18 +1,19 @@
 extends template/layout
 
 block content
-  .home-header
-    .container
-      h1.home-header__title Ясность нашей позиции очевидна очень
-      p.home-header__sub-title Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает широкому кругу
-      a.home-header__more-btn(href='#') Подробнее
-  .bg-grey
-    .home-slider__container
-      +home-slider()
-      .buttons__wrapper
-        .btn.btn--orange Отправить статью
-        .btn.btn--orange-border Полный каталог
-  +experts()
+  .main-social
+    .home-header
+      .container
+        h1.home-header__title Ясность нашей позиции очевидна очень
+        p.home-header__sub-title Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает широкому кругу
+        a.home-header__more-btn(href='#') Подробнее
+    .bg-grey
+      .home-slider__container
+        +home-slider()
+        .buttons__wrapper
+          .btn.btn--orange Отправить статью
+          .btn.btn--orange-border Полный каталог
+    +experts()
   +social()
 
 

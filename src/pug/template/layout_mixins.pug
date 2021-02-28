@@ -1,1 +1,181 @@
+mixin header()
+  header.header
+    .container
+      .toggle-menu-btn.active
+        span
+        span
+        span
+      +modal3()
+      img.logo(src='images/logo.png')
+      +menu('menu')
+      .header__right
+        .auth_btn
+        +modal1()
+        form.form-search
+          input.header__search(name="search", type="text", autocomplete="off", placeholder="Поиск по сайту")
 
+mixin menu(className)
+  div(class= className)
+    each item in menu
+      a(href= item.url, class=className + '-item', class={'active': item.active})= item.title
+
+
+mixin social()
+  .social
+    .container
+      h2.social__title подписывайтесь на нас в соц сетях
+      .social__links
+        a.social__link.instagram(href="#")
+        a.social__link.viber(href="#")
+        a.social__link.facebook(href="#")
+
+mixin modal1()
+  .modal#sign
+    .modal__logo
+    .close-btn
+    +tabs()
+
+mixin modal2()
+  .modal#instruction
+    .modal__logo.modal__logo--center
+    .close-btn
+    +instruction()
+
+mixin modal3()
+  .modal#menu
+    .modal__logo.modal__logo--center
+    .close-btn
+    +menu('mobile-menu')
+
+mixin tabs()
+  .tabs__header
+    ul.tabs__list
+      li.tabs__item.active(data-tab='in') Вход
+      li.tabs__item(data-tab='up') Регистрация
+  .tabs__body.active#in
+    +signIn()
+  .tabs__body#up
+    +signUp()
+  .tabs__body#expert
+    +signExpert()
+
+mixin signIn()
+  form#signIn
+    +field({placeholder: 'E-mail или телефон', required: true, type: 'text'})
+    +field({placeholder: 'Пароль', required: true, type: 'password'})
+    a.modal-link(href='#restore') Восстановить пароль
+    +button({text: 'Войти'})
+
+mixin signUp()
+  form#signUp
+    .form-radio
+      +radio('student', 'whoIam', 'Я ученик', true)
+      +radio('parent', 'whoIam', 'Я родитель')
+    .forParent.hidden
+      .title Поля для родителя
+      .form-row
+        +field({placeholder: 'Фамилия', required: true, type: 'text'})
+        +field({placeholder: 'Имя', required: true, type: 'text'})
+      .form-row
+        +field({placeholder: 'Отчество', required: true, type: 'text'})
+      .title Поля для ввода о ребенке
+    .form-row
+      +field({placeholder: 'Фамилия', required: true, type: 'text'})
+      +field({placeholder: 'Имя', required: true, type: 'text'})
+    .form-row
+      +field({placeholder: 'Отчество', required: true, type: 'text'})
+      +field({placeholder: 'Дата рождения', required: true, type: 'date'})
+    .form-row
+      +field({placeholder: 'Школа', required: true, type: 'text'})
+      +field({placeholder: 'Класс', required: true, type: 'text'})
+    .form-row
+      +field({placeholder: 'E-mail', required: true, type: 'text'})
+      +field({placeholder: 'Телефон', required: true, type: 'text'})
+    +field({placeholder: 'Пароль', required: true, type: 'password'})
+    +field({placeholder: 'Подтвердите пароль', required: true, type: 'password'})
+    +field({placeholder: 'Ссылка на пост в instagram или TikTok', required: true, type: 'text'})
+    .form-radio
+      +radio('phone', 'send', 'Подтвердить регистрацию по телефону', true)
+      +radio('mail', 'send', 'Подтвердить регистрацию по E-mail')
+    +check('check1', 'check1')
+    +button({text: 'Зарегистрироваться'})
+
+mixin signExpert()
+  form#signExpert
+    .form-radio
+      +radio('expert', 'whoIam', 'Я Эксперт', true)
+    .form-row
+      +field({placeholder: 'Фамилия', required: true, type: 'text'})
+      +field({placeholder: 'Имя', required: true, type: 'text'})
+    .form-row
+      +field({placeholder: 'Отчество', required: true, type: 'text'})
+      +field({placeholder: 'Фото', required: true, type: 'file', id: 'photo'})
+    +field({placeholder: 'О себе', required: true, type: 'textArea'})
+    .form-row
+      +field({placeholder: 'E-mail', required: true, type: 'text'})
+      +field({placeholder: 'Телефон', required: true, type: 'text'})
+    +field({placeholder: 'Пароль', required: true, type: 'password'})
+    +field({placeholder: 'Подтвердите пароль', required: true, type: 'password'})
+    .form-radio
+      +radio('phoneExpert', 'send', 'Подтвердить регистрацию по телефону', true)
+      +radio('mailExpert', 'send', 'Подтвердить регистрацию по E-mail')
+    +check('check', 'check')
+    +button({text: 'Зарегистрироваться'})
+
+mixin field(params)
+  .form-field
+    if (params.placeholder)
+      .placeholder= params.placeholder
+    if (params.type === 'date')
+      .arrow
+      input.datePicker(type='text', placeholder= params.placeholder, required)
+    else if (params.type === 'textArea')
+      textarea(placeholder= params.placeholder, required)
+    else if (params.type === 'file')
+      input(type= params.type, id= params.id, required)
+      label(for= params.id)= params.placeholder
+    else
+      input(type= params.type, placeholder= params.placeholder, required)
+    if (params.type === 'password')
+      .eye
+
+mixin button(params)
+  button.form-btn(disabled)= params.text
+
+mixin radio(id, name, label, checked)
+  input(type="radio" id= id, value= id, name= name, checked=checked)
+  label(for= id)= label
+
+mixin check(id, name)
+  .form-checkbox
+    input(type='checkbox', id= id, name= name)
+    label(for='check') Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a>
+
+mixin instruction()
+  .instruction
+    .instruction__title инструкция
+    .instruction__text
+      p Барабанщик SYSTEM OF A DOWN Джон Долмаян поддержал актрису «Мандалорца» Джину Карано, которая была уволена из проектов Lucasfilm, находящихся под контролем Disney, за свой твит, в котором сравнила неприятие политических взглядов с действиями нацистов:
+      p «Евреев на улицах избивали не нацистские солдаты, а соседи...
+
+mixin breadcrumbs(url)
+  .breadcrums
+    .container
+      ul.breadcrums__list
+        li.breadcrums__item: a(href='/') Главная
+        li.breadcrums__item.active= url
+
+mixin back(url)
+  .back-history
+    a.back__btn(href='/')
+    .title= url
+
+mixin footer()
+  footer.footer
+    .container
+      .footer_links
+        a.link(href="#") Пользовательское соглашение
+        a.link(href="#") Соглашение об обработке персональных данных
+        a.link(href="#") Служба поддержки
+      .pdf_instruction
+      +modal2()

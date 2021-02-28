@@ -1,0 +1,31 @@
+extends template/layout
+
+block content
+  .main-social
+    +back('Новая статья')
+    .article
+      .container
+        .article__profile-wrapper
+          .article__profile
+            .article__title: h2 Анкета
+            form
+              .form-radio
+                +radio('student', 'whoIam', 'Я ученик', true)
+                +radio('parent', 'whoIam', 'Я родитель')
+
+              .form-row
+                +field({placeholder: 'Фамилия', required: true, type: 'text'})
+                +field({placeholder: 'Имя', required: true, type: 'text'})
+              +field({placeholder: 'Отчество', required: true, type: 'text'})
+              .form-row
+                +field({placeholder: 'Школа', required: true, type: 'text'})
+                +field({placeholder: 'Класс', required: true, type: 'text'})
+              +field({placeholder: 'Тематика', required: true, type: 'text'})
+        .article__body-wrapper
+          .article__body
+            .article__title
+              h2 Вы можете:
+              .article__file
+                input(type='file', id='file')
+                label(for='file') Добавить файл
+  +social()

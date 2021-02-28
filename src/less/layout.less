@@ -3,7 +3,7 @@
 
 @headerHeight: 91px;
 @footerHeight: 76px;
-
+@socialHeight: 193px;
 .header {
   height: @headerHeight;
   .container {
@@ -131,6 +131,9 @@
 
 .main {
   min-height: calc(100vh - @headerHeight - @footerHeight);
+  &-social {
+    min-height: calc(100vh - @headerHeight - @footerHeight - @socialHeight);
+  }
 }
 
 .footer {
@@ -221,4 +224,9 @@
       .font(12px, 14px, 400);
     }
   }
+}
+
+.back-history {
+  height: 70px;
+
 }
