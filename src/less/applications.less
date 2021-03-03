@@ -48,7 +48,9 @@
           border-radius: 0 0 15px 0;
         }
       }
-      &:hover, &:focus td {
+    }
+    tbody tr {
+      &:hover td, &:focus td {
         background-color: @orange;
         color: white;
         font-weight: 500;
@@ -76,6 +78,19 @@
     padding: 29px 27px;
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background-color: @hover;
+      .expert__count-app {
+        border-color: white;
+      }
+      .waiting-time:before {
+        background-color: #fff;
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          background-color: @hover;
+        }
+      }
+    }
   }
   .avatar {
     .circle(74px);
@@ -91,8 +106,13 @@
       content: '';
       display: block;
       .circle(31px);
-      .bg('svg/clock.svg', 31px);
+      .mask('clock', @orange);
       margin: 0 auto 15px;
+      transition: all 0.2s ease-out;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+         .bg('svg/clock.svg', 31px);
+          background-color: white;
+      }
     }
   }
 
@@ -126,6 +146,16 @@
       border-radius: 15px;
       user-select: none;
       cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        border-color: @black;
+        &:after {
+          content: '+';
+          display: inline-block;
+          padding-left: 5px;
+        }
+      }
     }
     .expert__count-app {
       width: 64px;
@@ -138,6 +168,7 @@
       .font(10px, 12px, 400);
       padding: 0 10px;
       border-radius: 15px;
+      transition: all 0.2s ease-out;
     }
   }
 }

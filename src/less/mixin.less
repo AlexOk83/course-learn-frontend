@@ -147,3 +147,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.mask(@image, @bg) {
+  -webkit-mask-image: url("../images/svg/@{image}.svg");
+  mask-image: url("../images/svg/@{image}.svg");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  background: @bg;
+}
