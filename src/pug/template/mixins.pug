@@ -58,3 +58,33 @@ mixin profile()
 		+field({placeholder: 'Школа', required: true, type: 'text'})
 		+field({placeholder: 'Класс', required: true, type: 'text'})
 	+field({placeholder: 'Тематика', required: true, type: 'text'})
+
+mixin applications()
+	table.application__list
+		thead
+			th Заявки
+			th Дата заявки
+		tbody
+			each item, index in applications
+				tr.application__item(id= 'application-' + (index + 1), tabindex="0", ref="select")
+					td= item.text
+					td= item.date
+
+mixin expertsToApplication()
+	.expert__list
+		h3.expert__list-title Эксперты
+		.row
+			each item in experts
+				+expertBlock(item)
+
+mixin expertBlock(expert)
+	.expert
+		.expert__block
+			.avatar: img(src=`images/${expert.img}`)
+			.waiting-time= expert.time
+			.expert__name= expert.name
+			.expert__status= expert.status
+			.expert__description= expert.description
+			.expert__footer
+				.expert-to-appoint Назначить
+				.expert__count-app= `${expert.counts} заявок`

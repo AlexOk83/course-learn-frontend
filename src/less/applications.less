@@ -1,0 +1,143 @@
+@import "mixin";
+@import "var";
+
+.application {
+  padding-top: 56px;
+
+  &__title {
+    .font(25px, 29px, 400);
+    margin-bottom: 60px;
+    strong {
+      font: inherit;
+      color: @orange;
+    }
+  }
+  &__list {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 15px;
+    margin-bottom: 100px;
+    th {
+      height: 70px;
+      text-align: left;
+      padding: 0 32px;
+      border-bottom: 1px solid @grey_border;
+      .font(18px, 21px, bold);
+    }
+    td {
+      &:first-child {
+        max-width: 200px;
+        .text_overflow();
+      }
+      .font(15px, 18px, 400);
+      height: 60px;
+      border-bottom: 1px solid @grey_border;
+      padding: 0 32px;
+    }
+    tr {
+      outline: none;
+      &:last-child td {
+        border-bottom: none;
+
+        &:first-child {
+          border-radius: 0 0 0 15px;
+        }
+
+        &:last-child {
+          border-radius: 0 0 15px 0;
+        }
+      }
+      &:hover, &:focus td {
+        background-color: @orange;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.expert {
+  .column(4,6);
+  margin-bottom: 34px;
+
+  &__list {
+    padding-bottom: 177px;
+  }
+  &__list-title {
+    padding: 30px;
+    .font(18px, 21px, bold);
+  }
+  &__block {
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 29px 27px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .avatar {
+    .circle(74px);
+    .img_cover();
+    overflow: hidden;
+  }
+  .waiting-time {
+    position: absolute;
+    top: 29px;
+    right: 40px;
+    .font(10px, 12px, 400);
+    &:before {
+      content: '';
+      display: block;
+      .circle(31px);
+      .bg('svg/clock.svg', 31px);
+      margin: 0 auto 15px;
+    }
+  }
+
+  &__name {
+    width: 100%;
+    padding-top: 21px;
+    .font(14px, 16px, 500);
+    margin-bottom: 12px;
+  }
+  &__status {
+    width: 100%;
+    .font(10px, 12px, 400);
+    margin-bottom: 13px;
+  }
+  &__description {
+    .font(10px, 12px);
+    margin-bottom: 16px;
+  }
+  &__footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: end;
+    align-items: flex-end;
+    .expert-to-appoint {
+      border: 1px solid @orange;
+      width: 102px;
+      height: 37px;
+      .font(10px, 35px, 400);
+      text-align: center;
+      border-radius: 15px;
+      user-select: none;
+      cursor: pointer;
+    }
+    .expert__count-app {
+      width: 64px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      border: 1px solid @grey_border;
+      .font(10px, 12px, 400);
+      padding: 0 10px;
+      border-radius: 15px;
+    }
+  }
+}

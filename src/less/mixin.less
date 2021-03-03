@@ -134,3 +134,16 @@
   line-height: @line_height;
   font-weight: @weight;
 }
+
+.longText-overflow(@countLine: 2, @fontSize: 14px, @lineHeight: 16px, @fw: 400) {
+  .font(@fontSize, @lineHeight, @fw);
+  max-height: @lineHeight * @countLine + 4px;
+  -webkit-line-clamp: @countLine;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  word-break: break-word;
+  hyphens: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

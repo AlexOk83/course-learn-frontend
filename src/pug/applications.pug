@@ -1,0 +1,9 @@
+extends template/layout
+
+block content
+    .main
+        .bg-grey.application
+            .container
+                h2.application__title У вас <strong> #{applications.length} </strong> новые заявки
+                +applications()
+                +expertsToApplication()
