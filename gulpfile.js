@@ -62,7 +62,6 @@ gulp.task('watch', function () {
   gulp.watch('src/pug/template/*.pug', ['pug']);
   gulp.watch('build/*.html', ['html']);
   gulp.watch('build/css/*.css', ['css']);
-
 });
 
 gulp.task('default', ['browserSync', 'html', 'css', 'less', 'pug', 'watch']);

@@ -88,3 +88,12 @@ mixin expertBlock(expert)
 			.expert__footer
 				.expert-to-appoint Назначить
 				.expert__count-app= `${expert.counts} заявок`
+
+mixin winner(item)
+	.card
+		.card__block.card__block--winner
+			.avatar: img(src=`images/${item.image}`)
+			.card__name= item.name
+			.card__status= item.status
+			.card__title Несколько строк о эксперте
+			.card__about= item.about

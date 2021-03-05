@@ -73,12 +73,12 @@
   &__block {
     background-color: white;
     position: relative;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+    box-shadow: @box_shadow;
     border-radius: 15px;
     padding: 29px 27px;
     display: flex;
     flex-wrap: wrap;
-    transition: all 0.2s ease-out;
+    transition: @transition;
     &:hover {
       background-color: @hover;
       .expert__count-app {
@@ -92,11 +92,6 @@
       }
     }
   }
-  .avatar {
-    .circle(74px);
-    .img_cover();
-    overflow: hidden;
-  }
   .waiting-time {
     position: absolute;
     top: 29px;
@@ -108,7 +103,7 @@
       .circle(31px);
       .mask('clock', @orange);
       margin: 0 auto 15px;
-      transition: all 0.2s ease-out;
+      transition: @transition;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
          .bg('svg/clock.svg', 31px);
           background-color: white;
@@ -146,7 +141,7 @@
       border-radius: 15px;
       user-select: none;
       cursor: pointer;
-      transition: all 0.2s ease-out;
+      transition: @transition;
 
       &:hover {
         border-color: @black;
@@ -168,7 +163,17 @@
       .font(10px, 12px, 400);
       padding: 0 10px;
       border-radius: 15px;
-      transition: all 0.2s ease-out;
+      transition: @transition;
     }
   }
+}
+
+.avatar {
+  .circle(74px);
+  .img_cover();
+  overflow: hidden;
+  .media_device({
+    width: 57px;
+    height: 57px;
+  });
 }

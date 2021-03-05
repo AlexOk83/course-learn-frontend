@@ -1,0 +1,9 @@
+extends template/layout
+
+block content
+  .main
+    +breadcrumbs('Победители')
+    .container
+      .row
+        each item in winners
+          +winner(item)

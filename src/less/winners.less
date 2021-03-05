@@ -1,0 +1,74 @@
+@import "mixin";
+@import "var";
+
+.card {
+  .column(6, 6);
+  margin-bottom: 40px;
+  &__block {
+    position: relative;
+    padding: 45px 50px 33px 143px;
+    box-shadow: @box_shadow;
+    border-radius: @radius;
+    cursor: pointer;
+    transition: @transition;
+    &:hover {
+      background-color: @orange;
+      .card__about, .card__title {
+        color: white;
+      }
+      &:after {
+        color: @black;
+      }
+    }
+    .media_device({
+      padding-left: 89px;
+      padding-right: 20px;
+    });
+    &--winner {
+      &:before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 45px;
+        right: 50px;
+        .bg('svg/star.svg',40px);
+        .media_device({
+          right: 20px;
+        });
+      }
+    }
+    &:after {
+      content: 'Читать далее...';
+      color: @orange;
+      .font(10px, 12px, 400);
+    }
+    .avatar {
+      position: absolute;
+      top: 31px;
+      left: 32px;
+      .media_device({
+        top: 45px;
+        left: 16px;
+      });
+    }
+  }
+  &__name {
+    .font(14px, 16px, 500);
+    margin-bottom: 13px;
+  }
+  &__status {
+    margin-bottom: 9px;
+    .font(10px, 12px, 400);
+  }
+  &__title {
+    .font(10px, 12px, 300);
+    margin-bottom: 10px;
+    color: @grey_text;
+  }
+  &__about {
+    .longText-overflow(3, 10px, 12px, 400);
+    color: @grey_text;
+  }
+}

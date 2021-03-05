@@ -167,7 +167,7 @@
 });
 
 jQuery(document).ready(function () {
-
+    console.log(jQuery());
     var $ = jQuery, $doc = $(document), $win = $(window);
 
     $.datepicker.regional['ru'] = {
@@ -282,6 +282,7 @@ jQuery(document).ready(function () {
         $('.modal').removeClass('active');
         $('.modal__overlay').addClass('visible');
         $('body').addClass('fixed');
+
     }
 
     $('.form-field').each(function() {
