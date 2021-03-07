@@ -80,7 +80,7 @@ mixin expertsToApplication()
 mixin expertBlock(expert)
 	.expert
 		.expert__block
-			.avatar: img(src=`images/${expert.img}`)
+			.avatar: img(src=`images/${expert.image}`)
 			.waiting-time= expert.time
 			.expert__name= expert.name
 			.expert__status= expert.status
@@ -114,7 +114,28 @@ mixin modalWinner(item)
 	.modal.modal--card(id= item.id)
 		.close-btn
 		.like_btn
-		.avatar: img(src=`images/${item.image}`)
+		+winnerSlider()
 		.card__name.card__name--winner= item.name
-		.card__status #{item.status} <span> #{item.scool}</strong>
+		.card__status #{item.status} <span> #{item.scool}</span>
 		.card__text= item.about
+
+mixin modalExpert(item)
+	.modal.modal--card(id= item.id)
+		.close-btn
+		.like_btn
+		.avatar: img(src=`images/${item.image}`)
+		.card__name= item.name
+		.card__status.card__status--expert #{item.status}
+		.card__text= item.description
+
+mixin winnerSlider()
+	.card-slider
+		.item
+			img(src= 'images/school-1.jpg')
+			p фото 1
+		.item
+			img(src= 'images/school-2.jpg')
+			p фото 2
+		.item
+			img(src= 'images/school-3.jpg')
+			p фото 3

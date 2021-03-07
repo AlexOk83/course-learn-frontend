@@ -78,6 +78,11 @@
     transform: translate(-50%, -50%) scale(0);
     top: 50%;
     left: 50%;
+    .media_mobile({
+      max-width: calc(100% - 40px);
+      max-height: 98vh;
+      padding: 33px 18px 35px 100px;
+    });
     &.active {
       transform: translate(-50%, -50%) scale(1);
     }
@@ -86,6 +91,12 @@
       position: absolute;
       top: 111px;
       left: 69px;
+      .media_mobile({
+        width: 45px;
+        height: 45px;
+        top: 33px;
+        left: 31px;
+      });
     }
     .like_btn {
       .circle(46px);
@@ -93,6 +104,7 @@
       position: absolute;
       top: 139px;
       right: 80px;
+      .hide_mobile();
     }
     .card {
       &__name {
@@ -118,6 +130,21 @@
           display: inline-block;
           padding-left: 8px;
           font: inherit;
+          .media_device({
+            padding-left: 0;
+            margin-top: 8px;
+            width: 100%;
+          });
+        }
+        &--expert {
+          &:after {
+            content: '';
+            display: inline-block;
+            .circle(19px);
+            .bg('svg/check.svg');
+            vertical-align: middle;
+            margin-left: 8px;
+          }
         }
       }
       &__text {
@@ -131,6 +158,7 @@
 
 
   &__logo {
+    display: block;
     width: 97px;
     height: 59px;
     .bg('logo.png');

@@ -247,6 +247,30 @@ jQuery(document).ready(function () {
         },
     });
 
+    $('.card-slider').owlCarousel({
+        loop: true,
+        nav: true,
+        dotsEach: false,
+        autoplay: false,
+        smartSpeed: 1000,
+        navigation: true,
+        navText: [],
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            766:{
+                items:1,
+                nav:true
+            },
+            1024:{
+                items:1,
+                nav:true
+            }
+        },
+    });
+
     $('.partners-slider').owlCarousel({
         loop: false,
         nav: true,
@@ -413,7 +437,12 @@ jQuery(document).ready(function () {
             showModal();
             $('#' + id).addClass('active');
         })
-    })
+    });
+
+    $('.like_btn').click(function(e) {
+       e.stopPropagation();
+       // $(this).addClass('liked');
+    });
 });
 
 
