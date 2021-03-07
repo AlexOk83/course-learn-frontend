@@ -406,6 +406,14 @@ jQuery(document).ready(function () {
             console.log(val);
         })
     });
+
+    $('div[data-winner]').each(function() {
+        var id = $(this).attr('data-winner');
+        $(this).click(function() {
+            showModal();
+            $('#' + id).addClass('active');
+        })
+    })
 });
 
 

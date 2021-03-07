@@ -2,9 +2,9 @@ extends template/layout
 
 block content
   .main
-    +breadcrumbs('Победители')
+    +breadcrumbs('Наши эксперты')
     .container
       .row
         each item in winners
-          +winner(item)
+          +expert(item)
           +modalWinner(item)

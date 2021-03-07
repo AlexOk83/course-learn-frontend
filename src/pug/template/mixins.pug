@@ -90,10 +90,31 @@ mixin expertBlock(expert)
 				.expert__count-app= `${expert.counts} заявок`
 
 mixin winner(item)
-	.card
+	.card(data-winner= item.id)
 		.card__block.card__block--winner
 			.avatar: img(src=`images/${item.image}`)
 			.card__name= item.name
 			.card__status= item.status
 			.card__title Несколько строк о эксперте
 			.card__about= item.about
+
+mixin expert(item)
+	.card(data-winner= item.id)
+		.card__block
+			.avatar: img(src=`images/${item.image}`)
+			.like_btn
+			.card__name= item.name
+			.card__status= item.status
+			.card__title Несколько строк о эксперте
+			.card__title Несколько строк о эксперте
+			.card__title Несколько строк о эксперте
+
+
+mixin modalWinner(item)
+	.modal.modal--card(id= item.id)
+		.close-btn
+		.like_btn
+		.avatar: img(src=`images/${item.image}`)
+		.card__name.card__name--winner= item.name
+		.card__status #{item.status} <span> #{item.scool}</strong>
+		.card__text= item.about

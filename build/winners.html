@@ -212,89 +212,66 @@
       </div>
     </header>
     <div class="main">
-      <div class="bg-grey application">
+      <div class="breadcrums">
         <div class="container">
-          <h2 class="application__title">У вас <strong> 4 </strong> новые заявки</h2>
-          <table class="application__list">
-            <thead>
-              <th>Заявки</th>
-              <th>Дата заявки</th>
-            </thead>
-            <tbody>
-              <tr class="application__item" id="application-1" tabindex="0" ref="select">
-                <td>Ясность нашей позиции очевидна: постоянный количественный рост и сфера нашей активности прекрасно подходит</td>
-                <td>11.02.2021</td>
-              </tr>
-              <tr class="application__item" id="application-2" tabindex="0" ref="select">
-                <td>Ясность нашей позиции очевидна: постоянный количественный рост и сфера нашей активности прекрасно подходит</td>
-                <td>11.02.2021</td>
-              </tr>
-              <tr class="application__item" id="application-3" tabindex="0" ref="select">
-                <td>Ясность нашей позиции очевидна: постоянный количественный рост и сфера нашей активности прекрасно подходит</td>
-                <td>11.02.2021</td>
-              </tr>
-              <tr class="application__item" id="application-4" tabindex="0" ref="select">
-                <td>Ясность нашей позиции очевидна: постоянный количественный рост и сфера нашей активности прекрасно подходит</td>
-                <td>11.02.2021</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="expert__list">
-            <h3 class="expert__list-title">Эксперты</h3>
-            <div class="row">
-              <div class="expert">
-                <div class="expert__block">
-                  <div class="avatar"><img src="images/man.png"></div>
-                  <div class="waiting-time">5 минут</div>
-                  <div class="expert__name">Иванов М.С.</div>
-                  <div class="expert__status">Эксперт</div>
-                  <div class="expert__description">Несколько строк о эксперте Несколько строк о эксперте Несколько строк о эксперте</div>
-                  <div class="expert__footer">
-                    <div class="expert-to-appoint">Назначить</div>
-                    <div class="expert__count-app">1 заявок</div>
-                  </div>
-                </div>
-              </div>
-              <div class="expert">
-                <div class="expert__block">
-                  <div class="avatar"><img src="images/man.png"></div>
-                  <div class="waiting-time">7 минут</div>
-                  <div class="expert__name">Иванов М.С.</div>
-                  <div class="expert__status">Эксперт</div>
-                  <div class="expert__description">Несколько строк о эксперте Несколько строк о эксперте Несколько строк о эксперте</div>
-                  <div class="expert__footer">
-                    <div class="expert-to-appoint">Назначить</div>
-                    <div class="expert__count-app">12334 заявок</div>
-                  </div>
-                </div>
-              </div>
-              <div class="expert">
-                <div class="expert__block">
-                  <div class="avatar"><img src="images/man.png"></div>
-                  <div class="waiting-time">12 минут</div>
-                  <div class="expert__name">Иванов М.С.</div>
-                  <div class="expert__status">Эксперт</div>
-                  <div class="expert__description">Несколько строк о эксперте Несколько строк о эксперте Несколько строк о эксперте</div>
-                  <div class="expert__footer">
-                    <div class="expert-to-appoint">Назначить</div>
-                    <div class="expert__count-app">13 заявок</div>
-                  </div>
-                </div>
-              </div>
-              <div class="expert">
-                <div class="expert__block">
-                  <div class="avatar"><img src="images/man.png"></div>
-                  <div class="waiting-time">45 минут</div>
-                  <div class="expert__name">Иванов М.С.</div>
-                  <div class="expert__status">Эксперт</div>
-                  <div class="expert__description">Несколько строк о эксперте Несколько строк о эксперте Несколько строк о эксперте</div>
-                  <div class="expert__footer">
-                    <div class="expert-to-appoint">Назначить</div>
-                    <div class="expert__count-app">123 заявок</div>
-                  </div>
-                </div>
-              </div>
+          <ul class="breadcrums__list">
+            <li class="breadcrums__item"><a href="/">Главная</a></li>
+            <li class="breadcrums__item active">Победители</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="card" data-winner="winner-1">
+            <div class="card__block card__block--winner">
+              <div class="avatar"><img src="images/man.png"></div>
+              <div class="card__name">Иванов И.С.</div>
+              <div class="card__status">Победитель</div>
+              <div class="card__title">Несколько строк о эксперте</div>
+              <div class="card__about">С учётом сложившейся международной обстановки, разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса модели развития. Реплицированные с зарубежных источников, современные исследования превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Лишь многие известные личности заблокированы в рамках своих собственных рациональных ограничений. В частности, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития.</div>
             </div>
+          </div>
+          <div class="modal modal--card" id="winner-1">
+            <div class="close-btn"></div>
+            <div class="like_btn"></div>
+            <div class="avatar"><img src="images/man.png"></div>
+            <div class="card__name card__name--winner">Иванов И.С.</div>
+            <div class="card__status">Победитель <span> Школа №1, Класс  4”Б”</strong></div>
+            <div class="card__text">С учётом сложившейся международной обстановки, разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса модели развития. Реплицированные с зарубежных источников, современные исследования превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Лишь многие известные личности заблокированы в рамках своих собственных рациональных ограничений. В частности, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития.</div>
+          </div>
+          <div class="card" data-winner="winner-2">
+            <div class="card__block card__block--winner">
+              <div class="avatar"><img src="images/girl.png"></div>
+              <div class="card__name">Иванова И.С.</div>
+              <div class="card__status">Победитель</div>
+              <div class="card__title">Несколько строк о эксперте</div>
+              <div class="card__about">С учётом сложившейся международной обстановки, разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса модели развития. Реплицированные с зарубежных источников, современные исследования превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Лишь многие известные личности заблокированы в рамках своих собственных рациональных ограничений. В частности, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития.</div>
+            </div>
+          </div>
+          <div class="modal modal--card" id="winner-2">
+            <div class="close-btn"></div>
+            <div class="like_btn"></div>
+            <div class="avatar"><img src="images/girl.png"></div>
+            <div class="card__name card__name--winner">Иванова И.С.</div>
+            <div class="card__status">Победитель <span> Школа №1, Класс  4”Б”</strong></div>
+            <div class="card__text">С учётом сложившейся международной обстановки, разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса модели развития. Реплицированные с зарубежных источников, современные исследования превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Лишь многие известные личности заблокированы в рамках своих собственных рациональных ограничений. В частности, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития.</div>
+          </div>
+          <div class="card" data-winner="winner-3">
+            <div class="card__block card__block--winner">
+              <div class="avatar"><img src="images/people.png"></div>
+              <div class="card__name">Иванов И.С.</div>
+              <div class="card__status">Победитель</div>
+              <div class="card__title">Несколько строк о эксперте</div>
+              <div class="card__about">С учётом сложившейся международной обстановки, разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса модели развития. Реплицированные с зарубежных источников, современные исследования превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Лишь многие известные личности заблокированы в рамках своих собственных рациональных ограничений. В частности, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития.</div>
+            </div>
+          </div>
+          <div class="modal modal--card" id="winner-3">
+            <div class="close-btn"></div>
+            <div class="like_btn"></div>
+            <div class="avatar"><img src="images/people.png"></div>
+            <div class="card__name card__name--winner">Иванов И.С.</div>
+            <div class="card__status">Победитель <span> Школа №1, Класс  4”Б”</strong></div>
+            <div class="card__text">С учётом сложившейся международной обстановки, разбавленное изрядной долей эмпатии, рациональное мышление создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса модели развития. Реплицированные с зарубежных источников, современные исследования превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Лишь многие известные личности заблокированы в рамках своих собственных рациональных ограничений. В частности, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития.</div>
           </div>
         </div>
       </div>

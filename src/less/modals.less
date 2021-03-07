@@ -5,29 +5,28 @@
   position: absolute;
   z-index: 20000;
   width: 100%;
-  max-width: 394px;
   transition: all 0.3s ease-out;
-  right: -1000px;
-  transform: scale(0);
   background-color: white;
-  border: 1px solid @grey_border;
-  padding: 44px 42px 57px 36px;
-  .media_mobile({
-    max-width: 100%;
-    height: 100vh;
-    position: fixed;
-    padding: 20px;
-    overflow-y: auto;
-  });
-  &.active {
-    transform: scale(1);
-  }
-  &.inactive {
-    transform: scale(0);
-  }
 
+  &#sign, &#menu, &#instruction {
+    max-width: 394px;
+    border: 1px solid @grey_border;
+    padding: 44px 42px 57px 36px;
+    transform: scale(0);
+    &.active {
+      transform: scale(1);
+    }
+    .media_mobile({
+      max-width: 100%;
+      height: 100vh;
+      position: fixed;
+      padding: 20px;
+      overflow-y: auto;
+    });
+  }
   &#sign {
     top: 91px;
+    right: -1000px;
     .media_mobile({
       top: 0;
     });
@@ -55,6 +54,7 @@
   }
   &#instruction {
     bottom: 0;
+    right: -1000px;
     &.active {
       right: 0;
     }
@@ -62,18 +62,74 @@
       right: -1000px;
     }
   }
-
-  .close-btn {
-    position: absolute;
-    .circle(21px);
-    .bg('svg/close.svg', 21px);
-    top: 23px;
-    right: 21px;
-    cursor: pointer;
-    &:active {
-      transform: scale(0.95);
+  &.active {
+    transform: scale(1);
+  }
+  &.inactive {
+    transform: scale(0);
+  }
+  &--card {
+    position: fixed;
+    max-width: 801px;
+    padding: 100px 180px 100px 280px;
+    box-shadow: 0 0 40px rgba(97, 81, 81, 0.2);
+    border-radius: @radius;
+    min-height: 380px;
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+    &.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .avatar {
+      .circle(146px);
+      position: absolute;
+      top: 111px;
+      left: 69px;
+    }
+    .like_btn {
+      .circle(46px);
+      .bg('svg/like.svg',18px 15px, 13px 16px);
+      position: absolute;
+      top: 139px;
+      right: 80px;
+    }
+    .card {
+      &__name {
+        .font(20px, 23px, bold);
+        margin-bottom: 18px;
+        &--winner {
+          &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: bottom;
+            margin-left: 20px;
+            width: 40px;
+            height: 40px;
+            .bg('svg/star.svg',40px);
+          }
+        }
+      }
+      &__status {
+        .font(16px, 19px, 500);
+        color: @orange;
+        margin-bottom: 13px;
+        span {
+          display: inline-block;
+          padding-left: 8px;
+          font: inherit;
+        }
+      }
+      &__text {
+        .font(12px, 14px, 400);
+        color: @grey_text;
+      }
     }
   }
+
+
+
+
   &__logo {
     width: 97px;
     height: 59px;
@@ -113,6 +169,18 @@
     &.visible {
       display: block;
     }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  .circle(21px);
+  .bg('svg/close.svg', 21px);
+  top: 23px;
+  right: 21px;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.95);
   }
 }
 
