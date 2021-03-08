@@ -148,3 +148,76 @@
     .font(17px, 20px, 300);
   }
 }
+.post {
+  background: white;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  cursor: pointer;
+  .media_desktop({
+    margin-bottom: 75px;
+  });
+  .row {
+    margin: 0px;
+  }
+  .post__block {
+    .media_desktop({
+      padding: 44px 86px;
+    });
+    .media_mobile({
+      padding: 20px;
+      margin: 20px 20px;
+    });
+
+  }
+  .avatar {
+    width: 74px;
+    height: 74px;
+  }
+  &__name {
+    margin-left: 30px;
+    margin-top: 25px;
+    font-size: 14px;
+    color: @black;
+
+  }
+  &__date {
+    margin-left: 30px;
+    margin-top: 25px;
+    font-size: 14px;
+    color: @grey_text;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.4px;
+    color: @black;
+    margin: 40px 0;
+  }
+  &__text {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.4px;
+  }
+  &__more {
+    color: @orange;
+
+  }
+  &__image {
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 20px;
+    .media_mobile({
+      max-height: 150px;
+    });
+    img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      .media_mobile({
+        max-height: 150px;
+      });
+    }
+  }
+}

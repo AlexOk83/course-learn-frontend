@@ -1,0 +1,10 @@
+extends template/layout
+
+block content
+    .main
+        +breadcrumbs('Статьи')
+        .container
+            .row
+                each item in articles
+                    +article(item)
+                    +modalPost(item)

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Парта героя</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="modal__overlay"></div>
+    <header class="header">
+      <div class="container">
+        <div class="toggle-menu-btn active"><span></span><span></span><span></span></div>
+        <div class="modal" id="menu"><a class="modal__logo modal__logo--center" href="/"></a>
+          <div class="close-btn"></div>
+          <div class="mobile-menu"><a class="mobile-menu-item active" href="#">Каталог статей</a><a class="mobile-menu-item" href="#">Отправить статью</a><a class="mobile-menu-item" href="experts.html">Наши эксперты</a><a class="mobile-menu-item" href="winners.html">Победители</a><a class="mobile-menu-item" href="partners.html">Партнеры</a>
+          </div>
+        </div><a href="/"><img class="logo" src="images/logo.png"></a>
+        <div class="menu"><a class="menu-item active" href="#">Каталог статей</a><a class="menu-item" href="#">Отправить статью</a><a class="menu-item" href="experts.html">Наши эксперты</a><a class="menu-item" href="winners.html">Победители</a><a class="menu-item" href="partners.html">Партнеры</a>
+        </div>
+        <div class="header__right">
+          <div class="auth_btn"></div>
+          <div class="modal" id="sign">
+            <div class="modal__logo"></div>
+            <div class="close-btn"></div>
+            <div class="tabs__header">
+              <ul class="tabs__list">
+                <li class="tabs__item active" data-tab="in">Вход</li>
+                <li class="tabs__item" data-tab="up">Регистрация</li>
+              </ul>
+            </div>
+            <div class="tabs__body active" id="in">
+              <form id="signIn">
+                <div class="form-field">
+                  <div class="placeholder">E-mail или телефон</div>
+                  <input type="text" placeholder="E-mail или телефон" required>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Пароль</div>
+                  <input type="password" placeholder="Пароль" required>
+                  <div class="eye"></div>
+                </div><a class="modal-link" href="#restore">Восстановить пароль</a>
+                <button class="form-btn">Войти</button>
+              </form>
+            </div>
+            <div class="tabs__body" id="up">
+              <form id="signUp">
+                <div class="form-radio">
+                  <input type="radio" id="student" value="student" name="whoIam" checked>
+                  <label for="student">Я ученик</label>
+                  <input type="radio" id="parent" value="parent" name="whoIam">
+                  <label for="parent">Я родитель</label>
+                </div>
+                <div class="forParent hidden">
+                  <div class="title">Поля для родителя</div>
+                  <div class="form-row">
+                    <div class="form-field">
+                      <div class="placeholder">Фамилия</div>
+                      <input type="text" placeholder="Фамилия" required>
+                    </div>
+                    <div class="form-field">
+                      <div class="placeholder">Имя</div>
+                      <input type="text" placeholder="Имя" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-field">
+                      <div class="placeholder">Отчество</div>
+                      <input type="text" placeholder="Отчество" required>
+                    </div>
+                  </div>
+                  <div class="title">Поля для ввода о ребенке</div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Фамилия</div>
+                    <input type="text" placeholder="Фамилия" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Имя</div>
+                    <input type="text" placeholder="Имя" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Отчество</div>
+                    <input type="text" placeholder="Отчество" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Дата рождения</div>
+                    <div class="arrow"></div>
+                    <input class="datePicker" type="text" placeholder="Дата рождения" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Школа</div>
+                    <input type="text" placeholder="Школа" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Класс</div>
+                    <input type="text" placeholder="Класс" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">E-mail</div>
+                    <input type="text" placeholder="E-mail" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Телефон</div>
+                    <input type="text" placeholder="Телефон" required>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Пароль</div>
+                  <input type="password" placeholder="Пароль" required>
+                  <div class="eye"></div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Подтвердите пароль</div>
+                  <input type="password" placeholder="Подтвердите пароль" required>
+                  <div class="eye"></div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Ссылка на пост в instagram или TikTok</div>
+                  <input type="text" placeholder="Ссылка на пост в instagram или TikTok" required>
+                </div>
+                <div class="form-radio">
+                  <input type="radio" id="phone" value="phone" name="send" checked>
+                  <label for="phone">Подтвердить регистрацию по телефону</label>
+                  <input type="radio" id="mail" value="mail" name="send">
+                  <label for="mail">Подтвердить регистрацию по E-mail</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="check1" name="check1">
+                  <label for="check">Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a></label>
+                </div>
+                <button class="form-btn">Зарегистрироваться</button>
+              </form>
+            </div>
+            <div class="tabs__body" id="expert">
+              <form id="signExpert">
+                <div class="form-radio">
+                  <input type="radio" id="expert" value="expert" name="whoIam" checked>
+                  <label for="expert">Я Эксперт</label>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Фамилия</div>
+                    <input type="text" placeholder="Фамилия" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Имя</div>
+                    <input type="text" placeholder="Имя" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">Отчество</div>
+                    <input type="text" placeholder="Отчество" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Фото</div>
+                    <input type="file" id="photo" required>
+                    <label for="photo">Фото</label>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">О себе</div>
+                  <textarea placeholder="О себе" required></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <div class="placeholder">E-mail</div>
+                    <input type="text" placeholder="E-mail" required>
+                  </div>
+                  <div class="form-field">
+                    <div class="placeholder">Телефон</div>
+                    <input type="text" placeholder="Телефон" required>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Пароль</div>
+                  <input type="password" placeholder="Пароль" required>
+                  <div class="eye"></div>
+                </div>
+                <div class="form-field">
+                  <div class="placeholder">Подтвердите пароль</div>
+                  <input type="password" placeholder="Подтвердите пароль" required>
+                  <div class="eye"></div>
+                </div>
+                <div class="form-radio">
+                  <input type="radio" id="phoneExpert" value="phoneExpert" name="send" checked>
+                  <label for="phoneExpert">Подтвердить регистрацию по телефону</label>
+                  <input type="radio" id="mailExpert" value="mailExpert" name="send">
+                  <label for="mailExpert">Подтвердить регистрацию по E-mail</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="check" name="check">
+                  <label for="check">Я соглашаюсь на обработку персональных данных в соответствии с <a href='#'>Политикой обработки персональных данных</a></label>
+                </div>
+                <button class="form-btn">Зарегистрироваться</button>
+              </form>
+            </div>
+          </div>
+          <form class="form-search">
+            <input class="header__search" name="search" type="text" autocomplete="off" placeholder="Поиск по сайту">
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="breadcrums">
+        <div class="container">
+          <ul class="breadcrums__list">
+            <li class="breadcrums__item"><a href="/">Главная</a></li>
+            <li class="breadcrums__item active">Личные данные</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lk">
+          <div class="profile_row">
+            <div class="profile_face">
+              <div class="profile_face__avatar"><img src="images/woman.png"></div>
+              <div class="profile_face__name">Иванов М.С.</div>
+              <div class="profile_face__status">Эксперт</div>
+            </div>
+            <div class="profile_data">
+              <div class="profile_data__title">Личные данные:</div>
+              <div class="profile_data__text">Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает широкому кругу (специалистов) участие в формировании как самодостаточных, так и внешне зависимых концептуальных решений. Приятно, граждане, наблюдать, как многие известные личности, вне зависимости от их уровня, должны быть разоблачены. </div>
+            </div>
+          </div>
+          <div class="buttons__wrapper">
+            <div class="btn btn--orange">Новые заявки</div>
+            <div class="btn btn--orange">Обработанные заявки</div>
+            <div class="btn btn--orange btn--notify">Отложенные заявки</div>
+            <div class="btn btn--orange">Спам (черный список)</div>
+            <div class="btn btn--orange">Таблица экспертов</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social">
+      <div class="container">
+        <h2 class="social__title">подписывайтесь на нас в соц сетях</h2>
+        <div class="social__links"><a class="social__link instagram" href="#"></a><a class="social__link viber" href="#"></a><a class="social__link facebook" href="#"></a></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_links"><a class="link" href="#">Пользовательское соглашение</a><a class="link" href="#">Соглашение об обработке персональных данных</a><a class="link" href="#">Служба поддержки</a></div>
+        <div class="pdf_instruction"></div>
+        <div class="modal" id="instruction">
+          <div class="modal__logo modal__logo--center"></div>
+          <div class="close-btn"></div>
+          <div class="instruction">
+            <div class="instruction__title">инструкция</div>
+            <div class="instruction__text">
+              <p>Барабанщик SYSTEM OF A DOWN Джон Долмаян поддержал актрису «Мандалорца» Джину Карано, которая была уволена из проектов Lucasfilm, находящихся под контролем Disney, за свой твит, в котором сравнила неприятие политических взглядов с действиями нацистов:</p>
+              <p>«Евреев на улицах избивали не нацистские солдаты, а соседи...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/owl.carousel-min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

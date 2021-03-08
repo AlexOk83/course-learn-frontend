@@ -4,6 +4,23 @@ mixin home-slider()
 	.home-slider
 		each item in slider1
 			+slider-item(item)
+mixin lk()
+	.lk
+		.profile_row
+			.profile_face
+				.profile_face__avatar
+					img(src=`images/woman.png`)
+				.profile_face__name= "Иванов М.С."
+				.profile_face__status= "Эксперт"
+			.profile_data
+				.profile_data__title= "Личные данные:"
+				.profile_data__text= "Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает широкому кругу (специалистов) участие в формировании как самодостаточных, так и внешне зависимых концептуальных решений. Приятно, граждане, наблюдать, как многие известные личности, вне зависимости от их уровня, должны быть разоблачены. "
+		.buttons__wrapper
+			.btn.btn--orange= "Новые заявки"
+			.btn.btn--orange= "Обработанные заявки"
+			.btn.btn--orange.btn--notify= "Отложенные заявки"
+			.btn.btn--orange= "Спам (черный список)"
+			.btn.btn--orange= "Таблица экспертов"
 
 mixin slider-item(item)
 	.slider-item
@@ -109,6 +126,18 @@ mixin expert(item)
 			.card__title Несколько строк о эксперте
 			.card__title Несколько строк о эксперте
 
+mixin article(item)
+	.post
+		.post__block
+			.row
+				.avatar: img(src=`images/${item.image}`)
+				.post__name= item.name
+				.post__date= item.date
+			.post__title= item.title
+			.post__text= item.text
+			a.post__more(href="#")= "Читать далее"
+			.post__image: img(src=`images/${item.image}`)
+
 
 mixin modalWinner(item)
 	.modal.modal--card(id= item.id)
@@ -127,6 +156,20 @@ mixin modalExpert(item)
 		.card__name= item.name
 		.card__status.card__status--expert #{item.status}
 		.card__text= item.description
+
+mixin modalPost(item)
+	.modal.modal--card.modal--post(id= item.id)
+		.close-btn
+		.post
+			.post__block
+				.row
+					.avatar: img(src=`images/${item.image}`)
+					.post__name= item.name
+					.post__date= item.date
+				.post__title= item.title
+				.post__text= item.text
+				a.post__more(href="#")= "Читать далее"
+				.post__image: img(src=`images/${item.image}`)
 
 mixin winnerSlider()
 	.card-slider
