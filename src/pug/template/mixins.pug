@@ -171,14 +171,20 @@ mixin modalPost(item)
 				a.post__more(href="#")= "Читать далее"
 				.post__image: img(src=`images/${item.image}`)
 
+mixin image-wrap-fancy(image, url, alt)
+	if (url)
+		a(href= url, data-fancybox="images" rel="gallery").img_wrap: img(src="images/" + image, alt="" + alt, )
+	else
+		a(href="images/" + image, data-fancybox="images" rel="gallery").img_wrap: img(src="images/" + image, alt="" + alt, )
+
 mixin winnerSlider()
 	.card-slider
-		.item
+		a(href="images/school-1.jpg", data-fancybox="images" rel="gallery").item
 			img(src= 'images/school-1.jpg')
 			p фото 1
-		.item
+		a(href="images/school-2.jpg", data-fancybox="images" rel="gallery").item
 			img(src= 'images/school-2.jpg')
 			p фото 2
-		.item
+		a(href="images/school-3.jpg", data-fancybox="images" rel="gallery").item
 			img(src= 'images/school-3.jpg')
 			p фото 3

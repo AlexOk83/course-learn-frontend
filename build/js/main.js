@@ -443,6 +443,10 @@ jQuery(document).ready(function () {
        e.stopPropagation();
        // $(this).addClass('liked');
     });
+
+    $('[data-fancybox]').fancybox({
+
+    });
 });
 
 
