@@ -180,3 +180,13 @@ mixin footer()
         a.link(href="#") Служба поддержки
       .pdf_instruction
       +modal2()
+
+mixin filter()
+  .filter
+    .container
+      .row
+        .filter_item
+        .filter_item
+          +select({ option: filterOptions })
+        .filter_item
+          +button({ text: 'Фильтровать'})

@@ -8,7 +8,7 @@
   margin: 46px 0;
   &--title {
     .column(5,5,12,12);
-    padding: 0px;
+    padding: 0;
     font-size: 25px;
     line-height: 29px;
     letter-spacing: -0.4px;
@@ -18,9 +18,8 @@
       height: 40px;
       position: absolute;
       right: 20px;
-      top: 0px;
-      background-image: url("/images/svg/time.svg");
-      background-repeat: no-repeat;
+      top: 0;
+      .bg('svg/time.svg', 40px);
     }
   }
   &_list {
@@ -96,12 +95,25 @@
     border: 1px solid @grey_border;
     padding: 0 25px 54px;
     height: 100%;
-
-    .buttons__wrapper {
-      display: flex;
-      flex-wrap: wrap;
+    .row {
+      margin-left: -7.5px;
+      margin-right: -7.5px;
+    }
+    .btn__wrapper {
+      .column(4,4,12,12, 7.5px);
       .btn {
-        .column(4,4,12,12);
+        width: 100%;
+        height: 49px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .font(12px, 14px, 500);
+        padding: 0 30px;
+        border-radius: @radius;
+        &:hover {
+          background-color: @hover;
+        }
       }
     }
   }
@@ -230,14 +242,14 @@
 }
 .post {
   background: white;
-  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   cursor: pointer;
   .media_desktop({
     margin-bottom: 75px;
   });
   .row {
-    margin: 0px;
+    margin: 0;
   }
   .post__block {
     .media_desktop({

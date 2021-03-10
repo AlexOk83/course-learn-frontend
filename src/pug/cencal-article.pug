@@ -63,8 +63,8 @@ block content
                         +field({placeholder: 'Текст статьи', required: false, type: 'textArea'})
                         +field({placeholder: 'Комментарий эксперта', required: false, type: 'textArea'})
 
-                        .buttons__wrapper
-                            .btn.btn--orange= "Принять к публикации"
-                            .btn.btn--orange= "Сохранить оценки"
-                            .btn.btn--orange= "Не принимать к публикации"
+                        .row
+                            .btn__wrapper: .btn.btn--orange= "Принять к публикации"
+                            .btn__wrapper: .btn.btn--orange= "Сохранить оценки"
+                            .btn__wrapper: .btn.btn--orange= "Не принимать к публикации"
     +social()
