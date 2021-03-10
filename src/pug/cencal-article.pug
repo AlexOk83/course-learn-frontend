@@ -1,0 +1,70 @@
+extends template/layout
+
+block content
+    .main-social
+        +back('Новая статья')
+        .container
+            .navigate
+                h3.navigate--title= "У вас 3 статьи на проверку"
+                    .navigate--title--after
+                ul.navigate_list
+                    li
+                        a(href="#")= "Статья 1"
+                    li
+                        a.active(href="#")= "Статья 2"
+                    li
+                        a(href="#")= "Статья 3"
+        .article
+            .container
+                .article__profile
+                    .article__body
+                        .article__title: h2 Ваша оценка
+                        .appraisal
+                            .appraisal_row
+                                .appraisal_left
+                                    .btn.btn--appraisal= "Критерий оценивания"
+                                .appraisal_right
+                                    .btn.btn--appraisal= "Оценка"
+                            .appraisal_row
+                                .appraisal_left
+                                    .btn.btn--appraisal.border--red= "Критерий оценивания"
+                                .appraisal_right
+                                    .btn.btn--appraisal.border--red= "Оценка"
+                            .appraisal_row
+                                .appraisal_left
+                                    .btn.btn--appraisal.border--green= "Критерий оценивания"
+                                .appraisal_right
+                                    .btn.btn--appraisal.border--green= "Оценка"
+                            .appraisal_row
+                                .appraisal_left
+                                    .btn.btn--appraisal= "Критерий оценивания"
+                                .appraisal_right
+                                    .btn.btn--appraisal= "Оценка"
+                            .appraisal_row
+                                .appraisal_left
+                                    .btn.btn--appraisal= "Критерий оценивания"
+                                .appraisal_right
+                                    .btn.btn--appraisal= "Оценка"
+                .article__edit
+                    .article__body
+                        .article__title
+                            h2 Вы можете:
+                            .article__file
+                                input(type='file', id='file')
+                                label(for='file') Добавить файл
+                            span Внести статью в окно ниже
+                        .article__validation Для загрузки статьи необходимо...
+                        .article__files
+                            span Редактирование статьи:
+                            .files__list
+                                .file-item.file-item--pdf
+                                .file-item.file-item--image: img(src='images/screen.png')
+                            .add_file-btn
+                        +field({placeholder: 'Текст статьи', required: false, type: 'textArea'})
+                        +field({placeholder: 'Комментарий эксперта', required: false, type: 'textArea'})
+
+                        .buttons__wrapper
+                            .btn.btn--orange= "Принять к публикации"
+                            .btn.btn--orange= "Сохранить оценки"
+                            .btn.btn--orange= "Не принимать к публикации"
+    +social()
