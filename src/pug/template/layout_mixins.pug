@@ -140,7 +140,7 @@ mixin field(params)
       .eye
 
 mixin button(params)
-  button.form-btn(disabled= params.disabled)= params.text
+  button.form-btn(disabled= params.disabled, class= params.class)= params.text
 
 mixin radio(id, name, label, checked)
   input(type="radio" id= id, value= id, name= name, checked=checked)
@@ -185,8 +185,15 @@ mixin filter()
   .filter
     .container
       .row
-        .filter_item
-        .filter_item
-          +select({ option: filterOptions })
-        .filter_item
-          +button({ text: 'Фильтровать'})
+        .filter_item.filter_item--double
+          .filter_field: input(placeholder='Поиск по ФИО', name='search-name')
+          .filter_field: input(placeholder='Поиск по классу', name='search-school')
+        .filter_item.filter_item--left-offset
+          +select(filterOptions)
+        .filter_item.filter_item--double
+          .filter_btn Фильтровать
+
+mixin select(params)
+  select(placeholder= params.placeholder, name= params.name)
+    each option in params.options
+      option(selected= option.selected value= option.value)= option.label

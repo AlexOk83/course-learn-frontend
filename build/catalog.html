@@ -4,6 +4,7 @@
     <title>Парта героя</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="styleSheet" media="all" type="text/css" href="css/jquery.fancybox.css">
     <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
   </head>
   <body>
@@ -222,10 +223,22 @@
       <div class="filter">
         <div class="container">
           <div class="row">
-            <div class="filter_item"></div>
-            <div class="filter_item"></div>
-            <div class="filter_item">
-              <button class="form-btn">Фильтровать</button>
+            <div class="filter_item filter_item--double">
+              <div class="filter_field">
+                <input placeholder="Поиск по ФИО" name="search-name">
+              </div>
+              <div class="filter_field">
+                <input placeholder="Поиск по классу" name="search-school">
+              </div>
+            </div>
+            <div class="filter_item filter_item--left-offset">
+              <select>
+                <option selected value="ASC">сортировать по возрастанию</option>
+                <option value="DESC">сортировать по убыванию</option>
+              </select>
+            </div>
+            <div class="filter_item filter_item--double">
+              <div class="filter_btn">Фильтровать</div>
             </div>
           </div>
         </div>
@@ -251,6 +264,7 @@
     </footer>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
     <script src="js/owl.carousel-min.js"></script>
     <script src="js/main.js"></script>
   </body>

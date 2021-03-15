@@ -245,3 +245,75 @@
     .font(24px, 70px, bold);
   }
 }
+
+.filter {
+  &_item {
+    .column(4,4);
+    margin-bottom: 14px;
+    &--double {
+      .column(5,6);
+      display: flex;
+      justify-content: space-between;
+      &:before, &:after {
+        display: none;
+      }
+    }
+    &--left-offset {
+      .left_desktop(3);
+      .left_tablet(2);
+    }
+    select {
+      width: 100%;
+      line-height: 40px;
+      height: 36px;
+      border: none;
+      outline: none;
+      .text_overflow();
+      option {
+        line-height: 30px;
+      }
+    }
+  }
+  &_field {
+    width: calc(50% - 7.5px);
+    position: relative;
+    &:before {
+      .before(9px);
+      left: 10px;
+      width: 11px;
+      height: 11px;
+      .bg('svg/search-grey.svg', 11px);
+    }
+    &:after {
+      .before(9px);
+      right: 10px;
+      width: 11px;
+      height: 11px;
+      .bg('svg/filter.svg', 11px);
+    }
+    input {
+      width: 100%;
+      outline: none;
+      height: 28px;
+      padding: 0 32px;
+      border-radius: 5px;
+      border: 1px solid @grey_border;
+      .font(11px, 13px, 400);
+      &:focus {
+        border-color: @orange;
+      }
+    }
+  }
+  &_btn {
+    height: 32px;
+    width: 100%;
+    line-height: 32px;
+    cursor: pointer;
+    background-color: @grey_text;
+    color: @black;
+    .font(10px, 32px, 400);
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
