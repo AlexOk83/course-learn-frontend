@@ -194,6 +194,7 @@ mixin filter()
           .filter_btn Фильтровать
 
 mixin select(params)
-  select(placeholder= params.placeholder, name= params.name)
-    each option in params.options
-      option(selected= option.selected value= option.value)= option.label
+  .form-select
+    select(placeholder= params.placeholder, name= params.name)
+      each option in params.options
+        option(selected= option.selected value= option.value)= option.label
