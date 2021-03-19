@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--include variable-->
 <html lang="ru">
   <head>
     <title>Marafon</title>
@@ -8,38 +7,46 @@
     <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
   </head>
   <body>
-    <p>hello 2</p>
-    <!--
-    header.header
-      .container
-        .header__top
-          a.logo(href='/') SCANDI
-          ul.menu
-            each item in menu
-              li: a(href= item.url)= item.title
-          .phone +7(981) 857-46-24
-        .header__content
-          h1.header__title= title_h1
-          h2.header__title2= title_h2
-          .button= buttonText
-    section.section.section--about
-      .container
-        h2.section__title о нас
-        .row
-          .section_image-wrapper: .section_image-block: img(src='images/image3.png')
-          .section--about__text
-            each text in aboutText
-              p= text
-    section.section--advantages
-      .container
-        .row
-          each adv in advantages
-            .section--advantages__item
-              .number= adv.value
-              .text= adv.desc
-    section
-      .container
-        h2.section__title наши работы
+    <header class="header">
+      <div class="container">
+        <div class="header__top"><a class="logo" href="/">SCANDI</a>
+          <ul class="menu">
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Портфолио</a></li>
+            <li><a href="#">Команда</a></li>
+            <li><a href="#">Как мы работаем</a></li>
+            <li><a href="#">Отзывы клиентов</a></li>
+            <li><a href="#">Оставить заявку</a></li>
+          </ul>
+          <div class="phone">+7(981) 857-46-24</div>
+        </div>
+        <div class="header__content">
+          <h1 class="header__title">Поможем сделать вашу квартиру уютнее</h1>
+          <h2 class="header__title2">Подбираем текстиль, мебель и аксессуары под ваш интерьер, находим магазины и помогаем организовать доставку</h2>
+          <div class="button">Оставить заявку</div>
+        </div>
+      </div>
+    </header>
+    <!--section.section.section--about
+    .container
+      h2.section__title о нас
+      .row
+        .section_image-wrapper: .section_image-block: img(src='images/image3.png')
+        .section--about__text
+          each text2 in aboutText
+            p= text2
+    -->
+    <!--section.section--advantages
+    .container
+      .row
+        each adv in advantages1
+          .section--advantages__item
+            .number= adv.value
+            .text= adv.desc
+    -->
+    <!--section
+    .container
+      h2.section__title наши работы
     -->
     <script src="js/jquery.js"></script>
     <script src="js/owl.carousel-min.js"></script>
