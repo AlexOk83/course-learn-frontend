@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--include variable-->
+<html lang="ru">
+  <head>
+    <title>Marafon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
+  </head>
+  <body>
+    <p>hello 2</p>
+    <!--
+    header.header
+      .container
+        .header__top
+          a.logo(href='/') SCANDI
+          ul.menu
+            each item in menu
+              li: a(href= item.url)= item.title
+          .phone +7(981) 857-46-24
+        .header__content
+          h1.header__title= title_h1
+          h2.header__title2= title_h2
+          .button= buttonText
+    section.section.section--about
+      .container
+        h2.section__title о нас
+        .row
+          .section_image-wrapper: .section_image-block: img(src='images/image3.png')
+          .section--about__text
+            each text in aboutText
+              p= text
+    section.section--advantages
+      .container
+        .row
+          each adv in advantages
+            .section--advantages__item
+              .number= adv.value
+              .text= adv.desc
+    section
+      .container
+        h2.section__title наши работы
+    -->
+    <script src="js/jquery.js"></script>
+    <script src="js/owl.carousel-min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
