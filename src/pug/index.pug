@@ -1,38 +1,7 @@
 extends template/layout
 
 block content
-    header.header
-      .container
-        .header__top
-          a.logo(href='/') SCANDI
-          ul.menu
-            each item in menu
-              li: a(href= item.url)= item.title
-          .phone +7(981) 857-46-24
-        .header__content
-          h1.header__title= title_h1
-          h2.header__title2= title_h2
-          .button= buttonText
-
-    //section.section.section--about
-      .container
-        h2.section__title о нас
-        .row
-          .section_image-wrapper: .section_image-block: img(src='images/image3.png')
-          .section--about__text
-            each text2 in aboutText
-              p= text2
-    //section.section--advantages
-      .container
-        .row
-          each adv in advantages1
-            .section--advantages__item
-              .number= adv.value
-              .text= adv.desc
-    //section
-      .container
-        h2.section__title наши работы
-
+  h1 hello5
 
 
 

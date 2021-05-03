@@ -1,68 +1,82 @@
-'use strict';
+import gulp from 'gulp';
+import less from 'gulp-less';
+import pug from 'gulp-pug'
+import browserSync from 'browser-sync';
+import autoPrefix from 'gulp-autoprefixer';
+import cleanCSS from 'gulp-clean-css';
+import concat from 'gulp-concat';
+import plumber from 'gulp-plumber';
 
-var gulp = require('gulp'),
-  pug = require('gulp-pug'),
-  rename = require('gulp-rename'),
-  minifyCSS = require('gulp-minify-css'),
-  less = require('gulp-less'),
-  autoprefixer = require('gulp-autoprefixer'),
-  browserSync = require('browser-sync'),
-  plumber = require('gulp-plumber'),
-  reload = browserSync.reload;
+const paths = {
+  styles: {
+    src: 'src/less/*.less',
+    dest: './build/assets/styles/'
+  },
+  scripts: {
+    src: './build/assets/js/*.js',
+  },
+  pug: {
+    src: 'src/pug/*.pug',
+    dest: './build/'
+  }
+}
 
-gulp.task('browserSync', function () {
-  browserSync({
+gulp.task('browser-sync', function(done) {
+  browserSync.init({
     server: {
-      baseDir: "./build"
+      baseDir: './build'
     },
     port: 3000,
     open: true,
     notify: false
   });
+
+  browserSync.watch('build/').on('change', browserSync.reload);
+
+  done();
 });
 
-//less
-gulp.task('less', function () {
-    gulp.src('src/less/global.less')
-        .pipe(less())
-        .pipe(plumber())
-        .pipe(autoprefixer('last 15 versions'))
-        .pipe(minifyCSS())
-        .pipe(rename("style.min.css"))
-        .pipe(gulp.dest('./build/css/'))
-        .pipe(reload({stream:true}));
+gulp.task('less', function (done) {
+  gulp.src(paths.styles.src)
+      .pipe(less())
+      .pipe(plumber())
+      .pipe(cleanCSS())
+      .pipe(autoPrefix({
+        browsers: ['last 4 versions'],
+        cascade: false
+      }))
+      .pipe(concat('styles.min.css'))
+      .pipe(gulp.dest(paths.styles.dest))
+      .pipe(browserSync.reload({stream: true}));
+
+  done();
+})
+
+gulp.task('js', function (done) {
+  gulp.src(paths.scripts.src)
+      .pipe(browserSync.reload({stream: true}));
+  done();
+})
+
+gulp.task('pug', function (done) {
+  gulp.src(paths.pug.src)
+      .pipe(pug({
+        locals: '',
+        pretty: true,
+      }))
+      .pipe(plumber())
+      .pipe(gulp.dest(paths.pug.dest))
+      .pipe(browserSync.reload({stream: true}));
+
+  done();
 });
 
-//html
-gulp.task('html', function () {
-  gulp.src('build/*.html')
-    .pipe(reload({stream: true}));
-});
+gulp.task('watch', gulp.series('less', 'js', 'pug', 'browser-sync', function(done) {
+  gulp.watch(paths.styles.src, gulp.series('less'));
+  gulp.watch(paths.scripts.src, gulp.series('js'));
+  gulp.watch('src/pug/*.pug', gulp.series('pug'));
 
-// pug
-gulp.task('pug', function () {
-  gulp.src('src/pug/*.pug')
-    .pipe(plumber())
-    .pipe(pug({
-      locals: '',
-      pretty : true
-    }))
-    .pipe(gulp.dest('./build'));
-});
+  done()
+}));
 
-//css
-gulp.task('css', function () {
-  gulp.src('build/css/*.css')
-    .pipe(reload({stream: true}));
-});
-
-gulp.task('watch', function () {
-  gulp.watch('src/less/*.less', ['less']);
-  gulp.watch('src/pug/*.pug', ['pug']);
-  gulp.watch('src/pug/template/*.pug', ['pug']);
-  gulp.watch('build/*.html', ['html']);
-  gulp.watch('build/css/*.css', ['css']);
-
-});
-
-gulp.task('default', ['browserSync', 'html', 'css', 'less', 'pug', 'watch']);
+gulp.task('default', gulp.series('watch'));

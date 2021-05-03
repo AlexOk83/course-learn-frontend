@@ -1,12 +1,12 @@
 // обрезание строки с многоточием
-.text_overflow {
+.text_overflow() {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
 // центруем элементы, высота и ширина которых не статична
-.center {
+.center() {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -23,7 +23,7 @@
 }
 
 // запрещаем у данного элемента выделять текст (у активных элементов двойным нажатием выделяется)
-.no_select {
+.no_select() {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -88,4 +88,85 @@
 
 .mixed_bg(@type : overlay) {
   background-blend-mode: @type;
+}
+
+.scrollbars(@size, @foreground-color, @background-color: mix(@foreground-color, white,  50%)) {
+  ::-webkit-scrollbar{
+    width:  @size;
+    height: @size;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: @foreground-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: @background-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: @foreground-color;
+    scrollbar-track-color: @background-color;
+  }
+
+
+}
+
+.circle(@size) {
+  width: @size;
+  height: @size;
+  border-radius: 50%;
+}
+
+.img_cover() {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.font(@size: 14px, @line_height: 16px, @weight: 300 ) {
+  font-size: @size;
+  line-height: @line_height;
+  font-weight: @weight;
+}
+
+.longText-overflow(@countLine: 2, @fontSize: 14px, @lineHeight: 16px, @fw: 400) {
+  .font(@fontSize, @lineHeight, @fw);
+  max-height: @lineHeight * @countLine + 4px;
+  -webkit-line-clamp: @countLine;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  word-break: break-word;
+  hyphens: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mask(@image, @bg) {
+  -webkit-mask-image: url("../images/svg/@{image}.svg");
+  mask-image: url("../images/svg/@{image}.svg");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  background: @bg;
+}
+
+.before(@top: 0) {
+  content: '';
+  display: block;
+  position: absolute;
+  top: @top;
 }
