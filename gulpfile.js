@@ -72,9 +72,9 @@ gulp.task('pug', function (done) {
 });
 
 gulp.task('watch', gulp.series('less', 'js', 'pug', 'browser-sync', function(done) {
-  gulp.watch(paths.styles.src, gulp.series('less'));
+  gulp.watch('src/less/**/*.less', gulp.series('less'));
   gulp.watch(paths.scripts.src, gulp.series('js'));
-  gulp.watch('src/pug/*.pug', gulp.series('pug'));
+  gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
 
   done()
 }));

@@ -19,6 +19,7 @@
     "@babel/polyfill": "^7.6.0"
   },
   "dependencies": {
+    "fullpage.js": "^3.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^4.0.1",
     "plumber": "^0.4.8"

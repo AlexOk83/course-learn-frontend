@@ -1,7 +1,18 @@
 extends template/layout
 
 block content
-  h1 hello5
+  .header
+    .container
+      a.header__logo(href='/')
+      nav.header__menu
+        each item in ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
+          li: a(href='#'+item)= item
+  main#home
+    .section.home.home--projects
+    .section.home.home--tarifs
+    .section.home.home--insruction
+    .section.home.home--contacts
+
 
 
 
