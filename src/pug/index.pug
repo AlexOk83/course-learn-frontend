@@ -1,18 +1,21 @@
 extends template/layout
 
 block content
-  .header
-    .container
-      a.header__logo(href='/')
-      nav.header__menu
-        each item in ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
-          li: a(href='#'+item)= item
-  main#home
-    .section.home.home--projects
-    .section.home.home--tarifs
-    .section.home.home--insruction
-    .section.home.home--contacts
+  +header()
+  .index-slide
+  nav#menu
+    li: a(href='firstPage')
+    li: a(href='firstPage')
+    li: a(href='firstPage')
+    li: a(href='firstPage')
 
+  main#home
+    .section.home.home--index: +index()
+    .section.home.home--projects projects
+    .section.home.home--tarifs tarifs
+    .section.home.home--insruction insruction
+    .section.home.home--contacts contacts
+  +home-footer()
 
 
 

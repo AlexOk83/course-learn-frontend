@@ -171,3 +171,9 @@
   position: absolute;
   top: @top;
 }
+
+.border-gradient(@size, @color1, @color2) {
+  border: @size solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, @color1, @color2);
+}

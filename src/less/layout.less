@@ -1,6 +1,94 @@
-.header {
+@import "lib/var";
+@import "lib/mixin";
+@import "lib/icons";
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &--right {
+    justify-content: flex-end;
+  }
+  &--no-wrap {
+    flex-wrap: nowrap;
+  }
 
 }
-.footer {
-
+.header {
+  padding-top: 50px;
+  // элементы блока
+  &__logo {
+    .logo-text {
+      fill: white;
+      transition: all 0.5s ease;
+      transition-delay: 0.2s;
+    }
+  }
+  &__menu {
+    display: flex;
+    .item {
+      padding: 7px 30px;
+      color: white;
+      line-height: 29px;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.5s ease;
+      transition-delay: 0.2s;
+      &.active {
+        color: @redBlock;
+      }
+    }
+  }
+  &__right-content {
+    display: flex;
+  }
+  &__region {
+    padding: 0 30px;
+    .bg('svg/border-gradient.svg');
+    height: 44px;
+    line-height: 42px;
+    .no_select();
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    transition: all 0.5s ease;
+    transition-delay: 0.2s;
+  }
+  &__person {
+    width: 20px;
+    height: 20px;
+    margin-top: 11px;
+    cursor: pointer;
+    margin-left: 37px;
+    .icon-user {
+      .icon(@icon-user, @icon_person);
+      transition: all 0.5s ease;
+      transition-delay: 0.2s;
+    }
+  }
+  // модификаторы шапки
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+  }
+  &--white-bg {
+    .logo-text {
+      fill: black;
+    }
+    .header__menu .item {
+      color: @text-accent;
+      &.active {
+        color: @redBlock;
+      }
+    }
+    .header__region {
+      color: black;
+    }
+    .icon-user {
+      color: @icon;
+    }
+  }
 }

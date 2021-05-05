@@ -1,12 +1,23 @@
 @import "lib/mixin";
 @import "lib/var";
 @import "lib/grid";
+@import "lib/icons";
 
 * {
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 body {
@@ -27,4 +38,30 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 @padding24;
+}
+.social {
+  display: flex;
+  &__item {
+    margin-left: 21px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: @icon_social;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    font-size: 27px;
+    line-height: 30px;
+    &:hover {
+      color: white;
+    }
+    .icon-whatsapp {
+      .icon(@icon-whatsapp, inherit);
+    }
+    .icon-viber {
+      .icon(@icon-viber, inherit);
+    }
+    .icon-telegram {
+      .icon(@icon-telegram, inherit);
+    }
+  }
 }

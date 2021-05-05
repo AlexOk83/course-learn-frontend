@@ -1,12 +1,53 @@
 @import "lib/mixin";
 @import "lib/var";
+@import "lib/grid";
 @import "lib/icons";
 
-.header {
+.index-slide {
+  .bg('slide1.png', cover);
+  background-attachment: fixed;
+  position: fixed;
   width: 100%;
-  &__menu {
-    position: fixed;
-    z-index: 20;
-    margin: 0 auto;
+  height: 100vh;
+  z-index: -1;
+}
+.home {
+
+  &__title {
+    color: white;
+    .title();
+    width: 100%;
+    max-width: 661px;
+    margin: 0 auto 80px;
   }
+  &-footer {
+    width: 100%;
+    padding-bottom: 60px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+  }
+  // modificators
+  &--index {
+    background: transparent;
+  }
+  &--projects {
+    background: white;
+  }
+  &--tarifs {
+    .bg('slide3.png', cover);
+  }
+  &--insruction {
+    .bg('slide4.png', cover);
+  }
+  &--contacts {
+    .bg('slide5.png', cover);
+  }
+}
+
+.slider-objects {
+
+  .column(18,24,24,24,@width_column24);
+  .left_desktop(3);
 }

@@ -1,1 +1,14 @@
 include example-code
+
+mixin index()
+  .container
+    h1.home__title= title_h1
+    .row
+      .slider-objects
+        each item in s1_list
+          +item-project(item)
+
+mixin item-project(item)
+  .item
+    .item__number= item.number
+    .item__text= item.title
