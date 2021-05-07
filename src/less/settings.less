@@ -39,6 +39,7 @@ body {
   margin: 0 auto;
   padding: 0 @padding24;
 }
+
 .social {
   display: flex;
   &__item {
@@ -63,5 +64,62 @@ body {
     .icon-telegram {
       .icon(@icon-telegram, inherit);
     }
+  }
+}
+
+.owl-stage-outer {
+  width: 100%;
+  overflow: hidden;
+  z-index: 5;
+  position: relative;
+}
+.owl-stage {
+  display: flex;
+}
+.owl-item {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.owl-nav {
+  position: absolute;
+  bottom: calc(100% - 13px);
+  right: 20px;
+  z-index: 20;
+  width: 46px;
+  height: 13px;
+  justify-content: space-between;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  &.disabled {
+    .owl-prev, .owl-next {
+      opacity: 0.3;
+    }
+  }
+  //background-color: white;
+  .owl-prev {
+    .icon(@icon-arrow-left, white);
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .owl-next {
+    .icon(@icon-arrow-right, white);
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
+.owl-dots {
+  &.disabled {
+    display: none;
+  }
+
+
+}
+.owl-dot {
+  cursor: pointer;
+  &.active {
+
   }
 }

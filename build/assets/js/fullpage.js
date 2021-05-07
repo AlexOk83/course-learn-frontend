@@ -1064,6 +1064,7 @@
             navigation.setAttribute('id', SECTION_NAV);
 
             var divUl = document.createElement('ul');
+            divUl.setAttribute('class', 'container')
             navigation.appendChild(divUl);
 
             appendTo(navigation, $body);

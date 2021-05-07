@@ -3,15 +3,9 @@ extends template/layout
 block content
   +header()
   .index-slide
-  nav#menu
-    li: a(href='firstPage')
-    li: a(href='firstPage')
-    li: a(href='firstPage')
-    li: a(href='firstPage')
-
   main#home
     .section.home.home--index: +index()
-    .section.home.home--projects projects
+    .section.home.home--projects: +project()
     .section.home.home--tarifs tarifs
     .section.home.home--insruction insruction
     .section.home.home--contacts contacts

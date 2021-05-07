@@ -6,14 +6,13 @@ jQuery(document).ready(function () {
         //options here
         scrollHorizontally: true,
         //Navigation
-        slidesNavigation: true,
-        slidesNavPosition: 'left',
         anchors:['index', 'projects', 'tarifs', 'insruction', 'contacts'],
         navigation: true,
-        navigationPosition: 'right',
-        navigationTooltips: ['index', 'projects', 'tarifs', 'insruction', 'contacts'],
+        navigationPosition: 'left',
         onLeave: function(origin, destination, direction){
             console.log(origin, destination, direction);
+            $('.header__menu .item').removeClass('active');
+            $(`[data-link="${destination.anchor}"]`).addClass('active');
             if (destination.anchor === 'projects') {
                 $('.header').addClass('header--white-bg')
             } else {
@@ -24,6 +23,47 @@ jQuery(document).ready(function () {
 
     //methods
     $.fn.fullpage.setAllowScrolling(true);
+
+    $('.slider-objects').owlCarousel({
+        loop:false,
+        responsiveClass:true,
+        navText: [],
+        navigation: true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            767:{
+                items:2,
+                nav:true
+            },
+            1200:{
+                items:3,
+                nav:true
+            }
+        }
+    })
+    $('.slider-project').owlCarousel({
+        loop:false,
+        responsiveClass:true,
+        navText: [],
+        navigation: true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            767:{
+                items:2,
+                nav:true
+            },
+            1200:{
+                items:3,
+                nav:true
+            }
+        }
+    })
 
 });
 

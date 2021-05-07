@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <link rel="styleSheet" media="all" type="text/css" href="assets/styles/styles.min.css">
-    <link rel="styleSheet" media="all" type="text/css" href="assets/styles/fullpage.min.css">
   </head>
   <body>
     <div class="header header--fixed">
@@ -15,10 +14,10 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M63.8892 33.0406L65.6054 31.3296L65.6019 35.244L63.7246 37.1144C63.3345 37.5036 62.8714 37.8123 62.3616 38.023C61.8518 38.2336 61.3054 38.342 60.7535 38.342C60.2017 38.342 59.6552 38.2336 59.1454 38.023C58.6356 37.8123 58.1725 37.5036 57.7824 37.1144L55.7689 35.107C55.3786 34.718 55.0691 34.2561 54.8578 33.7478C54.6466 33.2394 54.5379 32.6946 54.5379 32.1444C54.5379 31.5942 54.6466 31.0493 54.8578 30.541C55.0691 30.0327 55.3786 29.5708 55.7689 29.1818L55.9099 29.0413L56.5554 29.6848L58.5381 27.7081L60.5658 29.7297L61.3072 28.9917L59.2795 26.9701L60.6108 25.6417L61.3522 24.9026L60.6155 24.1646L56.5601 20.1215L55.8187 20.8595L59.8741 24.9026L58.5428 26.2321L56.5151 24.2106L55.8696 24.8542L52.3045 21.3C51.5167 20.5143 51.0741 19.4489 51.0741 18.3379C51.0741 17.227 51.5167 16.1615 52.3045 15.3759L61.0135 6.6935V10.5783L56.5554 15.0217L65.9619 24.4007L66.7022 23.6615L58.0359 15.0217L66.7034 6.38177L65.9631 5.64377L64.2481 7.35356V3.46874L66.1526 1.56884C66.9409 0.783315 68.0098 0.342041 69.1243 0.342041C70.2388 0.342041 71.3077 0.783315 72.096 1.56884L74.0929 3.5514C74.8807 4.33704 75.3233 5.40249 75.3233 6.51342C75.3233 7.62436 74.8807 8.68981 74.0929 9.47545L73.9306 9.63722L73.2839 8.99251L71.3012 10.9692L69.2676 8.95L68.5274 9.688L70.5551 11.7095L69.2226 13.0344L68.4812 13.7736L69.2226 14.5116L73.2839 18.557L74.0254 17.8178L69.97 13.7771L71.3012 12.4487L73.3218 14.4702L73.9697 13.8243L77.5585 17.4021C78.3464 18.188 78.789 19.2536 78.789 20.3648C78.789 21.4759 78.3464 22.5415 77.5585 23.3274L68.84 32.0192V28.1061L72.5555 24.4007L73.297 23.6615L63.8892 14.2837L63.149 15.0217L71.8153 23.6615L63.149 32.3014L63.8892 33.0406ZM63.2002 4.51375L62.0618 5.6485V9.53332L63.2002 8.39857V4.51375ZM66.6538 34.199L67.7922 33.0642V29.1499L66.6538 30.2858V34.199Z" fill="#EF3024"/>
 </svg></a>
         <nav class="header__menu">
-          <li class="item"><a href="#projects">Проекты</a></li>
-          <li class="item"><a href="#tarifs">Тарифы</a></li>
-          <li class="item"><a href="#insruction">Инструкция</a></li>
-          <li class="item"><a href="#contacts">Контакты</a></li>
+          <li class="item" data-link="projects"><a href="#projects">Проекты</a></li>
+          <li class="item" data-link="tarifs"><a href="#tarifs">Тарифы</a></li>
+          <li class="item" data-link="insruction"><a href="#insruction">Инструкция</a></li>
+          <li class="item" data-link="contacts"><a href="#contacts">Контакты</a></li>
         </nav>
         <div class="header__right-content">
           <div class="header__region">Выберите регион</div>
@@ -29,12 +28,6 @@
       </div>
     </div>
     <div class="index-slide"></div>
-    <nav id="menu">
-      <li><a href="firstPage"></a></li>
-      <li><a href="firstPage"></a></li>
-      <li><a href="firstPage"></a></li>
-      <li><a href="firstPage"></a></li>
-    </nav>
     <main id="home">
       <div class="section home home--index">
         <div class="container">
@@ -57,7 +50,43 @@
           </div>
         </div>
       </div>
-      <div class="section home home--projects">projects</div>
+      <div class="section home home--projects">
+        <div class="container">
+          <div class="row">
+            <h2 class="project__title">Проекты<a href="#">все проекты</a></h2>
+            <div class="slider-project">
+              <div class="item">
+                <div class="item__image"><img src="assets/images/project1.png"></div>
+                <div class="item__content">
+                  <div class="title">Название проекта №1</div>
+                  <div class="text">Текст краткого описания. Мифопорождающее текстовое устройство.</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item__image"><img src="assets/images/project2.png"></div>
+                <div class="item__content">
+                  <div class="title">Название проекта №2</div>
+                  <div class="text">Текст краткого описания. Мифопорождающее текстовое устройство.</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item__image"><img src="assets/images/project3.png"></div>
+                <div class="item__content">
+                  <div class="title">Название проекта №3</div>
+                  <div class="text">Текст краткого описания. Мифопорождающее текстовое устройство.</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item__image"><img src="assets/images/project4.png"></div>
+                <div class="item__content">
+                  <div class="title">Название проекта №4</div>
+                  <div class="text">Текст краткого описания. Мифопорождающее текстовое устройство.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="section home home--tarifs">tarifs</div>
       <div class="section home home--insruction">insruction</div>
       <div class="section home home--contacts">contacts</div>

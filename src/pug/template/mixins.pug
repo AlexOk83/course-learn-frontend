@@ -6,9 +6,25 @@ mixin index()
     .row
       .slider-objects
         each item in s1_list
+          +item-object(item)
+
+mixin item-object(item)
+  .item
+    .item__number= item.number
+    .item__text= item.title
+
+mixin project()
+  .container
+    .row
+      h2.project__title Проекты
+        a(href='#') все проекты
+      .slider-project
+        each item in s2_list
           +item-project(item)
 
 mixin item-project(item)
   .item
-    .item__number= item.number
-    .item__text= item.title
+    .item__image: img(src= 'assets/images/' + item.img)
+    .item__content
+      .title= item.title
+      .text= item.description

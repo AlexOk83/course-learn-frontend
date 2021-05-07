@@ -8,7 +8,7 @@ mixin header()
         </svg>
       nav.header__menu
         each item in menuHome
-          li.item: a(href= item.url)= item.title
+          li.item(data-link= item.url): a(href= '#' + item.url)= item.title
       .header__right-content
         +region()
         .header__person: .icon-user
