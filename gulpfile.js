@@ -13,7 +13,8 @@ const paths = {
     dest: './build/assets/styles/'
   },
   scripts: {
-    src: './build/assets/js/*.js',
+    src: 'src/js/*.js',
+    dest: './build/assets/js/',
   },
   pug: {
     src: 'src/pug/*.pug',
@@ -54,6 +55,8 @@ gulp.task('less', function (done) {
 
 gulp.task('js', function (done) {
   gulp.src(paths.scripts.src)
+      .pipe(concat('main.js'))
+      .pipe(gulp.dest(paths.scripts.dest))
       .pipe(browserSync.reload({stream: true}));
   done();
 })
