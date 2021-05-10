@@ -28,3 +28,22 @@ mixin item-project(item)
     .item__content
       .title= item.title
       .text= item.description
+
+mixin tarifs()
+  .container
+    .row
+      h2.tarif__title Тарифы
+        a(href='#') подробнее
+      .slider-tarifs
+        each item in s3_list
+          +item-tarif(item)
+
+mixin item-tarif(item)
+  .item
+    .item__content(class= 'item__content--'+ item.icon)
+      .item__title= item.title
+      .item__text= item.description
+      .item__price
+        span.value= item.price
+        span.postfix / месяц
+      +button({ text: 'попробовать' })

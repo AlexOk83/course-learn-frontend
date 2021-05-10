@@ -3,17 +3,22 @@
 @import "lib/grid";
 
 .btn {
-  width: 259px;
-  height: 58px;
-  border-radius: 25px;
+  width: 100%;
+  max-width: 175px;
+  height: 40px;
+  margin: auto;
+  .bg('svg/border-gradient.svg', 175px 40px);
   text-align: center;
-  line-height: 58px;
+  line-height: 38px;
   cursor: pointer;
-  font-size: 16px;
-  letter-spacing: -0.4px;
+  font-size: 14px;
+  font-weight: bold;
   transition: @transition;
   &:hover {
-
+    color: @text-accent;
+  }
+  &:active {
+    transform: scale(0.97);
   }
 }
 

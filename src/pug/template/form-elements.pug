@@ -13,7 +13,10 @@ mixin field(params)
             .eye
 
 mixin button(params)
-    button.form-btn(disabled= params.disabled)= params.text
+    .btn(disabled= params.disabled)= params.text
+
+mixin form-button(params)
+    button.form-btn(disabled= params.disabled, type='submit')= params.text
 
 mixin check(params)
     .form-checkbox

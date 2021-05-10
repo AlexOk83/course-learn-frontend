@@ -198,5 +198,25 @@ jQuery(document).ready(function () {
             }
         }
     })
+    $('.slider-tarifs').owlCarousel({
+        loop:false,
+        responsiveClass:true,
+        navText: [],
+        navigation: true,
+        responsive:{
+            400:{
+                items:1,
+                nav:true
+            },
+            768:{
+                items:2,
+                nav:true
+            },
+            1024:{
+                items:3,
+                nav:true
+            }
+        }
+    })
 
 });
