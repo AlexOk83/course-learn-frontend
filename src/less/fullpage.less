@@ -89,9 +89,9 @@ html.fp-enabled,
   transition: none !important;
 }
 #fp-nav {
-  position: fixed;
-  z-index: 5;
+  position: absolute;
   width: 100%;
+  z-index: 5;
   top: 50%;
   opacity: 1;
   transform: translateY(-50%);
@@ -99,6 +99,9 @@ html.fp-enabled,
   -webkit-transform: translate3d(0,-50%,0);
   .hide_device();
   ul.container {
+    height: 0;
+    display: flex;
+    flex-direction: column;
     &:before {
       content: '';
       display: block;
@@ -109,19 +112,19 @@ html.fp-enabled,
       height: 172px;
       background-color: @redBlock;
     }
+    li {
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
   }
   &.fp-left {
     ul.container {
-      display: flex;
       justify-content: flex-start;
-      flex-direction: column;
     }
   }
   &.fp-right {
     ul.container {
-      display: flex;
       justify-content: flex-end;
-      flex-direction: column;
     }
   }
 }
@@ -162,7 +165,7 @@ html.fp-enabled,
 .fp-slidesNav ul li a {
   display: block;
   position: relative;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
   height: 100%;
   cursor: pointer;

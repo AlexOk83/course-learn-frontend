@@ -1,0 +1,31 @@
+mixin field(params)
+    .form-field
+        if (params.placeholder && params.required)
+            .placeholder= params.placeholder
+        if (params.type === 'textArea')
+            textarea(placeholder= params.placeholder, required= params.required, name= params.name)
+        else if (params.type === 'file')
+            input(type= params.type, id= params.id, required= params.required, name= params.name)
+            label(for= params.id)= params.placeholder
+        else
+            input(type= params.type, placeholder= params.placeholder, required= params.required, name= params.name)
+        if (params.type === 'password')
+            .eye
+
+mixin button(params)
+    button.form-btn(disabled= params.disabled)= params.text
+
+mixin check(params)
+    .form-checkbox
+        input(type='checkbox', id= params.id, name= params.name)
+        label(for= params.id)= params.text
+
+mixin check1()
+    .form-checkbox
+        input(type='checkbox', id='check', name='check')
+        label(for='check') Даю согласие на обработку персональных данных
+
+mixin check2()
+    .form-checkbox
+        input(type='checkbox', id='check2', name='check2')
+        label(for='check2') Даю согласие на отправку уведомлений по почте и смс

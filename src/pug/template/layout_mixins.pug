@@ -1,3 +1,5 @@
+include form-elements
+
 mixin header()
   .header.header--fixed
     .container.wrapper
@@ -24,7 +26,39 @@ mixin home-footer()
         .social__item: .icon-viber
         .social__item: .icon-telegram
 
-mixin modals()
-  .modal
-    .modal.close
-    nav.tabs
+mixin modal()
+  .modal.active#sign
+    .close-btn
+    +tabs()
+
+mixin tabs()
+  .tabs__header
+    ul.tabs__list
+      li.tabs__item.active(data-tab='in') Вход
+      li.tabs__item(data-tab='up') Регистрация
+  .tabs__body.active#in
+    +signIn()
+  .tabs__body#up
+    +signUp()
+
+mixin signIn()
+  form#signIn
+    +field({placeholder: 'Имя пользователя или телефон', required: true, type: 'text'})
+    +field({placeholder: 'Пароль', required: true, type: 'password'})
+    a.modal__link(href='#restore') Забыли пароль?
+    +button({text: 'Войти'})
+
+mixin signUp()
+  form#signUp
+    +field({name: 'first-name', placeholder: 'ФИО', required: true, type: 'text'})
+    +field({name: 'login', placeholder: 'Имя пользователя', required: true, type: 'text'})
+    +field({name: 'organisation', placeholder: 'Организация', required: true, type: 'text'})
+    +field({name: 'phone', placeholder: 'Телефон', required: true, type: 'text'})
+    +field({name: 'email', placeholder: 'email', required: true, type: 'email'})
+    +field({name: 'password', placeholder: 'пароль', required: true, type: 'password'})
+    +field({name: 'password2', placeholder: 'повторите пароль', required: true, type: 'password'})
+    +check1()
+    +check2()
+    +button({text: 'Зарегистрироваться'})
+
+

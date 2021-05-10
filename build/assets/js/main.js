@@ -87,6 +87,72 @@ jQuery(document).ready(function () {
         });
 
     });
+
+    $('.form-field').each(function() {
+        var $this = $(this);
+        var inp = $('input', $this);
+        var eye = $('.eye', $this);
+        var check = function() {
+            if (inp.val().length > 0) {
+                $this.addClass('filled');
+            } else {
+                $this.removeClass('filled')
+                inp.mask(null);
+            }
+        }
+
+        eye.mousedown(function() {
+            inp.attr('type', 'text')
+        });
+
+        eye.mouseup(function () {
+            inp.attr('type', 'password')
+        })
+
+        inp.keyup(function() {
+            check();
+        })
+    });
+
+    $('.tabs__item').each(function() {
+        var $this = $(this);
+        var body = $this.attr('data-tab');
+        $this.click(function() {
+            if ($this.hasClass('active')) {
+                return false;
+            }
+
+            $('.tabs__body').removeClass('active');
+            $(`#${body}`).addClass('active');
+            $('.tabs__item').removeClass('active');
+            $this.addClass('active');
+        });
+    })
+
+    $('.modal').each(function () {
+        var $this = $(this);
+        var close = $('.close-btn', $this);
+
+        close.click(function() {
+            $this.addClass('inactive');
+            setTimeout(() => {
+                $this.removeClass('active inactive');
+            }, 200);
+
+        });
+    });
+
+    $('.header__person').click(function() {
+        $('#sign').addClass('active');
+    });
+
+    $('.pdf_instruction').click(function() {
+        $('#instruction').addClass('active');
+    });
+
+    $('.toggle-menu-btn').click(function() {
+        $('#menu').addClass('active');
+    });
 });
 jQuery(document).ready(function () {
 

@@ -27,9 +27,71 @@
         </div>
       </div>
     </div>
-    <div class="modal">
-      <div class="modal close"></div>
-      <nav class="tabs"></nav>
+    <div class="modal active" id="sign">
+      <div class="close-btn"></div>
+      <div class="tabs__header">
+        <ul class="tabs__list">
+          <li class="tabs__item active" data-tab="in">Вход</li>
+          <li class="tabs__item" data-tab="up">Регистрация</li>
+        </ul>
+      </div>
+      <div class="tabs__body active" id="in">
+        <form id="signIn">
+          <div class="form-field">
+            <div class="placeholder">Имя пользователя или телефон</div>
+            <input type="text" placeholder="Имя пользователя или телефон" required>
+          </div>
+          <div class="form-field">
+            <div class="placeholder">Пароль</div>
+            <input type="password" placeholder="Пароль" required>
+            <div class="eye"></div>
+          </div><a class="modal__link" href="#restore">Забыли пароль?</a>
+          <button class="form-btn">Войти</button>
+        </form>
+      </div>
+      <div class="tabs__body" id="up">
+        <form id="signUp">
+          <div class="form-field">
+            <div class="placeholder">ФИО</div>
+            <input type="text" placeholder="ФИО" required name="first-name">
+          </div>
+          <div class="form-field">
+            <div class="placeholder">Имя пользователя</div>
+            <input type="text" placeholder="Имя пользователя" required name="login">
+          </div>
+          <div class="form-field">
+            <div class="placeholder">Организация</div>
+            <input type="text" placeholder="Организация" required name="organisation">
+          </div>
+          <div class="form-field">
+            <div class="placeholder">Телефон</div>
+            <input type="text" placeholder="Телефон" required name="phone">
+          </div>
+          <div class="form-field">
+            <div class="placeholder">email</div>
+            <input type="email" placeholder="email" required name="email">
+          </div>
+          <div class="form-field">
+            <div class="placeholder">пароль</div>
+            <input type="password" placeholder="пароль" required name="password">
+            <div class="eye"></div>
+          </div>
+          <div class="form-field">
+            <div class="placeholder">повторите пароль</div>
+            <input type="password" placeholder="повторите пароль" required name="password2">
+            <div class="eye"></div>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="check" name="check">
+            <label for="check">Даю согласие на обработку персональных данных</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="check2" name="check2">
+            <label for="check2">Даю согласие на отправку уведомлений по почте и смс</label>
+          </div>
+          <button class="form-btn">Зарегистрироваться</button>
+        </form>
+      </div>
     </div>
     <div class="index-slide"></div>
     <main id="home">
@@ -48,6 +110,14 @@
               </div>
               <div class="item">
                 <div class="item__number">03</div>
+                <div class="item__text">Название объекта в несколько строк</div>
+              </div>
+              <div class="item">
+                <div class="item__number">04</div>
+                <div class="item__text">Название объекта в несколько строк</div>
+              </div>
+              <div class="item">
+                <div class="item__number">05</div>
                 <div class="item__text">Название объекта в несколько строк</div>
               </div>
             </div>
