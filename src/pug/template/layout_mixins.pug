@@ -44,9 +44,9 @@ mixin tabs()
 mixin signIn()
   form#signIn
     +field({placeholder: 'Имя пользователя или телефон', required: true, type: 'text'})
-    +field({placeholder: 'Пароль', required: true, type: 'password'})
+    +field({placeholder: 'Пароль', required: true, type: 'password', last: true })
     a.modal__link(href='#restore') Забыли пароль?
-    +button({text: 'Войти'})
+    +form-button({text: 'Войти'})
 
 mixin signUp()
   form#signUp
@@ -59,6 +59,6 @@ mixin signUp()
     +field({name: 'password2', placeholder: 'повторите пароль', required: true, type: 'password'})
     +check1()
     +check2()
-    +button({text: 'Зарегистрироваться'})
+    +form-button({text: 'Зарегистрироваться'})
 
 

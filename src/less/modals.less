@@ -13,7 +13,10 @@
   max-width: 590px;
   height: 100vh;
   padding: 50px 120px;
-
+  overflow-y: auto;
+  .media_mobile({
+    padding: 20px;
+  });
 
   &.active {
     right: 0;
@@ -22,9 +25,10 @@
   &__link {
     width: 100%;
     text-align: right;
-    color: @redMine;
+    color: @text-light;
     display: block;
-    margin-bottom: 35px;
+    margin-top: 11px;
+    margin-bottom: 18px;
     text-decoration: none;
     .font();
     &:hover {

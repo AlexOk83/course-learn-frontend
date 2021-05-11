@@ -1,5 +1,5 @@
 mixin field(params)
-    .form-field
+    .form-field(class={'form-field--last': params.last})
         if (params.placeholder && params.required)
             .placeholder= params.placeholder
         if (params.type === 'textArea')
@@ -16,7 +16,7 @@ mixin button(params)
     .btn(disabled= params.disabled)= params.text
 
 mixin form-button(params)
-    button.form-btn(disabled= params.disabled, type='submit')= params.text
+    button.form-btn(disabled= params.disabled, type='submit'): span= params.text
 
 mixin check(params)
     .form-checkbox
