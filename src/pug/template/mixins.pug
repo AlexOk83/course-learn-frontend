@@ -21,7 +21,6 @@ mixin project()
       .slider-project
         each item in s2_list
           +item-project(item)
-
 mixin item-project(item)
   .item
     .item__image: img(src= 'assets/images/' + item.img)
@@ -37,7 +36,6 @@ mixin tarifs()
       .slider-tarifs
         each item in s3_list
           +item-tarif(item)
-
 mixin item-tarif(item)
   .item
     .item__content(class= 'item__content--'+ item.icon)
@@ -47,3 +45,18 @@ mixin item-tarif(item)
         span.value= item.price
         span.postfix / месяц
       +button({ text: 'попробовать' })
+
+mixin instruction()
+  .container
+    .instruction
+      .instruction__body
+        .instruction__title Инструкция
+        .instruction__sub-title Подзаголовок
+        .instruction__list
+          each item in s4_list
+            .instruction__list-item
+              .number= item.number
+              .text= item.text
+
+mixin contacts()
+  .container
