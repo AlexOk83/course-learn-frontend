@@ -182,7 +182,7 @@
   }
 }
 
-.column(@count_desktop: 12, @count_tablet: 12, @count_mobile: 12, @count_extra_mobile: 12, @width) {
+.column(@count_desktop: 12, @count_tablet: 12, @count_mobile: 12, @count_extra_mobile: 12, @width: @width_column) {
   display: block;
   float: left;
   .clearfix();
@@ -191,6 +191,4 @@
   .width_tablet(@count_tablet, @width);
   .width_mobile(@count_mobile, @width);
   .width_extra_mobile(@count_extra_mobile, @width);
-  padding-left: @padding24;
-  padding-right: @padding24;
 }

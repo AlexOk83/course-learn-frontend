@@ -13,11 +13,19 @@ jQuery(document).ready(function () {
             console.log(origin, destination, direction);
             $('.header__menu .item').removeClass('active');
             $(`[data-link="${destination.anchor}"]`).addClass('active');
+
             if (destination.anchor === 'projects') {
                 $('.header').addClass('header--white-bg')
             } else {
                 $('.header').removeClass('header--white-bg');
             }
+
+            if (destination.anchor === 'contacts') {
+                $('.back-top').removeClass('back-top--scroll')
+            } else {
+                $('.back-top').addClass('back-top--scroll')
+            }
+
         },
     });
 

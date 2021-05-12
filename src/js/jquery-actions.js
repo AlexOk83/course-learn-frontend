@@ -126,4 +126,11 @@ jQuery(document).ready(function () {
     $('.toggle-menu-btn').click(function() {
         $('#menu').addClass('active');
     });
+
+    $('.back-top').click(function() {
+        if ($(this).hasClass('back-top--scroll')) {
+            return;
+        }
+        window.fullpage_api.moveTo('index');
+    });
 });

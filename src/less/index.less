@@ -331,3 +331,105 @@
   }
 
 }
+
+.contacts {
+  .column(19,24,24,24, @width_column24);
+  .left_desktop(4, @width_column24);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  &__title {
+    .title();
+    width: 100%;
+    margin-bottom: 49px;
+  }
+  &__phone {
+    padding-left: 58px;
+    padding-right: @padding24;
+    position: relative;
+    .font(22px, 27px, 700);
+    .column(4,6,12);
+    margin-bottom: 20px;
+    &:before {
+      content: '';
+      width: 27px;
+      height: 27px;
+      .bg('svg/phone.svg');
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__email {
+    padding-left: 58px;
+    position: relative;
+    .font(20px, 27px, 700);
+    .column(4,6,12);
+    margin-bottom: 20px;
+    &:before {
+      content: '';
+      width: 27px;
+      height: 27px;
+      .bg('svg/message.svg');
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__adress {
+    padding-left: 58px;
+    position: relative;
+    .font(22px, 27px, 700);
+    .column(4,12,12);
+    margin-bottom: 20px;
+    &:before {
+      content: '';
+      width: 27px;
+      height: 27px;
+      .bg('svg/marker_white.svg');
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__block {
+    .column(4,6,12);
+    margin-top: 36px;
+    margin-bottom: 20px;
+    padding-right: @padding24;
+    .media_mobile({
+      margin-top: 0;
+    })
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+}
+
+.back-top {
+  position: absolute;
+  width: 32px;
+  z-index: 10;
+  height: 32px;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -16px;
+  cursor: pointer;
+  text-align: center;
+  &--scroll {
+    .bg('svg/scroll.svg');
+    &:before {
+      display: none;
+    }
+  }
+  &:before {
+    content: @icon-arrow-top;
+    font-family: @icomoon-font-family;
+    .font(32px, 32px);
+    color: white;
+  }
+}
