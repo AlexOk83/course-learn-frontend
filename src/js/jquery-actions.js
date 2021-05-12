@@ -129,6 +129,7 @@ jQuery(document).ready(function () {
 
     $('.back-top').click(function() {
         if ($(this).hasClass('back-top--scroll')) {
+            window.fullpage_api.moveSectionDown();
             return;
         }
         window.fullpage_api.moveTo('index');

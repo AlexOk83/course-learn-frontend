@@ -29,7 +29,7 @@ jQuery(document).ready(function () {
         navigation: true,
         responsive:{
             0:{
-                items:1,
+                items:2,
                 nav:true
             },
             767:{
@@ -48,7 +48,7 @@ jQuery(document).ready(function () {
         navText: [],
         navigation: true,
         responsive:{
-            400:{
+            0:{
                 items:1,
                 nav:true
             },
