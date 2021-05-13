@@ -119,7 +119,7 @@
     width: 50%;
     height: 100%;
     top: 0;
-    right: calc(100% - 40px);
+    right: 100%;
     z-index: 20;
     .media_device({
       display: none;
@@ -335,14 +335,14 @@
   }
   &__list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     max-height: 45vh;
     .scrollbars(5px, @text-accent);
     .media_device({
       max-height: 55vh;
-      overflow-x: hidden;
-      overflow-y: auto;
+      overflow-y: hidden;
+      overflow-x: auto;
       flex-direction: row;
     });
 
@@ -354,7 +354,10 @@
       margin-bottom: 20px;
 
       .media_device({
-        width: 100%;
+        width: 50%;
+        margin-right: 20px;
+        flex-grow: 1;
+        flex-shrink: 0;
       });
       .number {
         position: absolute;

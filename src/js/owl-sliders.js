@@ -36,7 +36,7 @@ jQuery(document).ready(function () {
                 items:2,
                 nav:true
             },
-            1200:{
+            1024:{
                 items:3,
                 nav:true
             }
