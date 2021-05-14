@@ -1,11 +1,13 @@
-import gulp from 'gulp';
-import less from 'gulp-less';
-import pug from 'gulp-pug'
-import browserSync from 'browser-sync';
-import autoPrefix from 'gulp-autoprefixer';
-import cleanCSS from 'gulp-clean-css';
-import concat from 'gulp-concat';
-import plumber from 'gulp-plumber';
+'use strict';
+
+var gulp = require('gulp'),
+    less = require('gulp-less'),
+    pug = require('gulp-pug'),
+    browserSync = require('browser-sync'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cleanCSS = require('gulp-clean-css'),
+    concat = require('gulp-concat'),
+    plumber = require('gulp-plumber');
 
 const paths = {
   styles: {
@@ -42,7 +44,7 @@ gulp.task('less', function (done) {
       .pipe(less())
       .pipe(plumber())
       .pipe(cleanCSS())
-      .pipe(autoPrefix({
+      .pipe(autoprefixer({
         browsers: ['last 4 versions'],
         cascade: false
       }))
