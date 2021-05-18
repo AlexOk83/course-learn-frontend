@@ -7,6 +7,11 @@ mixin field(params)
         else if (params.type === 'file')
             input(type= params.type, id= params.id, required= params.required, name= params.name)
             label(for= params.id)= params.placeholder
+        else if (params.type === 'select')
+            select(name= params.name)
+                option(disabled='true')= params.placeholder
+                each val in params.list
+                    option(value= val.id)= val.value
         else
             input(type= params.type, placeholder= params.placeholder, required= params.required, name= params.name)
         if (params.type === 'password')

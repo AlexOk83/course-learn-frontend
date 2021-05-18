@@ -1,8 +1,6 @@
 doctype
-include variable
-include layout_mixins
-include mixins
-
+include index_vars
+include index_mixins
 
 html(lang="ru")
 	head
@@ -14,13 +12,10 @@ html(lang="ru")
 		link(rel="styleSheet", media="all", type="text/css", href="assets/styles/styles.min.css?v=1.2")
 
 	body
-		block vars
-		.container
-			.row
-				.left-menu
-				.pa-content
-					block content
+		block content
+
 		script(src='assets/js/jquery.js')
 		script(src='assets/js/plugins/owl.carousel-min.js')
-		script(src='assets/js/personal.js')
+		script(src='assets/js/plugins/fullpage.js')
+		script(src='assets/js/main.js')
 

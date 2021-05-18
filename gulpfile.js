@@ -15,7 +15,8 @@ const paths = {
     dest: './build/assets/styles/'
   },
   scripts: {
-    src: 'src/js/*.js',
+    src_home: 'src/js/home/*.js',
+    src_personal: 'src/js/personal/*.js',
     dest: './build/assets/js/',
   },
   pug: {
@@ -56,8 +57,15 @@ gulp.task('less', function (done) {
 })
 
 gulp.task('js', function (done) {
-  gulp.src(paths.scripts.src)
+  gulp.src(paths.scripts.src_home)
       .pipe(concat('main.js'))
+      .pipe(gulp.dest(paths.scripts.dest))
+      .pipe(browserSync.reload({stream: true}));
+  done();
+})
+gulp.task('js2', function (done) {
+  gulp.src(paths.scripts.src_personal)
+      .pipe(concat('personal.js'))
       .pipe(gulp.dest(paths.scripts.dest))
       .pipe(browserSync.reload({stream: true}));
   done();
@@ -76,9 +84,10 @@ gulp.task('pug', function (done) {
   done();
 });
 
-gulp.task('watch', gulp.series('less', 'js', 'pug', 'browser-sync', function(done) {
+gulp.task('watch', gulp.series('less', 'js', 'js2', 'pug', 'browser-sync', function(done) {
   gulp.watch('src/less/**/*.less', gulp.series('less'));
-  gulp.watch(paths.scripts.src, gulp.series('js'));
+  gulp.watch(paths.scripts.src_home, gulp.series('js'));
+  gulp.watch(paths.scripts.src_personal, gulp.series('js2'));
   gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
 
   done()

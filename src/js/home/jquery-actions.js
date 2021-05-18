@@ -2,41 +2,6 @@ jQuery(document).ready(function () {
 
     var $ = jQuery, $doc = $(document), $win = $(window);
 
-    $('#home').fullpage({
-        //options here
-        scrollHorizontally: true,
-        //Navigation
-        anchors:['index', 'projects', 'tarifs', 'insruction', 'contacts'],
-        navigation: true,
-        navigationPosition: 'left',
-        onLeave: function(origin, destination, direction){
-            console.log(origin, destination, direction);
-            $('.home-header__menu .item').removeClass('active');
-            $(`[data-link="${destination.anchor}"]`).addClass('active');
-
-            if (destination.anchor === 'projects') {
-                $('.home-header').addClass('home-header--white-bg')
-            } else {
-                $('.home-header').removeClass('home-header--white-bg');
-            }
-
-            if (destination.anchor === 'contacts') {
-                $('.back-top').removeClass('back-top--scroll')
-            } else {
-                $('.back-top').addClass('back-top--scroll')
-            }
-
-        },
-    });
-
-    //methods
-    $.fn.fullpage.setAllowScrolling(true);
-
-});
-jQuery(document).ready(function () {
-
-    var $ = jQuery, $doc = $(document), $win = $(window);
-
     $('.form-field').each(function() {
         var $this = $(this);
         var inp = $('input', $this);
@@ -195,70 +160,4 @@ jQuery(document).ready(function () {
         });
 
     });
-});
-jQuery(document).ready(function () {
-
-    var $ = jQuery, $doc = $(document), $win = $(window);
-
-    $('.slider-objects').owlCarousel({
-        loop:false,
-        responsiveClass:true,
-        navText: [],
-        navigation: true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            767:{
-                items:2,
-                nav:true
-            },
-            1200:{
-                items:3,
-                nav:true
-            }
-        }
-    })
-    $('.slider-project').owlCarousel({
-        loop:false,
-        responsiveClass:true,
-        navText: [],
-        navigation: true,
-        responsive:{
-            0:{
-                items:2,
-                nav:true
-            },
-            767:{
-                items:2,
-                nav:true
-            },
-            1024:{
-                items:3,
-                nav:true
-            }
-        }
-    })
-    $('.slider-tarifs').owlCarousel({
-        loop:false,
-        responsiveClass:true,
-        navText: [],
-        navigation: true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            768:{
-                items:2,
-                nav:true
-            },
-            1024:{
-                items:3,
-                nav:true
-            }
-        }
-    })
-
 });

@@ -1,11 +1,12 @@
-extends template/layout
+extends template/index/index_layout
 
 block content
-  +header()
+  +home-header()
+  +popup()
   +modal()
   .index-slide
   main#home
-    .section.home.home--index: +index()
+    .section.home.home--index: +home-index()
     .section.home.home--projects: +project()
     .section.home.home--tarifs: +tarifs()
     .section.home.home--insruction: +instruction()

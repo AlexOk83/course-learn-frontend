@@ -11,13 +11,13 @@ jQuery(document).ready(function () {
         navigationPosition: 'left',
         onLeave: function(origin, destination, direction){
             console.log(origin, destination, direction);
-            $('.header__menu .item').removeClass('active');
+            $('.home-header__menu .item').removeClass('active');
             $(`[data-link="${destination.anchor}"]`).addClass('active');
 
             if (destination.anchor === 'projects') {
-                $('.header').addClass('header--white-bg')
+                $('.home-header').addClass('home-header--white-bg')
             } else {
-                $('.header').removeClass('header--white-bg');
+                $('.home-header').removeClass('home-header--white-bg');
             }
 
             if (destination.anchor === 'contacts') {
