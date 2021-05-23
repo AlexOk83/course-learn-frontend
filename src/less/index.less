@@ -88,6 +88,7 @@
   }
   &__region {
     padding: 0 30px;
+    position: relative;
     .bg('svg/border-gradient.svg');
     height: 44px;
     line-height: 42px;
@@ -101,6 +102,19 @@
       .font(14px, 42px);
       padding: 0 15px;
     });
+    &.selected {
+      background: none;
+    }
+    &:before {
+      content: '';
+      .bg('svg/marker.svg');
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 16px;
+      height: 20px;
+    }
   }
   &__person {
     width: 20px;

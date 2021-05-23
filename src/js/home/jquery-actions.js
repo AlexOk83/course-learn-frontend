@@ -58,7 +58,6 @@ jQuery(document).ready(function () {
 
     $('.home-header__person').click(function() {
         $('#sign').addClass('active');
-        window.canScroll = false;
     });
 
     $('.home-header__region').click(function() {
@@ -68,13 +67,11 @@ jQuery(document).ready(function () {
         }, 0)
     });
 
-    const functionHide = function(e) {
-        e.stopPropagation();
+    function functionHide () {
         $('.popup').removeClass('active');
-        setTimeout(() => {
+        setTimeout(function() {
             $('.popup__overlay').removeClass('visible');
-
-        }, 300)
+        }, 0)
     }
 
     $('.popup .close-btn').click(functionHide);
@@ -152,6 +149,42 @@ jQuery(document).ready(function () {
             if ($(e.target).closest(".form-select").length) return;
             container.removeClass('active');
         });
+
+    });
+
+    $('.popup').each(function() {
+        const container = $(this),
+            searchP = $('.popup__search input', container),
+            select = $('.home-header__region'),
+            list = $('.popup__list', container);
+
+        searchP.on('keyup', function(e) {
+            console.log(e.target.value);
+            const value = e.target.value.toString();
+            if (value.length >= 2) {
+                $('.popup__item', list).each(function () {
+                    let text = $(this).text();
+                    if (text.toLowerCase().search(value.toLowerCase()) > -1) {
+                        $(this).show(200);
+                    } else {
+                        $(this).hide(200);
+                    }
+                })
+            } else {
+                $('.popup__item', list).show(200);
+            }
+        });
+
+        $('.popup__item', list).each(function() {
+            $(this).click(function() {
+                const value = $(this).attr('data-city');
+                select
+                    .text($(this).text())
+                    .attr('data-city', value)
+                    .addClass('selected');
+                functionHide();
+            })
+        })
 
     });
 });

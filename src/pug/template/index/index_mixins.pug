@@ -25,7 +25,7 @@ mixin home-footer()
     .back-top.back-top--scroll
 
 mixin modal()
-  .modal#sign.active
+  .modal#sign
     .close-btn
     .modal__title Costana
     +tabs()
@@ -33,11 +33,11 @@ mixin modal()
 mixin tabs()
   .tabs__header
     ul.tabs__list
-      li.tabs__item(data-tab='in') Вход
-      li.tabs__item.active(data-tab='up') Регистрация
-  .tabs__body#in
+      li.tabs__item.active(data-tab='in') Вход
+      li.tabs__item(data-tab='up') Регистрация
+  .tabs__body.active#in
     +signIn()
-  .tabs__body.active#up
+  .tabs__body#up
     +signUp()
 
 mixin signIn()
