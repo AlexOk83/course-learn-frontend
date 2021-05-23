@@ -7,15 +7,25 @@ mixin field(params)
         else if (params.type === 'file')
             input(type= params.type, id= params.id, required= params.required, name= params.name)
             label(for= params.id)= params.placeholder
-        else if (params.type === 'select')
-            select(name= params.name)
-                option(disabled='true')= params.placeholder
-                each val in params.list
-                    option(value= val.id)= val.value
         else
             input(type= params.type, placeholder= params.placeholder, required= params.required, name= params.name)
         if (params.type === 'password')
             .eye
+
+mixin select(params)
+    .form-select
+        select(name= params.name)
+            option= params.placeholder
+            each val in params.list
+                option(value= val.id)= val.value
+        .form-select__field= params.placeholder
+        .form-select__body
+            input.form-select__search(type='text')
+            .clear-btn
+            .form-select__list
+                - for(let i = 0; i < 20; i++)
+                    each item in params.list
+                        .form-select__item(data-val= item.id + i)= item.value + i
 
 mixin button(params)
     .btn(disabled= params.disabled)= params.text

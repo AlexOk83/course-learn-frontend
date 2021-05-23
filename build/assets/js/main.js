@@ -4,12 +4,36 @@ jQuery(document).ready(function () {
 
     $('#home').fullpage({
         //options here
-        scrollHorizontally: true,
+        scrollHorizontally: false,
         //Navigation
         anchors:['index', 'projects', 'tarifs', 'insruction', 'contacts'],
         navigation: true,
         navigationPosition: 'left',
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: true,
+        fitToSection: false,
+        fitToSectionDelay: 1000,
+        scrollBar: false,
+        continuousVertical: false,
+        continuousHorizontal: false,
+        interlockedSlides: false,
+        dragAndMove: true,
+        offsetSections: false,
+        resetSliders: false,
+        fadingEffect: false,
+        normalScrollElements: '#element1, .element2',
+        scrollOverflow: true,
+        scrollOverflowReset: false,
+        scrollOverflowOptions: null,
+        touchSensitivity: 15,
+        bigSectionsDestination: null,
         onLeave: function(origin, destination, direction){
+            // здеь добавлять
+            if ($('.modal').hasClass('active')) {
+                $(document).on('scroll');
+                return false;
+            }
             console.log(origin, destination, direction);
             $('.home-header__menu .item').removeClass('active');
             $(`[data-link="${destination.anchor}"]`).addClass('active');
@@ -30,7 +54,7 @@ jQuery(document).ready(function () {
     });
 
     //methods
-    $.fn.fullpage.setAllowScrolling(true);
+    // $.fn.fullpage.setAllowScrolling(true);
 
 });
 jQuery(document).ready(function () {
@@ -93,6 +117,7 @@ jQuery(document).ready(function () {
 
     $('.home-header__person').click(function() {
         $('#sign').addClass('active');
+        window.canScroll = false;
     });
 
     $('.home-header__region').click(function() {
@@ -129,69 +154,62 @@ jQuery(document).ready(function () {
         window.fullpage_api.moveTo('index');
     });
 
-    $('select').each(function () {
-        var $this = $(this),
-            $parent = $(this).parent(),
-            numberOfOptions = $this.children('option').length;
+    $('.form-select').each(function() {
+        const container = $(this),
+            select = $('select', container),
+            field = $('.form-select__field', container),
+            search = $('.form-select__search', container),
+            clear = $('.clear-btn', container),
+            list = $('.form-select__list', container);
+        console.log(select);
 
-
-        if ($this.val()) {
-            $parent.addClass('filled')
-        }
-        $this.addClass('select-hidden');
-        $this.wrap('<div class="select"></div>');
-        $this.after('<div class="select-styled"></div>');
-
-        var $styledSelect = $this.next('div.select-styled');
-        $styledSelect.text($this.children('option').eq(0).text());
-
-        if ($this.prop('disabled')) {
-            $styledSelect.addClass('disabled');
-            $('.select').addClass('disabled');
-        }
-
-        var $list = $('<ul />', {
-            'class': 'select-options'
-        }).insertAfter($styledSelect);
-
-        for (var i = 0; i < numberOfOptions; i++) {
-            var li = $('<li />', {
-                text: $this.children('option').eq(i).text(),
-                rel: $this.children('option').eq(i).val(),
-                disabled: $this.children('option').eq(i).attr('disabled')
-            }).appendTo($list);
-            if (($this.val() === 0 && i === 0) || $this.val() === $this.children('option').eq(i).val()) {
-                li.addClass('selected');
-                $styledSelect.text($this.children('option').eq(i).text());
-            }
-
-        }
-
-        var $listItems = $list.children('li');
-
-        $styledSelect.click(function (e) {
-            e.stopPropagation();
-            $('.select-styled').removeClass('active').next('ul.select-options').hide();
-            $(this).toggleClass('active').next('ul.select-options').toggle();
+        search.on('keyup', function(e) {
+           console.log(e.target.value);
+           const value = e.target.value.toString();
+           if (value.length >= 2) {
+               $('.form-select__item', list).each(function () {
+                    let text = $(this).text();
+                    console.log(text.toLowerCase().search(value.toLowerCase()));
+                    if (text.toLowerCase().search(value.toLowerCase()) > -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+               })
+           } else {
+               $('.form-select__item', list).show();
+           }
         });
 
-        $listItems.click(function (e) {
+        clear.click(function() {
+            search.val('');
+            search.focus();
+            $('.form-select__item', list).show();
+        })
+
+
+        field.click(function(e) {
             e.stopPropagation();
-            if ($(this).attr('disabled')) {
-                return;
-            }
-            $styledSelect.text($(this).text()).removeClass('active');
-            $this.val($(this).attr('rel'));
-            $listItems.removeClass('selected');
-            $(this).addClass('selected');
-            $list.hide();
-            $parent.addClass('filled')
-            //console.log($this.val());
+            container.addClass('active');
+            setTimeout(function() {
+                search.focus();
+            }, 100);
         });
 
-        $(document).click(function () {
-            $styledSelect.removeClass('active');
-            $list.hide();
+        $('.form-select__item', list).each(function() {
+            $(this).click(function() {
+                const value = $(this).attr('data-val');
+                select.val(value);
+                field.text($(this).text());
+                container.removeClass('active');
+            })
+        })
+
+
+
+        $(document).click(function (e) {
+            if ($(e.target).closest(".form-select").length) return;
+            container.removeClass('active');
         });
 
     });

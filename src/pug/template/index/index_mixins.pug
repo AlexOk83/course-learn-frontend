@@ -25,7 +25,7 @@ mixin home-footer()
     .back-top.back-top--scroll
 
 mixin modal()
-  .modal#sign
+  .modal#sign.active
     .close-btn
     .modal__title Costana
     +tabs()
@@ -33,11 +33,11 @@ mixin modal()
 mixin tabs()
   .tabs__header
     ul.tabs__list
-      li.tabs__item.active(data-tab='in') Вход
-      li.tabs__item(data-tab='up') Регистрация
-  .tabs__body.active#in
+      li.tabs__item(data-tab='in') Вход
+      li.tabs__item.active(data-tab='up') Регистрация
+  .tabs__body#in
     +signIn()
-  .tabs__body#up
+  .tabs__body.active#up
     +signUp()
 
 mixin signIn()
@@ -51,7 +51,7 @@ mixin signUp()
   form#signUp
     +field({name: 'first-name', placeholder: 'ФИО', required: true, type: 'text'})
     +field({name: 'login', placeholder: 'Имя пользователя', required: true, type: 'text'})
-    +field({name: 'organisation', placeholder: 'Организация', required: true, type: 'select', list: list_org})
+    +select({name: 'organisation', placeholder: 'Организация', list: list_org})
     +field({name: 'phone', placeholder: 'Телефон', required: true, type: 'text'})
     +field({name: 'email', placeholder: 'email', required: true, type: 'email'})
     +field({name: 'password', placeholder: 'пароль', required: true, type: 'password'})

@@ -70,16 +70,16 @@
         </div>
       </div>
     </div>
-    <div class="modal" id="sign">
+    <div class="modal active" id="sign">
       <div class="close-btn"></div>
       <div class="modal__title">Costana</div>
       <div class="tabs__header">
         <ul class="tabs__list">
-          <li class="tabs__item active" data-tab="in">Вход</li>
-          <li class="tabs__item" data-tab="up">Регистрация</li>
+          <li class="tabs__item" data-tab="in">Вход</li>
+          <li class="tabs__item active" data-tab="up">Регистрация</li>
         </ul>
       </div>
-      <div class="tabs__body active" id="in">
+      <div class="tabs__body" id="in">
         <form id="signIn">
           <div class="form-field">
             <div class="placeholder">Имя пользователя или телефон</div>
@@ -93,7 +93,7 @@
           <button class="form-btn" type="submit"><span>Войти</span></button>
         </form>
       </div>
-      <div class="tabs__body" id="up">
+      <div class="tabs__body active" id="up">
         <form id="signUp">
           <div class="form-field">
             <div class="placeholder">ФИО</div>
@@ -103,14 +103,80 @@
             <div class="placeholder">Имя пользователя</div>
             <input type="text" placeholder="Имя пользователя" required name="login">
           </div>
-          <div class="form-field">
-            <div class="placeholder">Организация</div>
+          <div class="form-select">
             <select name="organisation">
-              <option disabled="true">Организация</option>
+              <option>Организация</option>
               <option value="1">Фирма №1</option>
               <option value="2">Фирма №2</option>
               <option value="3">Фирма №3</option>
             </select>
+            <div class="form-select__field">Организация</div>
+            <div class="form-select__body">
+              <input class="form-select__search" type="text">
+              <div class="clear-btn"></div>
+              <div class="form-select__list">
+                <div class="form-select__item" data-val="10">Фирма №10</div>
+                <div class="form-select__item" data-val="20">Фирма №20</div>
+                <div class="form-select__item" data-val="30">Фирма №30</div>
+                <div class="form-select__item" data-val="11">Фирма №11</div>
+                <div class="form-select__item" data-val="21">Фирма №21</div>
+                <div class="form-select__item" data-val="31">Фирма №31</div>
+                <div class="form-select__item" data-val="12">Фирма №12</div>
+                <div class="form-select__item" data-val="22">Фирма №22</div>
+                <div class="form-select__item" data-val="32">Фирма №32</div>
+                <div class="form-select__item" data-val="13">Фирма №13</div>
+                <div class="form-select__item" data-val="23">Фирма №23</div>
+                <div class="form-select__item" data-val="33">Фирма №33</div>
+                <div class="form-select__item" data-val="14">Фирма №14</div>
+                <div class="form-select__item" data-val="24">Фирма №24</div>
+                <div class="form-select__item" data-val="34">Фирма №34</div>
+                <div class="form-select__item" data-val="15">Фирма №15</div>
+                <div class="form-select__item" data-val="25">Фирма №25</div>
+                <div class="form-select__item" data-val="35">Фирма №35</div>
+                <div class="form-select__item" data-val="16">Фирма №16</div>
+                <div class="form-select__item" data-val="26">Фирма №26</div>
+                <div class="form-select__item" data-val="36">Фирма №36</div>
+                <div class="form-select__item" data-val="17">Фирма №17</div>
+                <div class="form-select__item" data-val="27">Фирма №27</div>
+                <div class="form-select__item" data-val="37">Фирма №37</div>
+                <div class="form-select__item" data-val="18">Фирма №18</div>
+                <div class="form-select__item" data-val="28">Фирма №28</div>
+                <div class="form-select__item" data-val="38">Фирма №38</div>
+                <div class="form-select__item" data-val="19">Фирма №19</div>
+                <div class="form-select__item" data-val="29">Фирма №29</div>
+                <div class="form-select__item" data-val="39">Фирма №39</div>
+                <div class="form-select__item" data-val="110">Фирма №110</div>
+                <div class="form-select__item" data-val="210">Фирма №210</div>
+                <div class="form-select__item" data-val="310">Фирма №310</div>
+                <div class="form-select__item" data-val="111">Фирма №111</div>
+                <div class="form-select__item" data-val="211">Фирма №211</div>
+                <div class="form-select__item" data-val="311">Фирма №311</div>
+                <div class="form-select__item" data-val="112">Фирма №112</div>
+                <div class="form-select__item" data-val="212">Фирма №212</div>
+                <div class="form-select__item" data-val="312">Фирма №312</div>
+                <div class="form-select__item" data-val="113">Фирма №113</div>
+                <div class="form-select__item" data-val="213">Фирма №213</div>
+                <div class="form-select__item" data-val="313">Фирма №313</div>
+                <div class="form-select__item" data-val="114">Фирма №114</div>
+                <div class="form-select__item" data-val="214">Фирма №214</div>
+                <div class="form-select__item" data-val="314">Фирма №314</div>
+                <div class="form-select__item" data-val="115">Фирма №115</div>
+                <div class="form-select__item" data-val="215">Фирма №215</div>
+                <div class="form-select__item" data-val="315">Фирма №315</div>
+                <div class="form-select__item" data-val="116">Фирма №116</div>
+                <div class="form-select__item" data-val="216">Фирма №216</div>
+                <div class="form-select__item" data-val="316">Фирма №316</div>
+                <div class="form-select__item" data-val="117">Фирма №117</div>
+                <div class="form-select__item" data-val="217">Фирма №217</div>
+                <div class="form-select__item" data-val="317">Фирма №317</div>
+                <div class="form-select__item" data-val="118">Фирма №118</div>
+                <div class="form-select__item" data-val="218">Фирма №218</div>
+                <div class="form-select__item" data-val="318">Фирма №318</div>
+                <div class="form-select__item" data-val="119">Фирма №119</div>
+                <div class="form-select__item" data-val="219">Фирма №219</div>
+                <div class="form-select__item" data-val="319">Фирма №319</div>
+              </div>
+            </div>
           </div>
           <div class="form-field">
             <div class="placeholder">Телефон</div>
