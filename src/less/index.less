@@ -104,17 +104,18 @@
     });
     &.selected {
       background: none;
+      &:before {
+        content: '';
+        .bg('svg/marker.svg');
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 16px;
+        height: 20px;
+      }
     }
-    &:before {
-      content: '';
-      .bg('svg/marker.svg');
-      display: block;
-      position: absolute;
-      top: 10px;
-      left: 0;
-      width: 16px;
-      height: 20px;
-    }
+
   }
   &__person {
     width: 20px;
@@ -257,6 +258,9 @@
         display: block;
         width: 100%;
         padding-bottom: 125%;
+        .media_max_height(750px, {
+          padding-bottom: 75%;
+        });
       }
       &:after {
         content: @icon-arrow-top-right;
@@ -285,10 +289,17 @@
         line-height: 26px;
         margin-bottom: 6px;
         .text_overflow();
+        .media_max_height(750px, {
+          font-size: 16px;
+          line-height: 20px;
+        });
       }
       .text {
         color: @text-accent;
-        .longText-overflow(3, 16px, 22px)
+        .longText-overflow(3, 16px, 22px);
+        .media_max_height(750px, {
+          .longText-overflow(3, 14px, 16px);
+        });
       }
     }
   }
