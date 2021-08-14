@@ -158,8 +158,8 @@ html, body {
   width: 100%;
   height: 100%;
   background-image: url("../images/brands/horizontal.svg");
-  background-position: left;
-  background-repeat: repeat-x;
+  background-position: center;
+  background-repeat: space no-repeat;
   background-size: 20% 38px;
 }
 .stub__brand--left, .stub__brand--right {
@@ -208,8 +208,55 @@ html, body {
   }
 }
 @media (max-width: 1280px) {
+  .stub__brand--top, .stub__brand--bottom {
+    height: 48px;
+    padding: 0 34px;
+  }
+  .stub__brand--top:before, .stub__brand--bottom:before {
+    background-size: 261px 29px;
+  }
+  .stub__brand--left, .stub__brand--right {
+    width: 48px;
+  }
   .stub__brand--left:before, .stub__brand--left:after, .stub__brand--right:before, .stub__brand--right:after {
-    background-size: 36px 326px;
+    background-size: 29px 261px;
+  }
+}
+@media (max-device-width: 768px) {
+  .stub__brand--top, .stub__brand--bottom {
+    height: 36px;
+  }
+  .stub__brand--top:before, .stub__brand--bottom:before {
+    background-size: 199px 22px;
+  }
+  .stub__brand--left, .stub__brand--right {
+    width: 36px;
+  }
+  .stub__brand--left:before, .stub__brand--left:after, .stub__brand--right:before, .stub__brand--right:after {
+    background-repeat: no-repeat space;
+    background-size: 22px 199px;
+  }
+}
+@media (max-device-width: 480px) {
+  .stub__brand--top, .stub__brand--bottom {
+    height: 53px;
+  }
+  .stub__brand--top:before, .stub__brand--bottom:before {
+    background-size: 329px 36px;
+  }
+  .stub__brand--bottom:before {
+    background-image: url("../images/brands/horizontal_bottom.svg");
+  }
+  .stub__brand--left, .stub__brand--right {
+    display: none;
+  }
+}
+@media (max-device-width: 360px) {
+  .stub__brand--top, .stub__brand--bottom {
+    height: 48px;
+  }
+  .stub__brand--top:before, .stub__brand--bottom:before {
+    background-size: contain;
   }
 }
 .stub__container {
