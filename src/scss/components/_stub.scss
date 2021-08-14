@@ -1,10 +1,13 @@
 @import "variables";
+@import "mixins";
+
 .stub {
-  $stub: &;
   position: relative;
+  display: flex;
   height: 100%;
   width: 100%;
 
+  // границы - готово!
   &__brand {
     position: absolute;
     z-index: 100;
@@ -122,7 +125,7 @@
       &--bottom:before { background-image: url($path_brand_h2); }
       &--left, &--right { display: none; }
     }
-    @media (max-device-width: $display_360) {
+    @media (max-device-width: $width_min) {
       &--top, &--bottom {
         height: $height_border_small;
         &:before {
@@ -132,318 +135,105 @@
 
     }
   }
-/*
-  &__top, &__bottom, &__left, &__right {
-    position: absolute;
-    display: flex;
-    background-color: $color_main;
-    overflow: hidden;
-  }
 
-  &__top, &__bottom {
-    left: 0;
-    width: 100%;
-    height: $padding_horizontal;
-    align-items: center;
-
-    @media (max-width: $xl) {
-      height: $padding_horizontal_xl;
-    }
-
-    @media (max-width: $md) {
-      height: $padding_horizontal_mobile;
-    }
-
-    #{$stub}__brand {
-      flex-grow: 1;
-      padding: 0 40px;
-      height: 58px;
-
-      &:before {
-        background-image: url($path_brand_h);
-        background-position: center;
-        background-size: contain;
-      }
-
-      @media (max-width: $xl) {
-        &:nth-child(1) {
-          display: none;
-        }
-      }
-
-      @media (max-width: $md) {
-        height: 38px;
-
-        &:nth-child(2) {
-          display: none;
-        }
-      }
-    }
-  }
-
-  &__left, &__right {
-    top: $padding_horizontal;
-    bottom: $padding_horizontal;
-    width: $padding_vertical;
-    flex-direction: column;
-    align-items: center;
-
-    @media (max-width: $xl) {
-      top: $padding_horizontal_xl;
-      bottom: $padding_horizontal_xl;
-      width: $padding_vertical_xl;
-    }
-
-    @media (max-width: $md) {
-      display: none;
-    }
-
-    #{$stub}__brand {
-      flex-grow: 1;
-      padding: 30px 0;
-      width: 58px;
-      min-height: 556px;
-
-      @media (max-width: $xl) {
-        width: 50px;
-        min-height: 480px;
-      }
-
-      &:first-child {
-        padding-top: 0;
-      }
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      &:before {
-        flex-grow: 1;
-        background-image: url($path_img + 'brands/vertical.png');
-        background-position: center;
-        background-size: contain;
-      }
-    }
-  }
-
-  &__top {
-    top: 0;
-  }
-
-  &__bottom {
-    bottom: 0;
-  }
-
-  &__left {
-    left: 0;
-  }
-
-  &__right {
-    right: 0;
-  }
-*/
+  // контейнер - готово!
   &__container {
     position: relative;
-    display: none;
-    width: 100%;
-    height: 100%;
+    display: block;
     z-index: 1;
-    background-image: url($path_img + 'bg.png');
-    background-repeat: repeat;
-    background-position: center;
     overflow: hidden;
-
-    @media (max-width: $xl) {
-      top: $padding_horizontal_xl;
-      bottom: $padding_horizontal_xl;
-      left: $padding_vertical_xl;
-      right: $padding_vertical_xl;
-    }
-
-    @media (max-width: $md) {
-      top: $padding_horizontal_mobile;
-      bottom: $padding_horizontal_mobile;
-      left: $padding_vertical_mobile;
-      right: $padding_vertical_mobile;
-    }
+    @include bg($path_img + 'bg.png', auto, repeat);
+    @include size(100%, 100%);
   }
 
+  // логотип - готово!
   &__logo {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 349px;
-    height: 365px;
-    margin: -173px 0 0 -171px;
-    background-image: url($path_img + 'logo.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    z-index: 300;
+    @include pos_center(348px, 365px);
+    @include bg($path_img + 'logo.svg');
 
-    @media (max-height: $height_xxl) {
-      width: 320px;
-      height: 320px;
-      margin: -160px 0 0 -170px;
-    }
-
-    @media (max-width: $xl) {
-      width: 220px;
-      height: 220px;
-      margin: -110px 0 0 -110px;
-    }
-
-    @media (max-width: $md) {
-      width: 190px;
-      height: 190px;
-      margin: -120px 0 0 -98px;
-    }
+    @media (max-width: $display_1440)         { @include pos_center(315px, 330px); }
+    @media (max-width: $display_1366)         { @include pos_center(315px, 330px); }
+    @media (max-width: $display_1280)         { @include pos_center(287px, 300px); }
+    @media (max-device-width: $display_1024)  { @include pos_center(292px, 305px); }
+    @media (max-device-width: $display_768)   { @include pos_center(374px, 390px); }
+    @media (max-device-width: $display_480)   { @include pos_center(199px, 209px); }
+    @media (max-device-width: $display_375)   { @include pos_center(161px, 169px); }
+    @media (max-device-width: $width_min)     { @include pos_center(132px, 139px); }
   }
 
   &__cat {
     $cat: &;
     position: absolute;
 
-    &-img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
-
     &-message {
       position: absolute;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
     }
 
+    // кошка №1 - готово!
     &--1 {
-      top: -42px;
-      left: -13px;
-      width: 504px;
-      height: 410px;
+      @include size_pos(451px, 350px, 60px, 47px);
+      @include bg($cat_top_left, 100% 100%, no-repeat, top left);
 
-      @media (max-height: $height_xxl) {
-        top: -60px;
-        left: -30px;
-        width: 504px;
-        height: 410px;
-      }
-
-      @media (max-width: $xl) {
-        top: -70px;
-        left: -30px;
-        width: 300px;
-        height: 300px;
-      }
-
-      @media (max-width: $md) {
-        top: -30px;
-        left: -60px;
-        width: 269px;
-        height: 220px;
-      }
-
-      #{$cat}-img {
-        background-image: url($path_img + 'cats/1.png');
-      }
+      @media (max-width: $display_1440)         { @include size_pos(424px, 329px, 52px, 38px); }
+      @media (max-width: $display_1366)         { @include size_pos(380px, 295px, 30px, 31px); }
+      @media (max-width: $display_1280)         { @include size_pos(344px, 267px, 38px, 31px); }
+      @media (max-device-width: $display_1024)  { @include size_pos(344px, 267px, 30px, 28px); }
+      @media (max-device-width: $display_768)   { @include size_pos(344px, 267px, 30px, -17px); }
+      @media (max-device-width: $display_480)   { @include size_pos(241px, 188px, 53px, -66px); }
+      @media (max-device-width: $display_375)   { @include size_pos(380px, 295px, 30px, 31px); }
+      @media (max-device-width: $width_min)     { @include size_pos(137px, 176px, 22px, -22px); }
 
       #{$cat}-message {
-        top: 67px;
-        left: 337px;
-        width: 501px;
-        height: 261px;
-        background-image: url($path_img + 'messages/1.svg');
+        @include size_pos(445px, 231px, 29px, 336px);
+        @include bg($path_img + 'messages/1.svg', 100% 100%, no-repeat, top center);
 
-        @media (max-height: $height_xxl) {
-          top: 80px;
-          left: 340px;
-          width: 440px;
-          height: 230px;
-        }
+        @media (max-width: $display_1440)         { @include size_pos(399px, 213px, 24px, 314px); }
+        @media (max-width: $display_1366)         { @include size_pos(347px, 185px, 10px, 290px); }
+        @media (max-width: $display_1280)         { @include size_pos(274px, 146px, 9px, 263px); }
+        @media (max-device-width: $display_768)   { @include size_pos(274px, 146px, 143px, 205px); }
+        @media (max-device-width: $display_480)   { @include size_pos(268px, 113px, 100px, 88px); }
+        @media (max-device-width: $display_375)   { @include size_pos(152px, 55px, 90px, 73px); }
+        @media (max-device-width: $width_min)   { @include size_pos(152px, 55px, 90px, 73px); }
 
-        @media (max-width: $xl) {
-          top: 90px;
-          left: 210px;
-          width: 200px;
-          height: 100px;
-        }
-
-        @media (max-width: $md) {
-          top: 125px;
-          left: 80px;
-          width: 210px;
-          height: 100px;
+        @media (max-width: $display_1024) {
           background-image: url($path_img + 'messages/1-mobile.svg');
         }
       }
     }
 
     &--2 {
-      bottom: -2px;
-      left: -12px;
-      width: 587px;
-      height: 549px;
-      z-index: 3;
+      @include size_pos(704px, 406px, 41px, auto, -40px);
+      @include bg($cat_top_right, 100% 100%, no-repeat, top left);
 
-      @media (max-height: $height_xxl) {
-        bottom: -65px;
-        left: -20px;
-        width: 550px;
-        height: 520px;
-      }
-
-      @media (max-width: $xl) {
-        bottom: -70px;
-        left: -50px;
-        width: 350px;
-        height: 320px;
-      }
-
-      @media (max-width: $md) {
-        bottom: -60px;
-        left: -90px;
-        width: 270px;
-        height: 250px;
-      }
-
-      #{$cat}-img {
-        background-image: url($path_img + 'cats/2.png');
-      }
+      @media (max-width: $display_1440)         { @include size_pos(585px, 337px, 27px, auto,  -83px); }
+      @media (max-width: $display_1366)         { @include size_pos(503px, 289px, 11px, auto,  -79px); }
+      @media (max-width: $display_1280)         { @include size_pos(385px, 221px, 35px, auto,  -47px); }
+      @media (max-device-width: $display_1024)  { @include size_pos(374px, 214px, 34px, auto, -137px); }
+      @media (max-device-width: $display_768)   { @include size_pos(374px, 214px, 24px, auto, -134px); }
+      @media (max-device-width: $display_480)   { @include size_pos(378px, 217px, 51px, auto, -206px); }
+      @media (max-device-width: $display_375)   { @include size_pos(276px, 158px, 46px, auto, -119px); }
+      @media (max-device-width: $width_min)     { @include size_pos(276px, 158px, 28px, auto, -151px); }
 
       #{$cat}-message {
-        bottom: 16px;
-        left: 330px;
-        width: 506px;
-        height: 248px;
-        background-image: url($path_img + 'messages/2.svg');
+        @include size_pos(454px, 195px, 242px, -119px);
+        @include bg($path_img + 'messages/5.svg', 100% 100%, no-repeat, top center);
 
-        @media (max-height: $height_xxl) {
-          bottom: 40px;
-          left: 320px;
-          width: 460px;
-          height: 200px;
-        }
+        @media (max-width: $display_1440)         { @include size_pos(337px, 162px, 228px,  -61px); }
+        @media (max-width: $display_1366)         { @include size_pos(323px, 139px, 200px, -102px); }
+        @media (max-width: $display_1280)         { @include size_pos(302px, 130px, 166px, -161px); }
+        @media (max-device-width: $display_1024)  { @include size_pos(249px, 107px, 176px, -124px); }
+        @media (max-device-width: $display_768)   { @include size_pos(270px,  79px,  74px, -182px); background-image: url($path_img + 'messages/5-mobile.svg'); }
+        @media (max-device-width: $display_480)   { @include size_pos(222px, 166px, 175px, -65px); background-image: url($path_img + 'messages/5.svg'); }
+        @media (max-device-width: $display_375)   { @include size_pos(158px, 72px, 116px, -47px); }
+        @media (max-device-width: $width_min)   { @include size_pos(158px, 72px, 130px, -47px); }
 
-        @media (max-width: $xl) {
-          bottom: 60px;
-          left: 200px;
-          width: 170px;
-          height: 85px;
-        }
-
-        @media (max-width: $md) {
-          bottom: 44px;
-          left: 180px;
-          width: 220px;
-          height: 105px;
-          background-image: url($path_img + 'messages/2-mobile.svg');
-        }
       }
     }
-
+/*
     &--3 {
       bottom: -189px;
       left: 50%;
@@ -647,5 +437,6 @@
         }
       }
     }
+ */
   }
 }

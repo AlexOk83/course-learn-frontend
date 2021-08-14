@@ -1,0 +1,35 @@
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin pos_center($w, $h) {
+  @include size($w, $h);
+  margin-top: -$h/2;
+  margin-left: -$w/2;
+}
+
+@mixin only_pos($t: auto, $l: auto, $r: auto, $b: auto) {
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+}
+
+@mixin bg($image, $size: contain, $repeat: no-repeat, $position: center) {
+  background-image: url($image);
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin posContainer($p) {
+  $p2: $p*2;
+  @include size(100% - #{$p2}, 100% - #{$p2});
+  margin: $p;
+}
+
+@mixin size_pos($w, $h, $t: auto, $l: auto, $r: auto, $b: auto) {
+  @include size($w, $h);
+  @include only_pos($t, $l, $r, $b);
+}
