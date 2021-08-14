@@ -100,7 +100,7 @@
         }
       }
     }
-    @media (max-device-width: $display_768) {
+    @media (max-width: $display_768) {
       &--top, &--bottom {
         height: $height_border_tablet;
         &:before {
@@ -115,7 +115,7 @@
         }
       }
     }
-    @media (max-device-width: $display_480) {
+    @media (max-width: $display_480) {
       &--top, &--bottom {
         height: $height_border_mobile;
         &:before {
@@ -125,7 +125,7 @@
       &--bottom:before { background-image: url($path_brand_h2); }
       &--left, &--right { display: none; }
     }
-    @media (max-device-width: $width_min) {
+    @media (max-width: $width_min) {
       &--top, &--bottom {
         height: $height_border_small;
         &:before {
@@ -149,20 +149,20 @@
   // логотип - готово!
   &__logo {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    z-index: 300;
-    @include pos_center(348px, 365px);
+    z-index: 200;
+    @include pos_logo(348px, 365px);
     @include bg($path_img + 'logo.svg');
 
-    @media (max-width: $display_1440)         { @include pos_center(315px, 330px); }
-    @media (max-width: $display_1366)         { @include pos_center(315px, 330px); }
-    @media (max-width: $display_1280)         { @include pos_center(287px, 300px); }
-    @media (max-device-width: $display_1024)  { @include pos_center(292px, 305px); }
-    @media (max-device-width: $display_768)   { @include pos_center(374px, 390px); }
-    @media (max-device-width: $display_480)   { @include pos_center(199px, 209px); }
-    @media (max-device-width: $display_375)   { @include pos_center(161px, 169px); }
-    @media (max-device-width: $width_min)     { @include pos_center(132px, 139px); }
+    @media (max-width: $display_1440)         { @include pos_logo(315px, 330px); top: 50%; }
+    @media (max-width: $display_1366)         { @include pos_logo(315px, 330px); }
+    @media (max-width: $display_1280)         { @include pos_logo(287px, 300px); }
+    @media (max-width: $display_1024)  { @include pos_logo(292px, 305px); }
+    @media (max-width: $display_768)   { @include pos_logo(374px, 390px); }
+    @media (max-width: $display_480)   { @include pos_logo(199px, 209px); }
+    @media (max-width: $display_375)   { @include pos_logo(161px, 169px); }
+    @media (max-width: $width_min)     { @include pos_logo(132px, 139px); }
   }
 
   &__cat {
@@ -181,11 +181,11 @@
       @media (max-width: $display_1440)         { @include size_pos(424px, 329px, 52px, 38px); }
       @media (max-width: $display_1366)         { @include size_pos(380px, 295px, 30px, 31px); }
       @media (max-width: $display_1280)         { @include size_pos(344px, 267px, 38px, 31px); }
-      @media (max-device-width: $display_1024)  { @include size_pos(344px, 267px, 30px, 28px); }
-      @media (max-device-width: $display_768)   { @include size_pos(344px, 267px, 30px, -17px); }
-      @media (max-device-width: $display_480)   { @include size_pos(241px, 188px, 53px, -66px); }
-      @media (max-device-width: $display_375)   { @include size_pos(380px, 295px, 30px, 31px); }
-      @media (max-device-width: $width_min)     { @include size_pos(137px, 176px, 22px, -22px); }
+      @media (max-width: $display_1024)  { @include size_pos(344px, 267px, 30px, 28px); }
+      @media (max-width: $display_768)   { @include size_pos(344px, 267px, 30px, -17px); }
+      @media (max-width: $display_480)   { @include size_pos(241px, 188px, 53px, -66px); }
+      @media (max-width: $display_375)   { @include size_pos(380px, 295px, 30px, 31px); }
+      @media (max-width: $width_min)     { @include size_pos(137px, 176px, 22px, -22px); }
 
       #{$cat}-message {
         @include size_pos(445px, 231px, 29px, 336px);
@@ -194,88 +194,175 @@
         @media (max-width: $display_1440)         { @include size_pos(399px, 213px, 24px, 314px); }
         @media (max-width: $display_1366)         { @include size_pos(347px, 185px, 10px, 290px); }
         @media (max-width: $display_1280)         { @include size_pos(274px, 146px, 9px, 263px); }
-        @media (max-device-width: $display_768)   { @include size_pos(274px, 146px, 143px, 205px); }
-        @media (max-device-width: $display_480)   { @include size_pos(268px, 113px, 100px, 88px); }
-        @media (max-device-width: $display_375)   { @include size_pos(152px, 55px, 90px, 73px); }
-        @media (max-device-width: $width_min)   { @include size_pos(152px, 55px, 90px, 73px); }
+        @media (max-width: $display_768)   { @include size_pos(274px, 146px, 143px, 205px); }
+        @media (max-width: $display_480)   { @include size_pos(268px, 113px, 100px, 88px); }
+        @media (max-width: $display_375)   { @include size_pos(152px, 55px, 90px, 73px); }
+        @media (max-width: $width_min)   { @include size_pos(152px, 55px, 90px, 73px); }
 
         @media (max-width: $display_1024) {
           background-image: url($path_img + 'messages/1-mobile.svg');
         }
       }
     }
-
     &--2 {
       @include size_pos(704px, 406px, 41px, auto, -40px);
       @include bg($cat_top_right, 100% 100%, no-repeat, top left);
 
-      @media (max-width: $display_1440)         { @include size_pos(585px, 337px, 27px, auto,  -83px); }
-      @media (max-width: $display_1366)         { @include size_pos(503px, 289px, 11px, auto,  -79px); }
-      @media (max-width: $display_1280)         { @include size_pos(385px, 221px, 35px, auto,  -47px); }
-      @media (max-device-width: $display_1024)  { @include size_pos(374px, 214px, 34px, auto, -137px); }
-      @media (max-device-width: $display_768)   { @include size_pos(374px, 214px, 24px, auto, -134px); }
-      @media (max-device-width: $display_480)   { @include size_pos(378px, 217px, 51px, auto, -206px); }
-      @media (max-device-width: $display_375)   { @include size_pos(276px, 158px, 46px, auto, -119px); }
-      @media (max-device-width: $width_min)     { @include size_pos(276px, 158px, 28px, auto, -151px); }
+      @media (max-width: $display_1440)  { @include size_pos(585px, 337px, 27px, auto,  -83px); }
+      @media (max-width: $display_1366)  { @include size_pos(503px, 289px, 11px, auto,  -79px); }
+      @media (max-width: $display_1280)  { @include size_pos(385px, 221px, 35px, auto,  -47px); }
+      @media (max-width: $display_1024)  { @include size_pos(374px, 214px, 34px, auto, -137px); }
+      @media (max-width: $display_768)   { @include size_pos(374px, 214px, 24px, auto, -134px); }
+      @media (max-width: $display_480)   { @include size_pos(378px, 217px, 51px, auto, -206px); }
+      @media (max-width: $display_375)   { @include size_pos(276px, 158px, 46px, auto, -119px); }
+      @media (max-width: $width_min)     { @include size_pos(276px, 158px, 28px, auto, -151px); }
 
       #{$cat}-message {
         @include size_pos(454px, 195px, 242px, -119px);
         @include bg($path_img + 'messages/5.svg', 100% 100%, no-repeat, top center);
-
-        @media (max-width: $display_1440)         { @include size_pos(337px, 162px, 228px,  -61px); }
+        z-index: 300;
+        @media (max-width: $display_1440)         { @include size_pos(377px, 162px, 228px,  -61px); }
         @media (max-width: $display_1366)         { @include size_pos(323px, 139px, 200px, -102px); }
         @media (max-width: $display_1280)         { @include size_pos(302px, 130px, 166px, -161px); }
-        @media (max-device-width: $display_1024)  { @include size_pos(249px, 107px, 176px, -124px); }
-        @media (max-device-width: $display_768)   { @include size_pos(270px,  79px,  74px, -182px); background-image: url($path_img + 'messages/5-mobile.svg'); }
-        @media (max-device-width: $display_480)   { @include size_pos(222px, 166px, 175px, -65px); background-image: url($path_img + 'messages/5.svg'); }
-        @media (max-device-width: $display_375)   { @include size_pos(158px, 72px, 116px, -47px); }
-        @media (max-device-width: $width_min)   { @include size_pos(158px, 72px, 130px, -47px); }
+        @media (max-width: $display_1024)  { @include size_pos(249px, 107px, 176px, -124px); }
+        @media (max-width: $display_768)   { @include size_pos(270px,  79px,  74px, -182px); background-image: url($path_img + 'messages/5-mobile.svg'); }
+        @media (max-width: $display_480)   { @include size_pos(222px, 166px, 175px, -65px); background-image: url($path_img + 'messages/5.svg'); }
+        @media (max-width: $display_375)   { @include size_pos(158px, 72px, 116px, -47px); }
+        @media (max-width: $width_min)   { @include size_pos(158px, 72px, 130px, -47px); }
 
       }
     }
-
     &--3 {
-      @include size_pos(587px, 549px, auto, 30px, auto, 57px);
+      @include size_pos(587px, 549px, auto, 30px, auto, 0);
       @include bg($cat_bottom_left, 100% 100%, no-repeat, center);
 
       @media (max-width: $display_1440)         { @include size_pos(484px, 453px, auto, 28px, auto, 50px); }
       @media (max-width: $display_1366)         { @include size_pos(436px, 408px, auto, 28px, auto, 45px); }
       @media (max-width: $display_1280)         { @include size_pos(391px, 366px, auto, 28px, auto, 27px); }
-      @media (max-device-width: $display_1024)  {
+      @media (max-width: $display_1024)  {
         @include size_pos(401px, 376px, auto, -73px, auto, 89px);
         transform: rotate(15deg);
       }
-      @media (max-device-width: $display_768)   { @include size_pos(359px, 336px, auto, -132px, auto, 136px); }
-      @media (max-device-width: $display_480)   {
+      @media (max-width: $display_768)   { @include size_pos(359px, 336px, auto, -132px, auto, 136px); }
+      @media (max-width: $display_480)   {
         @include size_pos(292px, 292px, auto, -34px, auto, 7px);
         transform: none;
       }
-      @media (max-device-width: $display_375)   { @include size_pos(213px, 213px, auto, 0, auto, 16px); }
-      @media (max-device-width: $width_min)     {
+      @media (max-width: $display_375)   { @include size_pos(213px, 213px, auto, 0, auto, 16px); }
+      @media (max-width: $width_min)     {
         @include size_pos(177px, 177px, auto, -16px, auto, 8px);
         transform: rotate(-25deg);
       }
 
       #{$cat}-message {
+        z-index: 200;
         @include size_pos(496px, 199px, 300px, 340px);
         @include bg($path_img + 'messages/2.svg', 100% 100%, no-repeat, center);
 
         @media (max-width: $display_1440)         { @include size_pos(327px, 130px, 279px, 245px); }
         @media (max-width: $display_1366)         { @include size_pos(358px, 144px, 237px, 245px); }
         @media (max-width: $display_1280)         { @include size_pos(286px, 115px, 213px, 220px); }
-        @media (max-device-width: $display_1024)  { @include size_pos(242px,  97px, 209px, 230px); transform: rotate(-15deg); }
-        @media (max-device-width: $display_768)   { @include size_pos(210px, 84px, 192px, 209px); }
-        @media (max-device-width: $display_480)   {
+        @media (max-width: $display_1024)  { @include size_pos(242px,  97px, 209px, 230px); transform: rotate(-15deg); }
+        @media (max-width: $display_768)   { @include size_pos(210px, 84px, 192px, 209px); }
+        @media (max-width: $display_480)   {
           @include size_pos(249px, 107px, 122px, 193px);
           background-image: url($path_img + 'messages/2-mobile.svg');
           transform: none ;
         }
-        @media (max-device-width: $display_375)   { @include size_pos(156px, 60px, 107px, 146px); }
-        @media (max-device-width: $width_min)     {
+        @media (max-width: $display_375)   { @include size_pos(156px, 60px, 107px, 146px); }
+        @media (max-width: $width_min)     {
           @include size_pos(158px, 60px, 103px, 96px);
           transform: rotate(25deg);
         }
 
+      }
+    }
+    &--4 {
+      @include size_pos(455px, 532px, auto, 38vw, auto, -17vh);
+      @include bg($cat_bottom_center, 100% 100%, no-repeat, center);
+
+      @media (max-width: $display_1440)  { @include size_pos(283px, 331px, auto, 586px, auto, -26px); }
+      @media (max-width: $display_1366)  { @include size_pos(283px, 331px, auto, 586px, auto, -82px); }
+      @media (max-width: $display_1280)  { @include size_pos(283px, 331px, auto, 482px, auto, -70px); }
+      @media (max-width: $display_1024)  { @include size_pos(283px, 331px, auto, 358px, auto, -74px); }
+      @media (max-width: $display_768)   { @include size_pos(283px, 331px, auto, 309px, auto, -41px); }
+      @media (max-width: $display_480)   {
+        @include size_pos(154px, 246px, 50%, -75px );
+        margin-top: -113px;
+        transform: rotate(90deg);
+      }
+      @media (max-width: $display_375)   {
+        @include size_pos(112px, 180px, 50%, -38px);
+        margin-top: -86px;
+      }
+
+      #{$cat}-message {
+        @include size_pos(345px, 154px, 82px, 291px);
+        @include bg($path_img + 'messages/3.svg', 100% 100%, no-repeat, center);
+
+        @media (max-width: $display_1440)  { @include size_pos(215px, 96px, 51px, 181px); }
+        @media (max-width: $display_1366)  { @include size_pos(215px, 96px, 51px, 181px); }
+        @media (max-width: $display_1280)  { @include size_pos(244px, 80px, 49px, 192px); }
+        @media (max-width: $display_1024)  { @include size_pos(208px, 68px, 51px, 177px); }
+        @media (max-width: $display_768)   { @include size_pos(190px, 75px, 49px, 192px); }
+        @media (max-width: $display_480)   {
+          @include size_pos(211px, 109px, -47px, 76px);
+          background-image: url($path_img + 'messages/3-mobile.svg');
+          transform: rotate(-90deg);
+        }
+        @media (max-width: $display_375)   {
+          @include size_pos(142px, 74px, -2px, 62px);
+          background-image: url($path_img + 'messages/3-mobile2.svg');
+        }
+      }
+    }
+    &--5 {
+      @include size_pos(526px, 651px, auto, auto, -32px, -68px);
+      @include bg($cat_bottom_right, 100% 100%, no-repeat, center);
+
+      @media (max-width: $display_1440)  { @include size_pos(354px, 438px, auto, auto, 37px, 49px); }
+      @media (max-width: $display_1366)  { @include size_pos(354px, 438px, auto, auto, -37px, 25px); }
+      @media (max-width: $display_1280)  { @include size_pos(307px, 380px, auto, auto, -21px, 45px); }
+      @media (max-width: $display_1024)  {
+        @include size_pos(307px, 380px, auto, auto, -51px, 75px);
+        transform: rotate(-27deg);
+      }
+      @media (max-width: $display_768)   {
+        @include size_pos(307px, 379px, auto, auto, -64px, 339px);
+        z-index: 300;
+      }
+      @media (max-width: $display_480)   {
+        @include size_pos(294px, 363px, auto, auto, -139px, 96px);
+        z-index: 100;
+      }
+      @media (max-width: $display_375)   {
+        @include size_pos(218px, 265px, auto, auto, -70px, 66px);
+      }
+      @media (max-width: $width_min)   {
+        @include size_pos(218px, 265px, auto, auto, -84px, 57px);
+      }
+
+      #{$cat}-message {
+        @include size_pos(426px, 149px, 139px, -301px);
+        @include bg($path_img + 'messages/4.svg', 100% 100%, no-repeat, center);
+
+        @media (max-width: $display_1440)  { @include size_pos(287px, 100px, 119px, -220px); }
+        @media (max-width: $display_1366)  { @include size_pos(287px, 100px, 132px, -210px); }
+        @media (max-width: $display_1280)  { @include size_pos(249px, 87px, 103px, -186px); }
+        @media (max-width: $display_1024)  {
+          @include size_pos(221px, 83px, 80px, -133px);
+          transform: rotate(27deg);
+        }
+        @media (max-width: $display_768)   { @include size_pos(190px, 75px, 49px, 192px); }
+        @media (max-width: $display_480)   {
+          @include size_pos(211px, 109px, -47px, 76px);
+          background-image: url($path_img + 'messages/3-mobile.svg');
+          transform: rotate(-90deg);
+        }
+        @media (max-width: $display_375)   {
+          @include size_pos(142px, 74px, -2px, 62px);
+          background-image: url($path_img + 'messages/3-mobile2.svg');
+        }
       }
     }
 

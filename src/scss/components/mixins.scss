@@ -3,7 +3,7 @@
   height: $h;
 }
 
-@mixin pos_center($w, $h) {
+@mixin pos_logo($w, $h) {
   @include size($w, $h);
   margin-top: -$h/2;
   margin-left: -$w/2;

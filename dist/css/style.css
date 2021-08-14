@@ -113,7 +113,7 @@ html, body {
     background-size: 29px 261px;
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__brand--top, .stub__brand--bottom {
     height: 36px;
   }
@@ -128,7 +128,7 @@ html, body {
     background-size: 22px 199px;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__brand--top, .stub__brand--bottom {
     height: 53px;
   }
@@ -142,7 +142,7 @@ html, body {
     display: none;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__brand--top, .stub__brand--bottom {
     height: 48px;
   }
@@ -164,9 +164,9 @@ html, body {
 }
 .stub__logo {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  z-index: 300;
+  z-index: 200;
   width: 348px;
   height: 365px;
   margin-top: -182.5px;
@@ -182,6 +182,7 @@ html, body {
     height: 330px;
     margin-top: -165px;
     margin-left: -157.5px;
+    top: 50%;
   }
 }
 @media (max-width: 1366px) {
@@ -200,7 +201,7 @@ html, body {
     margin-left: -143.5px;
   }
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .stub__logo {
     width: 292px;
     height: 305px;
@@ -208,7 +209,7 @@ html, body {
     margin-left: -146px;
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__logo {
     width: 374px;
     height: 390px;
@@ -216,7 +217,7 @@ html, body {
     margin-left: -187px;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__logo {
     width: 199px;
     height: 209px;
@@ -224,7 +225,7 @@ html, body {
     margin-left: -99.5px;
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__logo {
     width: 161px;
     height: 169px;
@@ -232,7 +233,7 @@ html, body {
     margin-left: -80.5px;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__logo {
     width: 132px;
     height: 139px;
@@ -288,7 +289,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .stub__cat--1 {
     width: 344px;
     height: 267px;
@@ -298,7 +299,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__cat--1 {
     width: 344px;
     height: 267px;
@@ -308,7 +309,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__cat--1 {
     width: 241px;
     height: 188px;
@@ -318,7 +319,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__cat--1 {
     width: 380px;
     height: 295px;
@@ -328,7 +329,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__cat--1 {
     width: 137px;
     height: 176px;
@@ -380,7 +381,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__cat--1 .stub__cat-message {
     width: 274px;
     height: 146px;
@@ -390,7 +391,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__cat--1 .stub__cat-message {
     width: 268px;
     height: 113px;
@@ -400,7 +401,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__cat--1 .stub__cat-message {
     width: 152px;
     height: 55px;
@@ -410,7 +411,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__cat--1 .stub__cat-message {
     width: 152px;
     height: 55px;
@@ -467,7 +468,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .stub__cat--2 {
     width: 374px;
     height: 214px;
@@ -477,7 +478,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__cat--2 {
     width: 374px;
     height: 214px;
@@ -487,7 +488,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__cat--2 {
     width: 378px;
     height: 217px;
@@ -497,7 +498,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__cat--2 {
     width: 276px;
     height: 158px;
@@ -507,7 +508,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__cat--2 {
     width: 276px;
     height: 158px;
@@ -528,10 +529,11 @@ html, body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% 100%;
+  z-index: 300;
 }
 @media (max-width: 1440px) {
   .stub__cat--2 .stub__cat-message {
-    width: 337px;
+    width: 377px;
     height: 162px;
     top: 228px;
     left: -61px;
@@ -559,7 +561,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .stub__cat--2 .stub__cat-message {
     width: 249px;
     height: 107px;
@@ -569,7 +571,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__cat--2 .stub__cat-message {
     width: 270px;
     height: 79px;
@@ -580,7 +582,7 @@ html, body {
     background-image: url("../images/messages/5-mobile.svg");
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__cat--2 .stub__cat-message {
     width: 222px;
     height: 166px;
@@ -591,7 +593,7 @@ html, body {
     background-image: url("../images/messages/5.svg");
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__cat--2 .stub__cat-message {
     width: 158px;
     height: 72px;
@@ -601,7 +603,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__cat--2 .stub__cat-message {
     width: 158px;
     height: 72px;
@@ -617,7 +619,7 @@ html, body {
   top: auto;
   left: 30px;
   right: auto;
-  bottom: 57px;
+  bottom: 0;
   background-image: url("../images/cats/Cat_2.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -653,7 +655,7 @@ html, body {
     bottom: 27px;
   }
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .stub__cat--3 {
     width: 401px;
     height: 376px;
@@ -664,7 +666,7 @@ html, body {
     transform: rotate(15deg);
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__cat--3 {
     width: 359px;
     height: 336px;
@@ -674,7 +676,7 @@ html, body {
     bottom: 136px;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__cat--3 {
     width: 292px;
     height: 292px;
@@ -685,7 +687,7 @@ html, body {
     transform: none;
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__cat--3 {
     width: 213px;
     height: 213px;
@@ -695,7 +697,7 @@ html, body {
     bottom: 16px;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__cat--3 {
     width: 177px;
     height: 177px;
@@ -707,6 +709,7 @@ html, body {
   }
 }
 .stub__cat--3 .stub__cat-message {
+  z-index: 200;
   width: 496px;
   height: 199px;
   top: 300px;
@@ -748,7 +751,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .stub__cat--3 .stub__cat-message {
     width: 242px;
     height: 97px;
@@ -759,7 +762,7 @@ html, body {
     transform: rotate(-15deg);
   }
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .stub__cat--3 .stub__cat-message {
     width: 210px;
     height: 84px;
@@ -769,7 +772,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 480px) {
+@media (max-width: 480px) {
   .stub__cat--3 .stub__cat-message {
     width: 249px;
     height: 107px;
@@ -781,7 +784,7 @@ html, body {
     transform: none;
   }
 }
-@media (max-device-width: 375px) {
+@media (max-width: 375px) {
   .stub__cat--3 .stub__cat-message {
     width: 156px;
     height: 60px;
@@ -791,7 +794,7 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-device-width: 320px) {
+@media (max-width: 320px) {
   .stub__cat--3 .stub__cat-message {
     width: 158px;
     height: 60px;
@@ -800,5 +803,356 @@ html, body {
     right: auto;
     bottom: auto;
     transform: rotate(25deg);
+  }
+}
+.stub__cat--4 {
+  width: 455px;
+  height: 532px;
+  top: auto;
+  left: 38vw;
+  right: auto;
+  bottom: -17vh;
+  background-image: url("../images/cats/Cat_1.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 1440px) {
+  .stub__cat--4 {
+    width: 283px;
+    height: 331px;
+    top: auto;
+    left: 586px;
+    right: auto;
+    bottom: -26px;
+  }
+}
+@media (max-width: 1366px) {
+  .stub__cat--4 {
+    width: 283px;
+    height: 331px;
+    top: auto;
+    left: 586px;
+    right: auto;
+    bottom: -82px;
+  }
+}
+@media (max-width: 1280px) {
+  .stub__cat--4 {
+    width: 283px;
+    height: 331px;
+    top: auto;
+    left: 482px;
+    right: auto;
+    bottom: -70px;
+  }
+}
+@media (max-width: 1024px) {
+  .stub__cat--4 {
+    width: 283px;
+    height: 331px;
+    top: auto;
+    left: 358px;
+    right: auto;
+    bottom: -74px;
+  }
+}
+@media (max-width: 768px) {
+  .stub__cat--4 {
+    width: 283px;
+    height: 331px;
+    top: auto;
+    left: 309px;
+    right: auto;
+    bottom: -41px;
+  }
+}
+@media (max-width: 480px) {
+  .stub__cat--4 {
+    width: 154px;
+    height: 246px;
+    top: 50%;
+    left: -75px;
+    right: auto;
+    bottom: auto;
+    margin-top: -113px;
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: 375px) {
+  .stub__cat--4 {
+    width: 112px;
+    height: 180px;
+    top: 50%;
+    left: -38px;
+    right: auto;
+    bottom: auto;
+    margin-top: -86px;
+  }
+}
+.stub__cat--4 .stub__cat-message {
+  width: 345px;
+  height: 154px;
+  top: 82px;
+  left: 291px;
+  right: auto;
+  bottom: auto;
+  background-image: url("../images/messages/3.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 1440px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 215px;
+    height: 96px;
+    top: 51px;
+    left: 181px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1366px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 215px;
+    height: 96px;
+    top: 51px;
+    left: 181px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1280px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 244px;
+    height: 80px;
+    top: 49px;
+    left: 192px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 208px;
+    height: 68px;
+    top: 51px;
+    left: 177px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 768px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 190px;
+    height: 75px;
+    top: 49px;
+    left: 192px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 480px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 211px;
+    height: 109px;
+    top: -47px;
+    left: 76px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/3-mobile.svg");
+    transform: rotate(-90deg);
+  }
+}
+@media (max-width: 375px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 142px;
+    height: 74px;
+    top: -2px;
+    left: 62px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/3-mobile2.svg");
+  }
+}
+.stub__cat--5 {
+  width: 526px;
+  height: 651px;
+  top: auto;
+  left: auto;
+  right: -32px;
+  bottom: -68px;
+  background-image: url("../images/cats/Cat_5.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 1440px) {
+  .stub__cat--5 {
+    width: 354px;
+    height: 438px;
+    top: auto;
+    left: auto;
+    right: 37px;
+    bottom: 49px;
+  }
+}
+@media (max-width: 1366px) {
+  .stub__cat--5 {
+    width: 354px;
+    height: 438px;
+    top: auto;
+    left: auto;
+    right: -37px;
+    bottom: 25px;
+  }
+}
+@media (max-width: 1280px) {
+  .stub__cat--5 {
+    width: 307px;
+    height: 380px;
+    top: auto;
+    left: auto;
+    right: -21px;
+    bottom: 45px;
+  }
+}
+@media (max-width: 1024px) {
+  .stub__cat--5 {
+    width: 307px;
+    height: 380px;
+    top: auto;
+    left: auto;
+    right: -51px;
+    bottom: 75px;
+    transform: rotate(-27deg);
+  }
+}
+@media (max-width: 768px) {
+  .stub__cat--5 {
+    width: 307px;
+    height: 379px;
+    top: auto;
+    left: auto;
+    right: -64px;
+    bottom: 339px;
+    z-index: 300;
+  }
+}
+@media (max-width: 480px) {
+  .stub__cat--5 {
+    width: 294px;
+    height: 363px;
+    top: auto;
+    left: auto;
+    right: -139px;
+    bottom: 96px;
+    z-index: 100;
+  }
+}
+@media (max-width: 375px) {
+  .stub__cat--5 {
+    width: 218px;
+    height: 265px;
+    top: auto;
+    left: auto;
+    right: -70px;
+    bottom: 66px;
+  }
+}
+@media (max-width: 320px) {
+  .stub__cat--5 {
+    width: 218px;
+    height: 265px;
+    top: auto;
+    left: auto;
+    right: -84px;
+    bottom: 57px;
+  }
+}
+.stub__cat--5 .stub__cat-message {
+  width: 426px;
+  height: 149px;
+  top: 139px;
+  left: -301px;
+  right: auto;
+  bottom: auto;
+  background-image: url("../images/messages/4.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 1440px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 287px;
+    height: 100px;
+    top: 119px;
+    left: -220px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1366px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 287px;
+    height: 100px;
+    top: 132px;
+    left: -210px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1280px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 249px;
+    height: 87px;
+    top: 103px;
+    left: -186px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 221px;
+    height: 83px;
+    top: 80px;
+    left: -133px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(27deg);
+  }
+}
+@media (max-width: 768px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 190px;
+    height: 75px;
+    top: 49px;
+    left: 192px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 480px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 211px;
+    height: 109px;
+    top: -47px;
+    left: 76px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/3-mobile.svg");
+    transform: rotate(-90deg);
+  }
+}
+@media (max-width: 375px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 142px;
+    height: 74px;
+    top: -2px;
+    left: 62px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/3-mobile2.svg");
   }
 }
