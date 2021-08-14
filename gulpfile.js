@@ -1,96 +1,52 @@
-'use strict';
+const gulp    = require('gulp'),
+  scss        = require('gulp-sass')(require('sass')),
+  del         = require('del'),
+  fileinclude = require('gulp-file-include'),
+  browserSync = require('browser-sync').create();
 
-var gulp = require('gulp'),
-    less = require('gulp-less'),
-    pug = require('gulp-pug'),
-    browserSync = require('browser-sync'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleanCSS = require('gulp-clean-css'),
-    concat = require('gulp-concat'),
-    plumber = require('gulp-plumber');
+const src = 'src';
+const dist = 'dist';
 
-const paths = {
-  styles: {
-    src: 'src/less/*.less',
-    dest: './build/assets/styles/'
-  },
-  scripts: {
-    src_home: 'src/js/home/*.js',
-    src_personal: 'src/js/personal/*.js',
-    dest: './build/assets/js/',
-  },
-  pug: {
-    src: 'src/pug/*.pug',
-    dest: './build/'
-  }
-}
+gulp.task('scss', () => {
+  return gulp.src(src + '/scss/style.scss')
+    .pipe(scss({outputStyle: 'expanded'}).on('error', scss.logError))
+    .pipe(gulp.dest(dist + '/css'))
+    .pipe(browserSync.reload({stream: true}));
+});
 
-gulp.task('browser-sync', function(done) {
+gulp.task('html', () => {
+  return gulp.src(src + '/html/*.html')
+    .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+    }))
+    .pipe(gulp.dest(dist + '/'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('images', () => {
+  return gulp.src(src + '/images/**/*.*')
+    .pipe(gulp.dest(dist + '/images'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('clean', () => {
+  return del([dist + '/']);
+});
+
+gulp.task('browser-sync', () => {
   browserSync.init({
     server: {
-      baseDir: './build'
+        baseDir: dist
     },
-    port: 3000,
-    open: true,
     notify: false
   });
-
-  browserSync.watch('build/').on('change', browserSync.reload);
-
-  done();
 });
 
-gulp.task('less', function (done) {
-  gulp.src(paths.styles.src)
-      .pipe(less())
-      .pipe(plumber())
-      .pipe(cleanCSS())
-      .pipe(autoprefixer({
-        browsers: ['last 4 versions'],
-        cascade: false
-      }))
-      .pipe(concat('styles.min.css'))
-      .pipe(gulp.dest(paths.styles.dest))
-      .pipe(browserSync.reload({stream: true}));
-
-  done();
-})
-
-gulp.task('js', function (done) {
-  gulp.src(paths.scripts.src_home)
-      .pipe(concat('main.js'))
-      .pipe(gulp.dest(paths.scripts.dest))
-      .pipe(browserSync.reload({stream: true}));
-  done();
-})
-gulp.task('js2', function (done) {
-  gulp.src(paths.scripts.src_personal)
-      .pipe(concat('personal.js'))
-      .pipe(gulp.dest(paths.scripts.dest))
-      .pipe(browserSync.reload({stream: true}));
-  done();
-})
-
-gulp.task('pug', function (done) {
-  gulp.src(paths.pug.src)
-      .pipe(pug({
-        locals: '',
-        pretty: true,
-      }))
-      .pipe(plumber())
-      .pipe(gulp.dest(paths.pug.dest))
-      .pipe(browserSync.reload({stream: true}));
-
-  done();
+gulp.task('watch', () => {
+  gulp.watch(src + '/scss/**/*.scss', ['scss', browserSync.reload]);
+  gulp.watch(src + '/html/**/*.html', ['html', browserSync.reload]);
+  gulp.watch(src + '/images/**/*.*', ['images', browserSync.reload]);
 });
 
-gulp.task('watch', gulp.series('less', 'js', 'js2', 'pug', 'browser-sync', function(done) {
-  gulp.watch('src/less/**/*.less', gulp.series('less'));
-  gulp.watch(paths.scripts.src_home, gulp.series('js'));
-  gulp.watch(paths.scripts.src_personal, gulp.series('js2'));
-  gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
-
-  done()
-}));
-
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', ['watch', 'scss', 'html', 'images', 'browser-sync']);
