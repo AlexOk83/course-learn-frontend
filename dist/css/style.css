@@ -222,7 +222,6 @@ html, body {
     height: 305px;
     margin-top: -152.5px;
     margin-left: -146px;
-    top: 50%;
   }
 }
 @media (max-width: 768px) {
@@ -231,6 +230,7 @@ html, body {
     height: 390px;
     margin-top: -195px;
     margin-left: -187px;
+    top: 50%;
   }
 }
 @media (max-width: 480px) {
@@ -1039,9 +1039,9 @@ html, body {
     height: 380px;
     top: auto;
     left: auto;
-    right: -51px;
-    bottom: 75px;
-    transform: rotate(-27deg);
+    right: -79px;
+    bottom: 121px;
+    transform: rotate(-20deg);
   }
 }
 @media (max-width: 768px) {
@@ -1050,8 +1050,8 @@ html, body {
     height: 379px;
     top: auto;
     left: auto;
-    right: -64px;
-    bottom: 339px;
+    right: -74px;
+    bottom: 310px;
     z-index: 300;
   }
 }
@@ -1132,19 +1132,20 @@ html, body {
   .stub__cat--5 .stub__cat-message {
     width: 221px;
     height: 83px;
-    top: 80px;
-    left: -133px;
+    top: 165px;
+    left: -85px;
     right: auto;
     bottom: auto;
-    transform: rotate(27deg);
+    transform: rotate(20deg);
+    background-image: url("../images/messages/4-mobile.svg");
   }
 }
 @media (max-width: 768px) {
   .stub__cat--5 .stub__cat-message {
-    width: 190px;
-    height: 75px;
-    top: 49px;
-    left: 192px;
+    width: 204px;
+    height: 99px;
+    top: 188px;
+    left: -79px;
     right: auto;
     bottom: auto;
   }
@@ -1157,7 +1158,6 @@ html, body {
     left: 76px;
     right: auto;
     bottom: auto;
-    background-image: url("../images/messages/3-mobile.svg");
     transform: rotate(-90deg);
   }
 }
@@ -1169,6 +1169,5 @@ html, body {
     left: 62px;
     right: auto;
     bottom: auto;
-    background-image: url("../images/messages/3-mobile2.svg");
   }
 }
