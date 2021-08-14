@@ -242,211 +242,6 @@ html, body {
 }
 .stub__cat {
   position: absolute;
-  /*
-      &--3 {
-        bottom: -189px;
-        left: 50%;
-        margin-left: -278px;
-        width: 773px;
-        height: 707px;
-        z-index: 2;
-
-        @media (max-height: $height_xxl) {
-          bottom: -200px;
-          margin-left: -200px;
-          width: 630px;
-          height: 630px;
-        }
-
-        @media (max-height: $height_lg) {
-          display: none;
-        }
-
-        @media (max-width: $xl) {
-          bottom: -150px;
-          margin-left: -100px;
-          width: 400px;
-          height: 400px;
-        }
-
-        @media (max-width: $md) {
-          bottom: 50%;
-          left: -123px;
-          margin-left: 0;
-          margin-bottom: -140px;
-          width: 300px;
-          height: 280px;
-        }
-
-        @media (max-width: $sm) {
-          display: none
-        }
-
-        .stub__cat-img {
-          background-image: url($path_img + 'cats/3.png');
-
-          @media (max-width: $md) {
-            transform: rotate(92.53deg);
-          }
-        }
-
-        .stub__cat-message {
-          bottom: 221px;
-          left: 375px;
-          width: 469px;
-          height: 216px;
-          background-image: url($path_img + 'messages/3.svg');
-
-          @media (max-height: $height_xxl) {
-            bottom: 200px;
-            left: 290px;
-            width: 420px;
-            height: 170px;
-          }
-
-          @media (max-width: $xl) {
-            bottom: 140px;
-            left: 200px;
-            width: 190px;
-            height: 90px;
-          }
-        }
-      }
-
-      &--4 {
-        bottom: -82px;
-        right: -123px;
-        width: 775px;
-        height: 777px;
-        z-index: 1;
-
-        @media (max-height: $height_xxl) {
-          bottom: -100px;
-          right: -115px;
-          width: 670px;
-          height: 670px;
-        }
-
-        @media (max-width: $xl) {
-          bottom: -100px;
-          right: -120px;
-          width: 470px;
-          height: 470px;
-        }
-
-        @media (max-width: $md) {
-          bottom: -15px;
-          right: -80px;
-          width: 400px;
-          height: 400px;
-        }
-
-        .stub__cat-img {
-          background-image: url($path_img + 'cats/4.png');
-
-          @media (max-width: $md) {
-            transform: rotate(-22deg);
-          }
-        }
-
-        .stub__cat-message {
-          bottom: 301px;
-          right: 372px;
-          width: 468px;
-          height: 215px;
-          background-image: url($path_img + 'messages/4.svg');
-
-          @media (max-height: $height_xxl) {
-            bottom: 250px;
-            right: 340px;
-            width: 380px;
-            height: 180px;
-          }
-
-          @media (max-width: $xl) {
-            bottom: 190px;
-            right: 250px;
-            width: 190px;
-            height: 90px;
-          }
-
-          @media (max-width: $md) {
-            bottom: 75px;
-            right: 55px;
-            width: 220px;
-            height: 110px;
-            background-image: url($path_img + 'messages/4-mobile.svg');
-          }
-        }
-      }
-
-      &--5 {
-        top: -100px;
-        right: -157px;
-        width: 860px;
-        height: 500px;
-        z-index: 1;
-
-        @media (max-height: $height_xxl) {
-          top: -90px;
-          right: -180px;
-          width: 750px;
-          height: 400px;
-        }
-
-        @media (max-height: $height_lg) {
-          display: none;
-        }
-
-        @media (max-width: $xl) {
-          top: -80px;
-          right: -200px;
-          width: 600px;
-          height: 300px;
-        }
-
-        @media (max-width: $md) {
-          top: -30px;
-          right: -150px;
-          width: 380px;
-          height: 250px;
-        }
-
-        .stub__cat-img {
-          background-image: url($path_img + 'cats/5.png');
-        }
-
-        .stub__cat-message {
-          top: 282px;
-          right: 374px;
-          width: 455px;
-          height: 219px;
-          background-image: url($path_img + 'messages/5.svg');
-
-          @media (max-height: $height_xxl) {
-            top: 240px;
-            right: 320px;
-            width: 390px;
-            height: 180px;
-          }
-
-          @media (max-width: $xl) {
-            top: 190px;
-            right: 280px;
-            width: 200px;
-            height: 100px;
-          }
-
-          @media (max-width: $md) {
-            top: 170px;
-            right: 180px;
-            width: 180px;
-            height: 95px;
-            background-image: url($path_img + 'messages/5-mobile.svg');
-          }
-        }
-      }
-   */
 }
 .stub__cat-message {
   position: absolute;
@@ -814,5 +609,196 @@ html, body {
     left: -47px;
     right: auto;
     bottom: auto;
+  }
+}
+.stub__cat--3 {
+  width: 587px;
+  height: 549px;
+  top: auto;
+  left: 30px;
+  right: auto;
+  bottom: 57px;
+  background-image: url("../images/cats/Cat_2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 1440px) {
+  .stub__cat--3 {
+    width: 484px;
+    height: 453px;
+    top: auto;
+    left: 28px;
+    right: auto;
+    bottom: 50px;
+  }
+}
+@media (max-width: 1366px) {
+  .stub__cat--3 {
+    width: 436px;
+    height: 408px;
+    top: auto;
+    left: 28px;
+    right: auto;
+    bottom: 45px;
+  }
+}
+@media (max-width: 1280px) {
+  .stub__cat--3 {
+    width: 391px;
+    height: 366px;
+    top: auto;
+    left: 28px;
+    right: auto;
+    bottom: 27px;
+  }
+}
+@media (max-device-width: 1024px) {
+  .stub__cat--3 {
+    width: 401px;
+    height: 376px;
+    top: auto;
+    left: -73px;
+    right: auto;
+    bottom: 89px;
+    transform: rotate(15deg);
+  }
+}
+@media (max-device-width: 768px) {
+  .stub__cat--3 {
+    width: 359px;
+    height: 336px;
+    top: auto;
+    left: -132px;
+    right: auto;
+    bottom: 136px;
+  }
+}
+@media (max-device-width: 480px) {
+  .stub__cat--3 {
+    width: 292px;
+    height: 292px;
+    top: auto;
+    left: -34px;
+    right: auto;
+    bottom: 7px;
+    transform: none;
+  }
+}
+@media (max-device-width: 375px) {
+  .stub__cat--3 {
+    width: 213px;
+    height: 213px;
+    top: auto;
+    left: 0;
+    right: auto;
+    bottom: 16px;
+  }
+}
+@media (max-device-width: 320px) {
+  .stub__cat--3 {
+    width: 177px;
+    height: 177px;
+    top: auto;
+    left: -16px;
+    right: auto;
+    bottom: 8px;
+    transform: rotate(-25deg);
+  }
+}
+.stub__cat--3 .stub__cat-message {
+  width: 496px;
+  height: 199px;
+  top: 300px;
+  left: 340px;
+  right: auto;
+  bottom: auto;
+  background-image: url("../images/messages/2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 1440px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 327px;
+    height: 130px;
+    top: 279px;
+    left: 245px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1366px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 358px;
+    height: 144px;
+    top: 237px;
+    left: 245px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-width: 1280px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 286px;
+    height: 115px;
+    top: 213px;
+    left: 220px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-device-width: 1024px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 242px;
+    height: 97px;
+    top: 209px;
+    left: 230px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(-15deg);
+  }
+}
+@media (max-device-width: 768px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 210px;
+    height: 84px;
+    top: 192px;
+    left: 209px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-device-width: 480px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 249px;
+    height: 107px;
+    top: 122px;
+    left: 193px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/2-mobile.svg");
+    transform: none;
+  }
+}
+@media (max-device-width: 375px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 156px;
+    height: 60px;
+    top: 107px;
+    left: 146px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-device-width: 320px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 158px;
+    height: 60px;
+    top: 103px;
+    left: 96px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(25deg);
   }
 }
