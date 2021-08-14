@@ -170,10 +170,10 @@
     @include pos_logo(348px, 365px);
     @include bg($path_img + 'logo.svg');
 
-    @media (max-width: $display_1440)         { @include pos_logo(315px, 330px); top: 50%; }
-    @media (max-width: $display_1366)         { @include pos_logo(315px, 330px); }
-    @media (max-width: $display_1280)         { @include pos_logo(287px, 300px); }
-    @media (max-width: $display_1024)  { @include pos_logo(292px, 305px); }
+    @media (max-width: $display_1440)  { @include pos_logo(315px, 330px); }
+    @media (max-width: $display_1366)  { @include pos_logo(315px, 330px); top: 45%; }
+    @media (max-width: $display_1280)  { @include pos_logo(287px, 300px); }
+    @media (max-width: $display_1024)  { @include pos_logo(292px, 305px); top: 50%; }
     @media (max-width: $display_768)   { @include pos_logo(374px, 390px); }
     @media (max-width: $display_480)   { @include pos_logo(199px, 209px); }
     @media (max-width: $display_375)   { @include pos_logo(161px, 169px); }
@@ -298,7 +298,7 @@
 
       @media (max-width: $display_1440)  { @include size_pos(283px, 331px, auto, 586px, auto, -7vh); }
       @media (max-width: $display_1366)  { @include size_pos(283px, 331px, auto, 586px, auto, -82px); }
-      @media (max-width: $display_1280)  { @include size_pos(283px, 331px, auto, 482px, auto, -70px); }
+      @media (max-width: $display_1280)  { @include size_pos(283px, 331px, auto, 482px, auto, -92px); }
       @media (max-width: $display_1024)  { @include size_pos(283px, 331px, auto, 358px, auto, -74px); }
       @media (max-width: $display_768)   { @include size_pos(283px, 331px, auto, 309px, auto, -41px); }
       @media (max-width: $display_480)   {

@@ -197,7 +197,6 @@ html, body {
     height: 330px;
     margin-top: -165px;
     margin-left: -157.5px;
-    top: 50%;
   }
 }
 @media (max-width: 1366px) {
@@ -206,6 +205,7 @@ html, body {
     height: 330px;
     margin-top: -165px;
     margin-left: -157.5px;
+    top: 45%;
   }
 }
 @media (max-width: 1280px) {
@@ -222,6 +222,7 @@ html, body {
     height: 305px;
     margin-top: -152.5px;
     margin-left: -146px;
+    top: 50%;
   }
 }
 @media (max-width: 768px) {
@@ -859,7 +860,7 @@ html, body {
     top: auto;
     left: 482px;
     right: auto;
-    bottom: -70px;
+    bottom: -92px;
   }
 }
 @media (max-width: 1024px) {
