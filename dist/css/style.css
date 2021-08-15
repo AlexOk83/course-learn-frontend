@@ -257,6 +257,15 @@ html, body {
     margin-left: -66px;
   }
 }
+@media (max-height: 480px) {
+  .stub__logo {
+    width: 132px;
+    height: 139px;
+    margin-top: -69.5px;
+    margin-left: -66px;
+    top: 50%;
+  }
+}
 .stub__cat {
   position: absolute;
 }
@@ -337,10 +346,10 @@ html, body {
 }
 @media (max-width: 375px) {
   .stub__cat--1 {
-    width: 380px;
-    height: 295px;
-    top: 30px;
-    left: 31px;
+    width: 137px;
+    height: 176px;
+    top: 35px;
+    left: -22px;
     right: auto;
     bottom: auto;
   }
@@ -351,6 +360,26 @@ html, body {
     height: 176px;
     top: 22px;
     left: -22px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--1 {
+    width: 188px;
+    height: 241px;
+    top: -47px;
+    left: 34px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--1 {
+    width: 137px;
+    height: 176px;
+    top: -35px;
+    left: 34px;
     right: auto;
     bottom: auto;
   }
@@ -397,6 +426,11 @@ html, body {
     bottom: auto;
   }
 }
+@media (max-width: 1024px) {
+  .stub__cat--1 .stub__cat-message {
+    background-image: url("../images/messages/1-mobile.svg");
+  }
+}
 @media (max-width: 768px) {
   .stub__cat--1 .stub__cat-message {
     width: 274px;
@@ -411,8 +445,8 @@ html, body {
   .stub__cat--1 .stub__cat-message {
     width: 268px;
     height: 113px;
-    top: 100px;
-    left: 88px;
+    top: 113px;
+    left: 71px;
     right: auto;
     bottom: auto;
   }
@@ -437,8 +471,25 @@ html, body {
     bottom: auto;
   }
 }
-@media (max-width: 1024px) {
+@media (max-height: 480px) {
   .stub__cat--1 .stub__cat-message {
+    width: 268px;
+    height: 113px;
+    top: 90px;
+    left: 73px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/1.svg");
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--1 .stub__cat-message {
+    width: 152px;
+    height: 55px;
+    top: 90px;
+    left: 73px;
+    right: auto;
+    bottom: auto;
     background-image: url("../images/messages/1-mobile.svg");
   }
 }
@@ -534,6 +585,26 @@ html, body {
     bottom: auto;
   }
 }
+@media (max-height: 480px) {
+  .stub__cat--2 {
+    width: 378px;
+    height: 217px;
+    top: -1px;
+    left: auto;
+    right: -83px;
+    bottom: auto;
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--2 {
+    width: 276px;
+    height: 158px;
+    top: -1px;
+    left: auto;
+    right: -83px;
+    bottom: auto;
+  }
+}
 .stub__cat--2 .stub__cat-message {
   width: 454px;
   height: 195px;
@@ -625,6 +696,28 @@ html, body {
     height: 72px;
     top: 130px;
     left: -47px;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--2 .stub__cat-message {
+    width: 222px;
+    height: 116px;
+    top: 150px;
+    left: -40px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/5.svg");
+    z-index: 400;
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--2 .stub__cat-message {
+    width: 158px;
+    height: 72px;
+    top: 109px;
+    left: -21px;
     right: auto;
     bottom: auto;
   }
@@ -724,6 +817,27 @@ html, body {
     transform: rotate(-25deg);
   }
 }
+@media (max-height: 480px) {
+  .stub__cat--3 {
+    width: 292px;
+    height: 292px;
+    top: auto;
+    left: 76px;
+    right: auto;
+    bottom: -97px;
+    transform: rotate(-46deg);
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--3 {
+    width: 177px;
+    height: 177px;
+    top: auto;
+    left: 54px;
+    right: auto;
+    bottom: -48px;
+  }
+}
 .stub__cat--3 .stub__cat-message {
   z-index: 200;
   width: 496px;
@@ -783,7 +897,7 @@ html, body {
     width: 210px;
     height: 84px;
     top: 192px;
-    left: 209px;
+    left: 217px;
     right: auto;
     bottom: auto;
   }
@@ -802,9 +916,9 @@ html, body {
 }
 @media (max-width: 375px) {
   .stub__cat--3 .stub__cat-message {
-    width: 156px;
-    height: 60px;
-    top: 107px;
+    width: 158px;
+    height: 65px;
+    top: 120px;
     left: 146px;
     right: auto;
     bottom: auto;
@@ -814,11 +928,34 @@ html, body {
   .stub__cat--3 .stub__cat-message {
     width: 158px;
     height: 60px;
-    top: 103px;
-    left: 96px;
+    top: 111px;
+    left: 72px;
     right: auto;
     bottom: auto;
     transform: rotate(25deg);
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 249px;
+    height: 107px;
+    top: 207px;
+    left: 153px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/2-mobile2.svg");
+    transform: rotate(46deg);
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--3 .stub__cat-message {
+    width: 158px;
+    height: 60px;
+    top: 149px;
+    left: 94px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/2-mobile.svg");
   }
 }
 .stub__cat--4 {
@@ -885,7 +1022,7 @@ html, body {
 }
 @media (max-width: 480px) {
   .stub__cat--4 {
-    width: 154px;
+    width: 163px;
     height: 246px;
     top: 50%;
     left: -75px;
@@ -897,13 +1034,35 @@ html, body {
 }
 @media (max-width: 375px) {
   .stub__cat--4 {
-    width: 112px;
+    width: 125px;
     height: 180px;
     top: 50%;
     left: -38px;
     right: auto;
     bottom: auto;
     margin-top: -86px;
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--4 {
+    width: 154px;
+    height: 256px;
+    top: 50%;
+    left: -38px;
+    right: auto;
+    bottom: auto;
+    margin-top: -122px;
+    transform: rotate(90deg);
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--4 {
+    width: 125px;
+    height: 180px;
+    top: 50%;
+    left: -38px;
+    right: auto;
+    bottom: auto;
   }
 }
 .stub__cat--4 .stub__cat-message {
@@ -972,8 +1131,8 @@ html, body {
   .stub__cat--4 .stub__cat-message {
     width: 211px;
     height: 109px;
-    top: -47px;
-    left: 76px;
+    top: -37px;
+    left: 82px;
     right: auto;
     bottom: auto;
     background-image: url("../images/messages/3-mobile.svg");
@@ -984,11 +1143,33 @@ html, body {
   .stub__cat--4 .stub__cat-message {
     width: 142px;
     height: 74px;
-    top: -2px;
-    left: 62px;
+    top: 2px;
+    left: 77px;
     right: auto;
     bottom: auto;
     background-image: url("../images/messages/3-mobile2.svg");
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 211px;
+    height: 109px;
+    top: -120px;
+    left: -58px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/3-mobile3.svg");
+    transform: rotate(-90deg);
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--4 .stub__cat-message {
+    width: 142px;
+    height: 74px;
+    top: -77px;
+    left: -15px;
+    right: auto;
+    bottom: auto;
   }
 }
 .stub__cat--5 {
@@ -1074,6 +1255,7 @@ html, body {
     left: auto;
     right: -70px;
     bottom: 66px;
+    transform: rotate(-30deg);
   }
 }
 @media (max-width: 320px) {
@@ -1084,6 +1266,27 @@ html, body {
     left: auto;
     right: -84px;
     bottom: 57px;
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--5 {
+    width: 294px;
+    height: 363px;
+    top: auto;
+    left: auto;
+    right: -79px;
+    bottom: -138px;
+    transform: rotate(-15deg);
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--5 {
+    width: 218px;
+    height: 265px;
+    top: auto;
+    left: auto;
+    right: -27px;
+    bottom: -82px;
   }
 }
 .stub__cat--5 .stub__cat-message {
@@ -1163,10 +1366,33 @@ html, body {
 }
 @media (max-width: 375px) {
   .stub__cat--5 .stub__cat-message {
-    width: 142px;
-    height: 74px;
-    top: -2px;
-    left: 62px;
+    width: 102px;
+    height: 66px;
+    top: 105px;
+    left: -31px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(30deg);
+  }
+}
+@media (max-height: 480px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 140px;
+    height: 90px;
+    top: 95px;
+    left: -83px;
+    right: auto;
+    bottom: auto;
+    background-image: url("../images/messages/4-mobile3.svg");
+    transform: rotate(15deg);
+  }
+}
+@media (max-height: 375px) {
+  .stub__cat--5 .stub__cat-message {
+    width: 102px;
+    height: 66px;
+    top: 80px;
+    left: -41px;
     right: auto;
     bottom: auto;
   }
