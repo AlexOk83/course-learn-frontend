@@ -1,0 +1,282 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Главная'
+  - var bodyClass = ''
+block content
+  .sliders 
+    .next
+      img(src="./assets/img/next.svg", alt="")
+    .prev
+      img(src="./assets/img/next.svg", alt="")
+    .swiper-container.main-slider
+      .swiper-wrapper
+        .swiper-slide.slide-1
+          .logo-absolute
+            img(src="./assets/img/logo.svg", alt="")
+          .flex.flex-center
+            .logo
+              img(src="./assets/img/logo-1.svg", alt="")
+            .text Бриллианты <br>на каждый день!
+        .swiper-slide.slide-2.flex
+          .number.right 2 
+          .header
+            a(href="") 
+              img(src="./assets/img/logo.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left(style="background: url(./assets/img/OH_MY_STILL_LIFE97771_fin.jpg) no-repeat center / cover")
+          .flex-right
+            .description АРТИКУЛ 0P141H23
+            .pic
+              a(href="https://alrosadiamond.ru/jewelry/rings/8p14112/skuId_54904/") 
+                img(src="./assets/img/ring.png", alt="")
+            .title Каждый день <br>бриллианты!
+        .swiper-slide.slide-3.flex
+          .number 3 
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            .title Бриллианты <br>без повода
+            a.pic.pic-1(href="https://alrosadiamond.ru/" style="background: url(./assets/img/OH_MY_STILL_LIFE98141.jpg) no-repeat center / cover") Утром
+          .flex-right
+            .pic.pic-2(href="https://alrosadiamond.ru/" style="background: url(./assets/img/OH_MY_STILL_LIFE97612_fin.jpg) no-repeat center / cover") Днем
+            .pic.pic-3(href="https://alrosadiamond.ru/" style="background: url(./assets/img/OH_MY95343_fin.jpg) no-repeat center / cover") Всегда
+        .swiper-slide.slide-4.flex
+          .number.right 4
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            .pic.pic-1
+              a(href="https://alrosadiamond.ru/jewelry/earrings/11p15612/skuId_55009/")
+                img(src="./assets/img/OH_MY95220_fin.png", alt="")
+          .flex-right
+            .pic.pic-2
+              a(href="https://alrosadiamond.ru/jewelry/earrings/11p15612/skuId_55009/") 
+                img(src="./assets/img/earring.png", alt="")
+            .description АРТИКУЛ 1P156E23
+            .title Украшения <b>OHMY</b> <br>с настоящими <br>бриллиантами <br>можно носить где, <br>как и когда угодно
+        .swiper-slide.slide-5.flex
+          .number.right 5
+          .header
+            a(href="" style="opacity: 0") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left(style="background: url(./assets/img/OH_MY97045.png) no-repeat center / cover")
+            .title Diamonds
+          .flex-right
+            .description АРТИКУЛ 1P156E23
+            a(href="https://alrosadiamond.ru/jewelry/earrings/11p15812/skuId_55010/") 
+              img(src="./assets/img/ring_with_text.png", alt="")
+        .swiper-slide.slide-6.flex
+          .number 6
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            .title Украшения <br><b>OHMY Diamonds</b> <br><span class="line">можно</span> нужно <br>комбинировать <br>и сочетать <br>с любым <br>стилем <br>и носить всегда <br>и везде!
+          .pic 
+            img(src="./assets/img/OH_MY_STILL_LIFE97670_fin.png", alt="")
+          .flex-right
+            .descriptions
+              a.description(href="https://alrosadiamond.ru/jewelry/necklace/7p16512/skuId_55012/")  АРТИКУЛ 1P156E23
+              .plus +
+              a.description(href="https://alrosadiamond.ru/jewelry/necklace/7p16712/skuId_54945/")  АРТИКУЛ 5P165H23
+            a.pic-2(href="https://alrosadiamond.ru/jewelry/necklace/7p16512/skuId_55012/") 
+              img(src="./assets/img/podveska-3.png", alt="")
+            a.pic-3(href="https://alrosadiamond.ru/jewelry/necklace/7p16712/skuId_54945/") 
+              img(src="./assets/img/podveska.png", alt="")
+        .swiper-slide.slide-7.flex
+          .number.right 7
+          .header
+            a(href="") 
+              img(src="./assets/img/logo.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          a.flex-left(href="#" style="background: url(./assets/img/OH_MY_STILL_LIFE97918.jpg) no-repeat center top / cover") ДИЗАЙН
+          .flex-right
+            a.pic(href="https://alrosadiamond.ru/jewelry/bracelet/1p16512/skuId_54937/") 
+              .description АРТИКУЛ 1P156E23
+              img(src="./assets/img/necklace.png", alt="")
+            .title-right
+              .title Яркий блеск настоящих <br>бриллиантов, желтое <br>золото и геометрия <br>минималистичного дизайна
+        .swiper-slide.slide-8.flex
+          .number 8
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a.white(href="") ALROSADIAMOND.RU 
+          .flex-left
+            a.pic(href="https://alrosadiamond.ru/jewelry/necklace/7p16612/skuId_54942/")
+              .description АРТИКУЛ 5P166H23
+              img(src="./assets/img/podveska-2.png", alt="") 
+            .title Изящные <br>Стильные <br>Универсальные!
+          a.flex-right(href="#" style="background: url(./assets/img/OH_MY_STILL_LIFE97896.png) no-repeat left top / auto 100%")
+        .swiper-slide.slide-9.flex
+          .number 9
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            a.pic(href="https://alrosadiamond.ru/jewelry/bracelet/1p15912/skuId_54934/")
+              .description АРТИКУЛ 3P159H23
+              img(src="./assets/img/braslet.png", alt="") 
+            .text В украшениях <b>OHMY Diamonds</b> <br>используются тщательно отобранные <br>настоящие бриллианты, добытые <br>на севере, земле полной природных <br>сокровищ, которая лежит <br>за полярным кругом.
+          a.flex-right(href="#" style="background: url(./assets/img/OH_MY_STILL_LIFE97790.jpg) no-repeat right top / auto 100%")
+        .swiper-slide.slide-10.flex
+          .number 10
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            img(src="./assets/img/OH_MY96605_fin.png", alt="")
+          .flex-right
+            a.pic(href="https://alrosadiamond.ru/jewelry/necklace/7p16512/skuId_55012/")
+              .description АРТИКУЛ 5P165H23
+              img(src="./assets/img/podveska-3.png", alt="") 
+            .text Добыча алмазов осуществляется <br>в соответствии с самыми строгими <br>стандартами и практиками <br>ответственного производства, <br>включая <b>RJC Code of Practices</b>, <br>нормативы <b>OECD и WDC.</b>
+        .swiper-slide.slide-11.flex
+          .number 11
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            .title 
+              | Коллекция 
+              span <br>украшений
+            a.cart.cart-1(href="https://alrosadiamond.ru/jewelry/pusets/10p14212/skuId_54917/") 
+              img(src="./assets/img/two-rings.png", alt="")
+              .cart__name ПУСЕТЫ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585, 38 вставок, 0,27 карат
+              .cart__description АРТИКУЛ 9P142H25
+          .flex-right
+            a.cart.cart-2(href="https://alrosadiamond.ru/jewelry/rings/8p14112/skuId_54904/") 
+              img(src="./assets/img/kolco-1.png", alt="")
+              .cart__name КОЛЬЦО <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585, 42 вставки, 0,37 карат
+              .cart__description АРТИКУЛ 0P141H2
+        .swiper-slide.slide-12.flex
+          .number 12
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            a.cart.cart-1(href="https://alrosadiamond.ru/jewelry/rings/8p14012/skuId_54901/") 
+              img(src="./assets/img/ring-2.png", alt="")
+              .cart__name ПУСЕТЫ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585
+              .cart__description 20 вставок,
+              .cart__description 0,19 карат
+              .cart__description АРТИКУЛ 0P140H23
+          .flex-right
+            a.cart.cart-2(href="https://alrosadiamond.ru/jewelry/necklace/7p16712/skuId_54945/") 
+              img(src="./assets/img/podveska-min.png", alt="")
+              .cart__name КОЛЬЕ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 10 вставок,
+              .cart__description 0,18 карат
+              .cart__description АРТИКУЛ 5P167H23
+            a.cart.cart-3(href="https://alrosadiamond.ru/jewelry/pendants/9p14512/skuId_55059/") 
+              img(src="./assets/img/kulon-min.png", alt="")
+              .cart__name ПОДВЕСКА <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 1 вставка,
+              .cart__description 0,15 карат
+              .cart__description АРТИКУЛ 2P145D23
+            a.cart.cart-4(href="https://alrosadiamond.ru/jewelry/bracelet/1p16512/skuId_54937/") 
+              img(src="./assets/img/necklace.png", alt="")
+              .cart__name БРАСЛЕТ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 5 вставок,
+              .cart__description 0,10 карат
+              .cart__description АРТИКУЛ 3P165H23
+        .swiper-slide.slide-13.flex
+          .number 13
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            a.cart.cart-1(href="https://alrosadiamond.ru/jewelry/pusets/10p15712/skuId_54928/") 
+              img(src="./assets/img/c-13-1.png", alt="")
+              .cart__name ПУСЕТЫ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585
+              .cart__description 64 вставок,
+              .cart__description 0,50 карат
+              .cart__description АРТИКУЛ 9P157H25
+            a.cart.cart-2(href="https://alrosadiamond.ru/jewelry/earrings/11p15812/skuId_55010/") 
+              img(src="./assets/img/kolco-3.png", alt="")
+              .cart__name СЕРЬГИ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 48 вставок,
+              .cart__description 0,32 карат
+              .cart__description АРТИКУЛ 1P158H23
+          .flex-right
+            a.cart.cart-3(href="https://alrosadiamond.ru/jewelry/necklace/7p16512/skuId_55012/") 
+              .cart__name КОЛЬЕ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 5 вставок,
+              .cart__description 0,11 карат
+              .cart__description АРТИКУЛ 5P165H23
+            a.cart.cart-4(href="https://alrosadiamond.ru/jewelry/necklace/7p16812/skuId_54947/") 
+              img(src="./assets/img/podveska-4.png", alt="")
+              .cart__name КОЛЬЕ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 47 вставок,
+              .cart__description 0,36 карат
+              .cart__description АРТИКУЛ 5P168H25
+        .swiper-slide.slide-14.flex
+          .number 14
+          .header
+            a(href="") 
+              img(src="./assets/img/logo-black.svg", alt="")
+            a(href="") ALROSADIAMOND.RU 
+          .flex-left
+            a.cart.cart-1(href="https://alrosadiamond.ru/jewelry/necklace/7p16612/skuId_54942/") 
+              img(src="./assets/img/podveska-2.png", alt="")
+              .cart__name КОЛЬЕ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 23 вставки,
+              .cart__description 0,20 карат
+              .cart__description АРТИКУЛ 5P166H23
+          .flex-right
+            a.cart.cart-2(href="https://alrosadiamond.ru/jewelry/earrings/11p14112/skuId_54914/") 
+              img(src="./assets/img/last-2.png", alt="")
+              .cart__name СЕРЬГИ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 24 вставки,
+              .cart__description 0,19 кара
+              .cart__description АРТИКУЛ 1P141H23
+            a.cart.cart-3(href="https://alrosadiamond.ru/jewelry/earrings/11p15612/skuId_55009/") 
+              img(src="./assets/img/last-3.png", alt="")
+              .cart__name ПОДВЕСКА <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 2 вставки,
+              .cart__description 0,22 карат
+              .cart__description АРТИКУЛ 1P156E23
+            a.cart.cart-4(href="https://alrosadiamond.ru/jewelry/bracelet/1p15912/skuId_54934/") 
+              img(src="./assets/img/last-4.png", alt="")
+              .cart__name БРАСЛЕТ <br>OH MY DAIMONDS
+              .cart__description Желтое золото 585,
+              .cart__description 16 вставок,
+              .cart__description 0,15 карат
+              .cart__description АРТИКУЛ 3P159H23
+        .swiper-slide.slide-15
+          .info 
+            a.last__link(href="#") ALROSADIAMOND.RU
+            .socials 
+              a.socials__link(href="#")
+                .socials__ico
+                  img(src="./assets/img/instagram.svg", alt="")
+                .socials__text ALROSADIAMONDS
+              a.socials__link(href="#")
+                .socials__ico
+                  img(src="./assets/img/facebook.svg", alt="")
+                .socials__text ALROSA.JEWELRY

@@ -1,0 +1,25 @@
+// Commons
+@import "variables";
+@import "custom-reset";
+
+// External
+// @import "vendor/jquery.fancybox.css";
+@import "node_modules/swiper/swiper.scss";
+// @import "plugins/nouislider.scss";
+
+// Base
+@import "mixins";
+@import "base";
+@import "generated/svgsprites";
+@import "fonts";
+
+// Base components
+@import "components/base/btn";
+@import "components/base/content";
+@import "components/base/footer";
+@import "components/base/header";
+
+
+
+// Project pages
+@import "pages/main";
